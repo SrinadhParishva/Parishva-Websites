@@ -443,9 +443,7 @@ function initAuditModal() {
             document.documentElement.classList.remove('overflow-hidden');
         }
 
-        modal.classList.add('active');
-        document.body.classList.add('overflow-hidden');
-        document.documentElement.classList.add('overflow-hidden');
+        window.open('https://forms.gle/q4Nfo5Nkdv3cRcJd7', '_blank');
     };
 
     const closeModal = () => {
