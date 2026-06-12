@@ -3186,6 +3186,79 @@ body.overflow-hidden {
         padding-bottom: 60px;
     }
 
+    .hero-badge {
+        margin-bottom: 32px;
+    }
+
+    h1.hero-h1 {
+        margin-bottom: 28px;
+    }
+
+    .hero-h2 {
+        margin-bottom: 26px;
+    }
+
+    .hero-seo {
+        margin-bottom: 32px;
+    }
+
+    .problem-text .sec-h2 {
+        margin-bottom: 24px;
+    }
+
+    .problem-insight {
+        margin-bottom: 24px;
+    }
+
+    .problem-list {
+        margin-bottom: 24px;
+    }
+
+    .problem-verdict {
+        margin: 30px auto 0;
+    }
+
+    #positioning .sec-h2 {
+        margin-bottom: 28px;
+    }
+
+    .pos-left-col {
+        gap: 28px;
+    }
+
+    .pos-right-col {
+        gap: 32px;
+    }
+
+    .aaa-header {
+        margin-bottom: 40px;
+    }
+
+    .aaa-grid {
+        margin-bottom: 40px;
+    }
+
+    .aaa-card {
+        padding: 40px 24px 30px;
+    }
+
+    .aaa-closing {
+        margin: 40px auto 0;
+        padding: 30px 20px;
+    }
+
+    .aaa-closing p {
+        margin-bottom: 16px;
+    }
+
+    .process-header {
+        margin-bottom: 48px;
+    }
+
+    .pipeline-container {
+        margin-bottom: 40px;
+    }
+
     .nav-links,
     .nav-cta {
         display: none;
@@ -3239,8 +3312,78 @@ body.overflow-hidden {
         padding-bottom: 40px;
     }
 
+    .hero-badge {
+        margin-bottom: 36px;
+    }
+
     h1.hero-h1 {
         font-size: 2.2rem;
+        margin-bottom: 32px;
+    }
+
+    .hero-h2 {
+        margin-bottom: 30px;
+    }
+
+    .hero-seo {
+        margin-bottom: 40px;
+    }
+
+    .problem-text .sec-h2 {
+        margin-bottom: 24px;
+    }
+
+    .problem-insight {
+        margin-bottom: 24px;
+    }
+
+    .problem-list {
+        margin-bottom: 24px;
+    }
+
+    .problem-verdict {
+        margin: 28px auto 0;
+    }
+
+    #positioning .sec-h2 {
+        margin-bottom: 24px;
+    }
+
+    .pos-left-col {
+        gap: 24px;
+    }
+
+    .pos-right-col {
+        gap: 28px;
+    }
+
+    .aaa-header {
+        margin-bottom: 36px;
+    }
+
+    .aaa-grid {
+        margin-bottom: 36px;
+    }
+
+    .aaa-card {
+        padding: 36px 20px 26px;
+    }
+
+    .aaa-closing {
+        margin: 36px auto 0;
+        padding: 28px 16px;
+    }
+
+    .aaa-closing p {
+        margin-bottom: 14px;
+    }
+
+    .process-header {
+        margin-bottom: 36px;
+    }
+
+    .pipeline-container {
+        margin-bottom: 36px;
     }
 
     .sec-h2 {
