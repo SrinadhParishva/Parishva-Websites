@@ -1227,123 +1227,191 @@ h1.hero-h1 em {
     transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
-    overflow: visible; /* ensure dot is visible outside card boundaries */
+    justify-content: center;
+    perspective: 800px; /* Enable 3D transitions */
 }
 
 .pipeline-card {
-    background: rgba(14, 24, 28, 0.85);
-    border: 1px solid rgba(212, 162, 77, 0.12);
-    padding: 32px 20px;
     position: relative;
-    transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    clip-path: polygon(0 0, calc(100% - 16px) 0, 100% 16px, 100% 100%, 0 100%);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+    padding: 30px 20px;
     width: 100%;
-    height: 100%;
+    min-height: 140px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    transform-style: preserve-3d;
 }
 
 /* Asymmetric staggered skyline heights on desktop */
 @media (min-width: 1025px) {
-    .pipeline-card-wrapper.card-step1 { transform: translateY(-30px); }
-    .pipeline-card-wrapper.card-step2 { transform: translateY(30px); }
-    .pipeline-card-wrapper.card-bridge { transform: translateY(-5px); scale: 1.03; z-index: 2; }
-    .pipeline-card-wrapper.card-step3 { transform: translateY(30px); }
-    .pipeline-card-wrapper.card-step4 { transform: translateY(-30px); }
-    .pipeline-card-wrapper.card-step5 { transform: translateY(25px); }
+    .pipeline-card-wrapper.card-step1 { transform: translateY(-15px); }
+    .pipeline-card-wrapper.card-step2 { transform: translateY(15px); }
+    .pipeline-card-wrapper.card-bridge { transform: translateY(0px); scale: 1.04; z-index: 2; }
+    .pipeline-card-wrapper.card-step3 { transform: translateY(15px); }
+    .pipeline-card-wrapper.card-step4 { transform: translateY(-15px); }
+    .pipeline-card-wrapper.card-step5 { transform: translateY(12px); }
 
-    .pipeline-card-wrapper.card-step1:hover { transform: translateY(-40px); }
-    .pipeline-card-wrapper.card-step2:hover { transform: translateY(20px); }
-    .pipeline-card-wrapper.card-bridge:hover { transform: translateY(-10px) scale(1.06); }
-    .pipeline-card-wrapper.card-step3:hover { transform: translateY(20px); }
-    .pipeline-card-wrapper.card-step4:hover { transform: translateY(-40px); }
-    .pipeline-card-wrapper.card-step5:hover { transform: translateY(15px); }
+    .pipeline-card-wrapper.card-step1:hover { transform: translateY(-25px); }
+    .pipeline-card-wrapper.card-step2:hover { transform: translateY(5px); }
+    .pipeline-card-wrapper.card-bridge:hover { transform: translateY(-5px) scale(1.08); }
+    .pipeline-card-wrapper.card-step3:hover { transform: translateY(5px); }
+    .pipeline-card-wrapper.card-step4:hover { transform: translateY(-25px); }
+    .pipeline-card-wrapper.card-step5:hover { transform: translateY(2px); }
 }
 
+/* 3D Tilt Hover effect on the card itself */
 .pipeline-card-wrapper:hover .pipeline-card {
-    border-color: var(--gold);
-    box-shadow: 0 15px 40px rgba(212, 162, 77, 0.18), 0 20px 50px rgba(0, 0, 0, 0.6);
-    background: rgba(19, 31, 36, 0.9);
+    transform: rotateX(6deg) rotateY(-6deg) translateZ(10px);
 }
 
-/* Corner Crosshairs for Blueprint styling */
-.card-crosshair {
+/* Responsive SVG HUD Border Frame */
+.card-frame {
     position: absolute;
-    font-family: var(--font-body);
-    font-size: 10px;
-    font-weight: 300;
-    color: rgba(212, 162, 77, 0.35);
-    line-height: 1;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
     pointer-events: none;
-    user-select: none;
 }
 
-.card-crosshair.tl { top: 6px; left: 8px; }
-.card-crosshair.tr { top: 6px; right: 20px; } /* account for clipped corner */
-.card-crosshair.bl { bottom: 6px; left: 8px; }
-.card-crosshair.br { bottom: 6px; right: 8px; }
+.frame-bg {
+    fill: rgba(11, 18, 21, 0.45);
+    backdrop-filter: blur(14px) saturate(120%);
+    -webkit-backdrop-filter: blur(14px) saturate(120%);
+    transition: fill 0.5s ease;
+}
 
-/* Text & Meta details inside card */
-.card-meta {
-    font-family: var(--font-mono);
-    font-size: 11px;
-    letter-spacing: 0.2em;
-    color: var(--gold);
-    opacity: 0.75;
-    margin-bottom: 12px;
-    text-transform: uppercase;
+.frame-border {
+    stroke: rgba(212, 162, 77, 0.18);
+    stroke-width: 1px;
+    fill: none;
+    transition: stroke 0.5s ease;
+}
+
+.frame-inner-line {
+    stroke: rgba(212, 162, 77, 0.06);
+    stroke-width: 0.75px;
+    stroke-dasharray: 2 3;
+    fill: none;
+    transition: stroke 0.5s ease;
+}
+
+.frame-corner-accent {
+    stroke: var(--gold-light);
+    stroke-width: 1.5px;
+    fill: none;
+    opacity: 0.3;
+    transition: all 0.5s ease;
+}
+
+.frame-dot {
+    fill: var(--gold);
+    opacity: 0.3;
+    transition: all 0.5s ease;
+}
+
+/* Hover changes for SVG Frame elements */
+.pipeline-card-wrapper:hover .frame-bg {
+    fill: rgba(14, 24, 28, 0.65);
+}
+
+.pipeline-card-wrapper:hover .frame-border {
+    stroke: rgba(212, 162, 77, 0.6);
+    filter: drop-shadow(0 0 4px rgba(212, 162, 77, 0.4));
+}
+
+.pipeline-card-wrapper:hover .frame-inner-line {
+    stroke: rgba(212, 162, 77, 0.18);
+}
+
+.pipeline-card-wrapper:hover .frame-corner-accent {
+    opacity: 1;
+    stroke: var(--gold);
+    filter: drop-shadow(0 0 2px rgba(229, 191, 126, 0.8));
+}
+
+.pipeline-card-wrapper:hover .frame-dot {
+    opacity: 1;
+    filter: drop-shadow(0 0 2px var(--gold));
+}
+
+/* Card Content formatting */
+.card-content {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 100%;
+}
+
+.card-num {
+    font-family: var(--font-heading);
+    font-size: 1.65rem;
+    font-style: italic;
+    color: var(--gold-pale);
+    opacity: 0.55;
+    margin-bottom: 6px;
+    line-height: 1;
+    transition: var(--transition-smooth);
+}
+
+.pipeline-card-wrapper:hover .card-num {
+    opacity: 1;
+    color: var(--gold-light);
+    transform: translateY(-2px);
+    text-shadow: 0 0 6px rgba(229, 191, 126, 0.3);
 }
 
 .pipeline-card h3.card-title {
-    font-family: var(--font-heading);
-    font-size: 1.55rem;
-    font-weight: 300;
+    font-family: var(--font-mono);
+    font-size: 0.82rem;
+    font-weight: 400;
+    letter-spacing: 0.18em;
     color: var(--white);
-    margin-bottom: 12px;
-    line-height: 1.25;
+    text-transform: uppercase;
+    margin: 0;
+    line-height: 1.3;
+    transition: var(--transition-smooth);
 }
 
-.pipeline-card .card-desc {
-    font-family: var(--font-body);
-    font-size: 0.88rem;
-    color: var(--silver);
-    line-height: 1.6;
-    font-weight: 300;
+.pipeline-card-wrapper:hover h3.card-title {
+    color: var(--white);
+    letter-spacing: 0.22em; /* expand letter spacing slightly on hover */
+    text-shadow: 0 0 8px rgba(255, 255, 255, 0.2);
 }
 
-/* Central Bridge Card Styling */
-.pipeline-card-wrapper.card-bridge .pipeline-card {
-    border: 1px solid var(--gold);
-    background: linear-gradient(135deg, rgba(212, 162, 77, 0.15) 0%, rgba(11, 18, 21, 0.85) 100%);
-    box-shadow: 0 10px 40px rgba(212, 162, 77, 0.1);
+/* Bridge Card custom overrides (Step 2.5) */
+.pipeline-card-wrapper.card-bridge .frame-border {
+    stroke: rgba(212, 162, 77, 0.35);
 }
 
-.pipeline-card-wrapper.card-bridge:hover .pipeline-card {
-    box-shadow: 0 20px 50px rgba(212, 162, 77, 0.25), 0 25px 60px rgba(0, 0, 0, 0.6);
+.pipeline-card-wrapper.card-bridge .frame-bg {
+    fill: rgba(212, 162, 77, 0.03);
 }
 
-.bridge-tag {
-    font-size: 1.2rem;
-    color: var(--gold-light);
-    margin-bottom: 4px;
+.pipeline-card-wrapper.card-bridge .frame-corner-accent {
+    stroke: var(--gold);
+    opacity: 0.7;
+}
+
+.pipeline-card-wrapper.card-bridge:hover .frame-bg {
+    fill: rgba(212, 162, 77, 0.08);
+}
+
+.pipeline-card-wrapper.card-bridge:hover .frame-border {
+    stroke: var(--gold);
+    filter: drop-shadow(0 0 6px rgba(212, 162, 77, 0.6));
+}
+
+.pipeline-card-wrapper.card-bridge .card-num {
+    color: var(--gold);
     font-weight: bold;
-    display: inline-block;
-    animation: bounceBridge 2.5s ease-in-out infinite;
 }
-
-@keyframes bounceBridge {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-4px); }
-}
-
-.pipeline-card-wrapper.card-bridge h3.card-title {
-    color: var(--gold-light);
-    font-style: italic;
-}
-
-/* Nodes removed to clean up text overlay */
 
 .process-closing {
     margin-top: 2.5vh;
@@ -1368,7 +1436,7 @@ h1.hero-h1 em {
     
     .pipeline-row {
         grid-template-columns: 1fr;
-        gap: 30px;
+        gap: 20px;
         padding-left: 40px; /* Leave space for left timeline line */
         position: relative;
     }
@@ -1412,18 +1480,17 @@ h1.hero-h1 em {
     }
     
     .pipeline-card {
-        clip-path: polygon(0 0, calc(100% - 12px) 0, 100% 12px, 100% 100%, 0 100%) !important;
+        padding: 24px 20px;
+        min-height: 100px;
     }
     
     .pipeline-card-wrapper:hover {
-        transform: translateY(-5px) !important;
+        transform: translateY(-4px) !important;
     }
     
     .pipeline-card-wrapper:hover .pipeline-card {
         transform: none !important; /* prevent nested scale */
     }
-    
-    /* Nodes removed on mobile */
 }
 
 /* ── SERVICES SECTION ── */
