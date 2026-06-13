@@ -225,99 +225,124 @@
             </div>
 
             <div class="pipeline-container">
-                <!-- SVG Pipeline Thread Line -->
+                <!-- SVG Pipeline Thread Line (Smooth Weaving Spline) -->
                 <svg class="pipeline-svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
-                    <path d="M 0,60 L 1200,60" class="thread-path-bg" />
-                    <path d="M 0,60 L 1200,60" class="thread-path-active" />
+                    <path d="M 0,45 C 100,45 200,75 300,75 C 400,75 450,60 500,60 C 550,60 600,75 700,75 C 800,75 850,45 900,45 C 950,45 1000,72 1100,72 L 1200,72" class="thread-path-bg" />
+                    <path d="M 0,45 C 100,45 200,75 300,75 C 400,75 450,60 500,60 C 550,60 600,75 700,75 C 800,75 850,45 900,45 C 950,45 1000,72 1100,72 L 1200,72" class="thread-path-active" />
                 </svg>
 
                 <div class="pipeline-row">
                     <!-- Card 01: Investigate -->
                     <div class="pipeline-card-wrapper card-step1 reveal">
                         <div class="pipeline-card">
-                            <div class="card-crosshair tl">+</div>
-                            <div class="card-crosshair tr">+</div>
-                            <div class="card-crosshair bl">+</div>
-                            <div class="card-crosshair br">+</div>
-                            <div class="card-meta">01</div>
-                            <h3 class="card-title">Investigate</h3>
-                            <p class="card-desc">Deep understanding of your business model, customer audience, and
-                                competitive market dynamics. We identify the friction points before prescribing any
-                                marketing adjustments.</p>
+                            <svg class="card-frame" viewBox="0 0 100 100" preserveAspectRatio="none">
+                                <path d="M 12,0 L 88,0 L 100,12 L 100,88 L 88,100 L 12,100 L 0,88 L 0,12 Z" class="frame-bg" />
+                                <path d="M 12,0 L 88,0 L 100,12 L 100,88 L 88,100 L 12,100 L 0,88 L 0,12 Z" class="frame-border" />
+                                <path d="M 15,4 L 85,4 L 96,15 L 96,85 L 85,96 L 15,96 L 4,85 L 4,15 Z" class="frame-inner-line" />
+                                <path d="M 0,18 L 0,12 L 12,0 L 18,0" class="frame-corner-accent tl" />
+                                <path d="M 100,82 L 100,88 L 88,100 L 82,100" class="frame-corner-accent br" />
+                                <circle cx="92" cy="8" r="1.2" class="frame-dot tr" />
+                                <circle cx="8" cy="92" r="1.2" class="frame-dot bl" />
+                            </svg>
+                            <div class="card-content">
+                                <div class="card-num">01</div>
+                                <h3 class="card-title">Investigate</h3>
+                            </div>
                         </div>
                     </div>
 
                     <!-- Card 02: Strategy -->
                     <div class="pipeline-card-wrapper card-step2 reveal reveal-delay-1">
                         <div class="pipeline-card">
-                            <div class="card-crosshair tl">+</div>
-                            <div class="card-crosshair tr">+</div>
-                            <div class="card-crosshair bl">+</div>
-                            <div class="card-crosshair br">+</div>
-                            <div class="card-meta">02</div>
-                            <h3 class="card-title">Strategy</h3>
-                            <p class="card-desc">Defining your core direction, primary positioning angles, and building
-                                a structured communications blueprint that aligns your messaging with real customer pain
-                                points.</p>
+                            <svg class="card-frame" viewBox="0 0 100 100" preserveAspectRatio="none">
+                                <path d="M 12,0 L 88,0 L 100,12 L 100,88 L 88,100 L 12,100 L 0,88 L 0,12 Z" class="frame-bg" />
+                                <path d="M 12,0 L 88,0 L 100,12 L 100,88 L 88,100 L 12,100 L 0,88 L 0,12 Z" class="frame-border" />
+                                <path d="M 15,4 L 85,4 L 96,15 L 96,85 L 85,96 L 15,96 L 4,85 L 4,15 Z" class="frame-inner-line" />
+                                <path d="M 0,18 L 0,12 L 12,0 L 18,0" class="frame-corner-accent tl" />
+                                <path d="M 100,82 L 100,88 L 88,100 L 82,100" class="frame-corner-accent br" />
+                                <circle cx="92" cy="8" r="1.2" class="frame-dot tr" />
+                                <circle cx="8" cy="92" r="1.2" class="frame-dot bl" />
+                            </svg>
+                            <div class="card-content">
+                                <div class="card-num">02</div>
+                                <h3 class="card-title">Strategy</h3>
+                            </div>
                         </div>
                     </div>
 
                     <!-- Card 03: Bridging the Gap (System Bridge Module) -->
                     <div class="pipeline-card-wrapper card-bridge reveal reveal-delay-2">
                         <div class="pipeline-card">
-                            <div class="card-crosshair tl">+</div>
-                            <div class="card-crosshair tr">+</div>
-                            <div class="card-crosshair bl">+</div>
-                            <div class="card-crosshair br">+</div>
-                            <div class="card-meta">2.5</div>
-                            <div class="bridge-tag">↕</div>
-                            <h3 class="card-title">Our Unique Value</h3>
-                            <p class="card-desc">Translating abstract brand strategy into execution-ready clarity,
-                                ensuring that design, copy, and campaigns have a clear, actionable foundation before
-                                launch.</p>
+                            <svg class="card-frame" viewBox="0 0 100 100" preserveAspectRatio="none">
+                                <path d="M 12,0 L 88,0 L 100,12 L 100,88 L 88,100 L 12,100 L 0,88 L 0,12 Z" class="frame-bg" />
+                                <path d="M 12,0 L 88,0 L 100,12 L 100,88 L 88,100 L 12,100 L 0,88 L 0,12 Z" class="frame-border" />
+                                <path d="M 15,4 L 85,4 L 96,15 L 96,85 L 85,96 L 15,96 L 4,85 L 4,15 Z" class="frame-inner-line" />
+                                <path d="M 0,18 L 0,12 L 12,0 L 18,0" class="frame-corner-accent tl" />
+                                <path d="M 100,82 L 100,88 L 88,100 L 82,100" class="frame-corner-accent br" />
+                                <circle cx="92" cy="8" r="1.2" class="frame-dot tr" />
+                                <circle cx="8" cy="92" r="1.2" class="frame-dot bl" />
+                            </svg>
+                            <div class="card-content">
+                                <div class="card-num">2.5</div>
+                                <h3 class="card-title">Our Unique Value</h3>
+                            </div>
                         </div>
                     </div>
 
                     <!-- Card 04: Design -->
                     <div class="pipeline-card-wrapper card-step3 reveal reveal-delay-3">
                         <div class="pipeline-card">
-                            <div class="card-crosshair tl">+</div>
-                            <div class="card-crosshair tr">+</div>
-                            <div class="card-crosshair bl">+</div>
-                            <div class="card-crosshair br">+</div>
-                            <div class="card-meta">03</div>
-                            <h3 class="card-title">Design</h3>
-                            <p class="card-desc">Building how the brand communicates visually, structurally, and
-                                experientially. We shape digital touchpoints to capture attention and direct customer
-                                interest.</p>
+                            <svg class="card-frame" viewBox="0 0 100 100" preserveAspectRatio="none">
+                                <path d="M 12,0 L 88,0 L 100,12 L 100,88 L 88,100 L 12,100 L 0,88 L 0,12 Z" class="frame-bg" />
+                                <path d="M 12,0 L 88,0 L 100,12 L 100,88 L 88,100 L 12,100 L 0,88 L 0,12 Z" class="frame-border" />
+                                <path d="M 15,4 L 85,4 L 96,15 L 96,85 L 85,96 L 15,96 L 4,85 L 4,15 Z" class="frame-inner-line" />
+                                <path d="M 0,18 L 0,12 L 12,0 L 18,0" class="frame-corner-accent tl" />
+                                <path d="M 100,82 L 100,88 L 88,100 L 82,100" class="frame-corner-accent br" />
+                                <circle cx="92" cy="8" r="1.2" class="frame-dot tr" />
+                                <circle cx="8" cy="92" r="1.2" class="frame-dot bl" />
+                            </svg>
+                            <div class="card-content">
+                                <div class="card-num">03</div>
+                                <h3 class="card-title">Design</h3>
+                            </div>
                         </div>
                     </div>
 
                     <!-- Card 05: Implement -->
                     <div class="pipeline-card-wrapper card-step4 reveal reveal-delay-4">
                         <div class="pipeline-card">
-                            <div class="card-crosshair tl">+</div>
-                            <div class="card-crosshair tr">+</div>
-                            <div class="card-crosshair bl">+</div>
-                            <div class="card-crosshair br">+</div>
-                            <div class="card-meta">04</div>
-                            <h3 class="card-title">Implement</h3>
-                            <p class="card-desc">Executing high-converting copy, clean code, and creative assets with
-                                strategic clarity instead of random guesswork. We launch with precision.</p>
+                            <svg class="card-frame" viewBox="0 0 100 100" preserveAspectRatio="none">
+                                <path d="M 12,0 L 88,0 L 100,12 L 100,88 L 88,100 L 12,100 L 0,88 L 0,12 Z" class="frame-bg" />
+                                <path d="M 12,0 L 88,0 L 100,12 L 100,88 L 88,100 L 12,100 L 0,88 L 0,12 Z" class="frame-border" />
+                                <path d="M 15,4 L 85,4 L 96,15 L 96,85 L 85,96 L 15,96 L 4,85 L 4,15 Z" class="frame-inner-line" />
+                                <path d="M 0,18 L 0,12 L 12,0 L 18,0" class="frame-corner-accent tl" />
+                                <path d="M 100,82 L 100,88 L 88,100 L 82,100" class="frame-corner-accent br" />
+                                <circle cx="92" cy="8" r="1.2" class="frame-dot tr" />
+                                <circle cx="8" cy="92" r="1.2" class="frame-dot bl" />
+                            </svg>
+                            <div class="card-content">
+                                <div class="card-num">04</div>
+                                <h3 class="card-title">Implement</h3>
+                            </div>
                         </div>
                     </div>
 
                     <!-- Card 06: Engage / Revive -->
                     <div class="pipeline-card-wrapper card-step5 reveal reveal-delay-5">
                         <div class="pipeline-card">
-                            <div class="card-crosshair tl">+</div>
-                            <div class="card-crosshair tr">+</div>
-                            <div class="card-crosshair bl">+</div>
-                            <div class="card-crosshair br">+</div>
-                            <div class="card-meta">05</div>
-                            <h3 class="card-title">Execute/Engage</h3>
-                            <p class="card-desc">Refining, testing, and scaling live campaigns based on real-world
-                                response and key positioning metrics. Constant evolution for compounding growth.</p>
+                            <svg class="card-frame" viewBox="0 0 100 100" preserveAspectRatio="none">
+                                <path d="M 12,0 L 88,0 L 100,12 L 100,88 L 88,100 L 12,100 L 0,88 L 0,12 Z" class="frame-bg" />
+                                <path d="M 12,0 L 88,0 L 100,12 L 100,88 L 88,100 L 12,100 L 0,88 L 0,12 Z" class="frame-border" />
+                                <path d="M 15,4 L 85,4 L 96,15 L 96,85 L 85,96 L 15,96 L 4,85 L 4,15 Z" class="frame-inner-line" />
+                                <path d="M 0,18 L 0,12 L 12,0 L 18,0" class="frame-corner-accent tl" />
+                                <path d="M 100,82 L 100,88 L 88,100 L 82,100" class="frame-corner-accent br" />
+                                <circle cx="92" cy="8" r="1.2" class="frame-dot tr" />
+                                <circle cx="8" cy="92" r="1.2" class="frame-dot bl" />
+                            </svg>
+                            <div class="card-content">
+                                <div class="card-num">05</div>
+                                <h3 class="card-title">Execute/Engage</h3>
+                            </div>
                         </div>
                     </div>
                 </div>
