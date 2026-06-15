@@ -2881,6 +2881,28 @@ footer {
     margin-top: 4px;
 }
 
+.footer-address {
+    display: block;
+    margin-top: 16px;
+    font-family: var(--font-body);
+    font-size: 11px;
+    font-weight: 300;
+    color: rgba(237, 235, 235, 0.55);
+    letter-spacing: 0.05em;
+    text-transform: none;
+    line-height: 1.6;
+}
+
+.footer-address-label {
+    display: block;
+    font-family: var(--font-mono);
+    font-size: 8px;
+    letter-spacing: 0.25em;
+    color: var(--gold);
+    text-transform: uppercase;
+    margin-bottom: 6px;
+}
+
 .footer-copy {
     font-family: var(--font-body);
     font-weight: 200;
@@ -2895,6 +2917,45 @@ footer {
     font-size: .95rem;
     color: rgba(212, 162, 77, .35);
 }
+
+.footer-center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 14px;
+}
+
+.footer-socials {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.social-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    color: rgba(255, 255, 255, 0.4);
+    transition: var(--transition-quick);
+}
+
+.social-link svg {
+    width: 24px;
+    height: 24px;
+    fill: currentColor;
+    transition: transform 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275), color 0.25s ease;
+}
+
+.social-link:hover {
+    color: var(--gold);
+}
+
+.social-link:hover svg {
+    transform: scale(1.18) translateY(-2px);
+}
+
 
 /* ── INTERACTIVE AUDIT MODAL DIALOG ── */
 .modal-overlay {
