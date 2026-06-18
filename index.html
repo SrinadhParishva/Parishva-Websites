@@ -1,0 +1,1364 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parishva Branding Studio — Brand Strategy, Hyderabad</title>
+    <!-- Meta description for SEO -->
+    <meta name="description"
+        content="Parishva Branding Studio - strategic brand strategy and business audit for founders who are confused, stuck, or switching agencies we diagnose before we prescribe.">
+    <meta name="keywords"
+        content="branding studio, brand strategy, business audit, positioning, marketing clarity, digital marketing agency, social media manage, growth direction, Hyderabad branding agency">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Syncopate:wght@400;700&family=Jost:wght@200;300;400;500&display=swap"
+        rel="stylesheet">
+
+    <!-- Favicon / Brand Logo -->
+    <link rel="shortcut icon" href="favicon.png" type="image/png">
+    <link rel="icon" href="favicon.png" type="image/png">
+    <link rel="apple-touch-icon" href="favicon.png">
+
+    <!-- CSS Stylesheet -->
+    <link rel="stylesheet" href="style.css?v=3">
+    <!-- Blog Subscription Stylesheet -->
+    <link rel="stylesheet" href="subscription.css">
+
+    <!-- Firebase Compatibility Client SDKs -->
+    <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-database-compat.js"></script>
+    <!-- Firebase App Configuration -->
+    <script src="firebase-config.js"></script>
+</head>
+
+<body>
+
+    <!-- AMBIENT ELEMENTS -->
+    <canvas id="particle-canvas"></canvas>
+    <div class="holo-grid"></div>
+    <div class="scan-line"></div>
+
+    <!-- CUSTOM CURSOR -->
+    <div id="cursor"></div>
+    <div id="cursor-ring"></div>
+
+    <!-- NAVIGATION -->
+    <nav>
+        <a href="#" class="nav-logo" id="nav-logo">
+            <img src="logo.jpeg" alt="Parishva Branding Studio" class="nav-logo-img">
+        </a>
+        <ul class="nav-links">
+            <li><a href="#approach">Approach</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#cases">Work</a></li>
+            <li><a href="#process">Process</a></li>
+            <li><a href="#blogs">Blogs</a></li>
+        </ul>
+        <div class="nav-actions" style="display: flex; gap: 12px; align-items: center;">
+            <button class="nav-cta" id="nav-subscribe-btn"
+                style="background: transparent; border: 1px solid rgba(212, 162, 77, 0.3); color: var(--gold) !important;">Subscribe</button>
+            <button class="nav-cta" id="nav-cta-btn">Book an Audit</button>
+        </div>
+
+        <!-- Mobile Drawer Toggle -->
+        <button class="mobile-toggle" aria-label="Toggle menu" id="mobile-menu-toggle">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </button>
+    </nav>
+
+    <!-- MOBILE DRAWER NAVIGATION -->
+    <div class="mobile-drawer" id="mobile-drawer">
+        <div class="mobile-nav">
+            <a href="#approach" class="mobile-link">Approach</a>
+            <a href="#services" class="mobile-link">Services</a>
+            <a href="#cases" class="mobile-link">Work</a>
+            <a href="#process" class="mobile-link">Process</a>
+            <a href="#blogs" class="mobile-link">Blogs</a>
+            <button class="mobile-link btn-drawer" id="mobile-subscribe-btn"
+                style="background: transparent; border: 1px solid rgba(212, 162, 77, 0.25); color: var(--gold) !important; margin-bottom: 12px;">Subscribe</button>
+            <button class="mobile-link btn-drawer" id="mobile-cta-btn">Book an Audit</button>
+        </div>
+    </div>
+
+    <!-- ==================== 1st SECTION: HERO ==================== -->
+    <section id="hero" class="section">
+        <div class="hero-container">
+            <!-- Center: Hero content -->
+            <div class="hero-content">
+                <div class="hero-badge">◆ Diagnosis before strategy</div>
+                <h1 class="hero-h1 reveal">
+                    We fix <em>unclear brands</em><br>before you waste money<br>on marketing.
+                </h1>
+                <h2 class="hero-h2 reveal reveal-delay-1">
+                    For founders and decision-makers tired of switching agencies, campaigns, and creatives without
+                    results.
+                </h2>
+                <p class="hero-seo reveal reveal-delay-2">A brand strategy and business audit studio helping businesses
+                    fix positioning, messaging, and growth direction.</p>
+                <div class="hero-cta-group reveal reveal-delay-3">
+                    <button class="btn-primary" id="hero-cta-btn">Book a Business Audit</button>
+                    <span class="hero-tagline">See our work.</span>
+                </div>
+            </div>
+        </div>
+        <div class="hero-scroll">Scroll to Explore</div>
+    </section>
+
+    <!-- DIVIDER -->
+    <div class="holo-divider section"></div>
+
+    <!-- ==================== 2nd SECTION: PROBLEM (DIAGNOSIS) ==================== -->
+    <section id="problem" class="section">
+        <div class="container">
+            <div class="problem-inner">
+                <div class="problem-text">
+                    <div class="sec-label reveal">The Diagnosis</div>
+                    <h2 class="sec-h2 reveal reveal-delay-1">
+                        Most businesses don't have<br>a marketing problem.
+                    </h2>
+                    <p class="problem-insight reveal reveal-delay-2">They have a clarity problem.</p>
+                    <ul class="problem-list reveal reveal-delay-3">
+                        <li>New agency.</li>
+                        <li>New campaign.</li>
+                        <li>New creatives.</li>
+                        <li>Same results.</li>
+                        <li>Ads don't fix broken brands.</li>
+                    </ul>
+                    <div class="problem-verdict reveal reveal-delay-4">
+                        <p><b>Clarity does.</b></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- DIVIDER -->
+    <div class="holo-divider section"></div>
+
+    <!-- ==================== 3rd SECTION: POSITIONING (WHO WE ARE) ==================== -->
+    <section id="positioning" class="section">
+        <div class="container">
+            <div class="pos-inner">
+                <!-- Left Column: Title & Philosophy Quote Card -->
+                <div class="pos-left-col">
+                    <div class="sec-label reveal">Who We Are</div>
+                    <h2 class="sec-h2 reveal reveal-delay-1">Parishva Branding Studio</h2>
+
+                    <div class="pos-card reveal reveal-delay-2">
+                        <div class="pos-card-title">Studio Philosophy</div>
+                        <p class="pos-card-quote">"Structured thinking before strategy. Strategy before execution."</p>
+                        <div class="pos-card-author">Jyothi — Founder, Parishva</div>
+                    </div>
+                </div>
+
+                <!-- Right Column: Interactive Pillar Blocks -->
+                <div class="pos-right-col reveal reveal-delay-3">
+                    <div class="pos-pillar">
+                        <div class="pos-pillar-num">01</div>
+                        <div class="pos-pillar-content">
+                            <h3>Business First</h3>
+                            <p>We don't start with marketing. We start with understanding your business in depth with
+                                our AAA method.</p>
+                        </div>
+                    </div>
+
+                    <div class="pos-pillar">
+                        <div class="pos-pillar-num">02</div>
+                        <div class="pos-pillar-content">
+                            <h3>Structured Logic</h3>
+                            <p>Parishva is built on structured thinking, not guesswork. Our diagnostics find what's
+                                actually broken before recommending what to do next with our 5 stages of execution.</p>
+                        </div>
+                    </div>
+
+                    <div class="pos-pillar">
+                        <div class="pos-pillar-num">03</div>
+                        <div class="pos-pillar-content">
+                            <h3>Growth Direction</h3>
+                            <p>We work with businesses across industries to improve brand positioning, marketing
+                                clarity, and long-term growth direction by providing customized training to the founder
+                                and the teams.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- DIVIDER -->
+    <div class="holo-divider section"></div>
+
+    <!-- AAA FRAMEWORK -->
+    <section id="approach" class="section">
+        <div class="container">
+            <div class="aaa-header">
+                <div class="sec-label reveal">The Framework</div>
+                <h2 class="sec-h2 reveal reveal-delay-1">The <span class="gold">AAA</span> Method</h2>
+            </div>
+            <div class="aaa-grid">
+                <div class="aaa-card reveal">
+                    <div class="aaa-num">01</div>
+                    <div class="aaa-letter">A</div>
+                    <h3 class="aaa-title">Audit</h3>
+                    <p class="aaa-body">Understanding what's happening in your business today — across positioning,
+                        communication, and acquisition.</p>
+                </div>
+                <div class="aaa-card reveal reveal-delay-1">
+                    <div class="aaa-num">02</div>
+                    <div class="aaa-letter">A</div>
+                    <h3 class="aaa-title">Align</h3>
+                    <p class="aaa-body">Identifying where things are breaking, unclear, or inconsistent.</p>
+                </div>
+                <div class="aaa-card reveal reveal-delay-2">
+                    <div class="aaa-num">03</div>
+                    <div class="aaa-letter">A</div>
+                    <h3 class="aaa-title">Accelerate</h3>
+                    <p class="aaa-body">Bringing everything into a clear, intentional direction before execution.</p>
+                </div>
+            </div>
+            <div class="aaa-closing reveal">
+                <p>Without this step, most businesses keep repeating the same cycle with different strategies.</p>
+                <div class="aaa-seo">This business audit approach helps identify gaps in brand strategy, customer
+                    communication, and marketing performance before execution.</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- DIVIDER -->
+    <div class="holo-divider section"></div>
+
+    <!-- PROCESS -->
+    <section id="process" class="section">
+        <div class="container">
+            <div class="process-header">
+                <div class="sec-label reveal">The Method</div>
+                <h2 class="sec-h2 reveal reveal-delay-1">From Clarity to Execution</h2>
+            </div>
+
+            <div class="pipeline-container">
+                <!-- SVG Pipeline Thread Line (Smooth Weaving Spline) -->
+                <svg class="pipeline-svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                    <path
+                        d="M 0,45 C 100,45 200,75 300,75 C 400,75 450,60 500,60 C 550,60 600,75 700,75 C 800,75 850,45 900,45 C 950,45 1000,72 1100,72 L 1200,72"
+                        class="thread-path-bg" />
+                    <path
+                        d="M 0,45 C 100,45 200,75 300,75 C 400,75 450,60 500,60 C 550,60 600,75 700,75 C 800,75 850,45 900,45 C 950,45 1000,72 1100,72 L 1200,72"
+                        class="thread-path-active" />
+                </svg>
+
+                <div class="pipeline-row">
+                    <!-- Card 01: Investigate -->
+                    <div class="pipeline-card-wrapper card-step1 reveal">
+                        <div class="pipeline-card">
+                            <svg class="card-frame" viewBox="0 0 100 100" preserveAspectRatio="none">
+                                <path d="M 12,0 L 88,0 L 100,12 L 100,88 L 88,100 L 12,100 L 0,88 L 0,12 Z"
+                                    class="frame-bg" />
+                                <path d="M 12,0 L 88,0 L 100,12 L 100,88 L 88,100 L 12,100 L 0,88 L 0,12 Z"
+                                    class="frame-border" />
+                                <path d="M 15,4 L 85,4 L 96,15 L 96,85 L 85,96 L 15,96 L 4,85 L 4,15 Z"
+                                    class="frame-inner-line" />
+                                <path d="M 0,18 L 0,12 L 12,0 L 18,0" class="frame-corner-accent tl" />
+                                <path d="M 100,82 L 100,88 L 88,100 L 82,100" class="frame-corner-accent br" />
+                                <circle cx="92" cy="8" r="1.2" class="frame-dot tr" />
+                                <circle cx="8" cy="92" r="1.2" class="frame-dot bl" />
+                            </svg>
+                            <div class="card-content">
+                                <div class="card-num">01</div>
+                                <h3 class="card-title">Investigate</h3>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card 02: Strategy -->
+                    <div class="pipeline-card-wrapper card-step2 reveal reveal-delay-1">
+                        <div class="pipeline-card">
+                            <svg class="card-frame" viewBox="0 0 100 100" preserveAspectRatio="none">
+                                <path d="M 12,0 L 88,0 L 100,12 L 100,88 L 88,100 L 12,100 L 0,88 L 0,12 Z"
+                                    class="frame-bg" />
+                                <path d="M 12,0 L 88,0 L 100,12 L 100,88 L 88,100 L 12,100 L 0,88 L 0,12 Z"
+                                    class="frame-border" />
+                                <path d="M 15,4 L 85,4 L 96,15 L 96,85 L 85,96 L 15,96 L 4,85 L 4,15 Z"
+                                    class="frame-inner-line" />
+                                <path d="M 0,18 L 0,12 L 12,0 L 18,0" class="frame-corner-accent tl" />
+                                <path d="M 100,82 L 100,88 L 88,100 L 82,100" class="frame-corner-accent br" />
+                                <circle cx="92" cy="8" r="1.2" class="frame-dot tr" />
+                                <circle cx="8" cy="92" r="1.2" class="frame-dot bl" />
+                            </svg>
+                            <div class="card-content">
+                                <div class="card-num">02</div>
+                                <h3 class="card-title">Strategy</h3>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card 03: Bridging the Gap (System Bridge Module) -->
+                    <div class="pipeline-card-wrapper card-bridge reveal reveal-delay-2">
+                        <div class="pipeline-card">
+                            <svg class="card-frame" viewBox="0 0 100 100" preserveAspectRatio="none">
+                                <path d="M 12,0 L 88,0 L 100,12 L 100,88 L 88,100 L 12,100 L 0,88 L 0,12 Z"
+                                    class="frame-bg" />
+                                <path d="M 12,0 L 88,0 L 100,12 L 100,88 L 88,100 L 12,100 L 0,88 L 0,12 Z"
+                                    class="frame-border" />
+                                <path d="M 15,4 L 85,4 L 96,15 L 96,85 L 85,96 L 15,96 L 4,85 L 4,15 Z"
+                                    class="frame-inner-line" />
+                                <path d="M 0,18 L 0,12 L 12,0 L 18,0" class="frame-corner-accent tl" />
+                                <path d="M 100,82 L 100,88 L 88,100 L 82,100" class="frame-corner-accent br" />
+                                <circle cx="92" cy="8" r="1.2" class="frame-dot tr" />
+                                <circle cx="8" cy="92" r="1.2" class="frame-dot bl" />
+                            </svg>
+                            <div class="card-content">
+                                <div class="card-num">2.5</div>
+                                <h3 class="card-title">Our Unique Value</h3>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card 04: Design -->
+                    <div class="pipeline-card-wrapper card-step3 reveal reveal-delay-3">
+                        <div class="pipeline-card">
+                            <svg class="card-frame" viewBox="0 0 100 100" preserveAspectRatio="none">
+                                <path d="M 12,0 L 88,0 L 100,12 L 100,88 L 88,100 L 12,100 L 0,88 L 0,12 Z"
+                                    class="frame-bg" />
+                                <path d="M 12,0 L 88,0 L 100,12 L 100,88 L 88,100 L 12,100 L 0,88 L 0,12 Z"
+                                    class="frame-border" />
+                                <path d="M 15,4 L 85,4 L 96,15 L 96,85 L 85,96 L 15,96 L 4,85 L 4,15 Z"
+                                    class="frame-inner-line" />
+                                <path d="M 0,18 L 0,12 L 12,0 L 18,0" class="frame-corner-accent tl" />
+                                <path d="M 100,82 L 100,88 L 88,100 L 82,100" class="frame-corner-accent br" />
+                                <circle cx="92" cy="8" r="1.2" class="frame-dot tr" />
+                                <circle cx="8" cy="92" r="1.2" class="frame-dot bl" />
+                            </svg>
+                            <div class="card-content">
+                                <div class="card-num">03</div>
+                                <h3 class="card-title">Design</h3>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card 05: Implement -->
+                    <div class="pipeline-card-wrapper card-step4 reveal reveal-delay-4">
+                        <div class="pipeline-card">
+                            <svg class="card-frame" viewBox="0 0 100 100" preserveAspectRatio="none">
+                                <path d="M 12,0 L 88,0 L 100,12 L 100,88 L 88,100 L 12,100 L 0,88 L 0,12 Z"
+                                    class="frame-bg" />
+                                <path d="M 12,0 L 88,0 L 100,12 L 100,88 L 88,100 L 12,100 L 0,88 L 0,12 Z"
+                                    class="frame-border" />
+                                <path d="M 15,4 L 85,4 L 96,15 L 96,85 L 85,96 L 15,96 L 4,85 L 4,15 Z"
+                                    class="frame-inner-line" />
+                                <path d="M 0,18 L 0,12 L 12,0 L 18,0" class="frame-corner-accent tl" />
+                                <path d="M 100,82 L 100,88 L 88,100 L 82,100" class="frame-corner-accent br" />
+                                <circle cx="92" cy="8" r="1.2" class="frame-dot tr" />
+                                <circle cx="8" cy="92" r="1.2" class="frame-dot bl" />
+                            </svg>
+                            <div class="card-content">
+                                <div class="card-num">04</div>
+                                <h3 class="card-title">Implement</h3>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card 06: Engage / Revive -->
+                    <div class="pipeline-card-wrapper card-step5 reveal reveal-delay-5">
+                        <div class="pipeline-card">
+                            <svg class="card-frame" viewBox="0 0 100 100" preserveAspectRatio="none">
+                                <path d="M 12,0 L 88,0 L 100,12 L 100,88 L 88,100 L 12,100 L 0,88 L 0,12 Z"
+                                    class="frame-bg" />
+                                <path d="M 12,0 L 88,0 L 100,12 L 100,88 L 88,100 L 12,100 L 0,88 L 0,12 Z"
+                                    class="frame-border" />
+                                <path d="M 15,4 L 85,4 L 96,15 L 96,85 L 85,96 L 15,96 L 4,85 L 4,15 Z"
+                                    class="frame-inner-line" />
+                                <path d="M 0,18 L 0,12 L 12,0 L 18,0" class="frame-corner-accent tl" />
+                                <path d="M 100,82 L 100,88 L 88,100 L 82,100" class="frame-corner-accent br" />
+                                <circle cx="92" cy="8" r="1.2" class="frame-dot tr" />
+                                <circle cx="8" cy="92" r="1.2" class="frame-dot bl" />
+                            </svg>
+                            <div class="card-content">
+                                <div class="card-num">05</div>
+                                <h3 class="card-title">Execute/Engage</h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="process-closing reveal">
+                Most businesses skip the first steps. That’s where everything breaks.
+            </div>
+        </div>
+    </section>
+
+    <!-- DIVIDER -->
+    <div class="holo-divider section"></div>
+
+    <!-- SERVICES -->
+    <section id="services" class="section">
+        <div class="container">
+            <div class="services-header">
+                <div class="sec-label reveal">Services</div>
+                <h2 class="sec-h2 reveal reveal-delay-1">Brand Strategy & Business Audit Services</h2>
+            </div>
+
+            <div class="services-grid reveal">
+                <!-- Service 1: Business Audit -->
+                <div class="service-card">
+                    <div class="service-card-hud">
+                        <span class="service-num">01</span>
+                        <span class="service-status">// DIAGNOSTICS</span>
+                    </div>
+                    <h3 class="service-card-title">Business Audit</h3>
+                    <div class="service-card-content">
+                        <p class="service-desc">A structured 2-day deep dive into your business.</p>
+                        <p class="service-emphasis">Not a report. A direction.</p>
+                    </div>
+                    <a href="AAA%20AUDIT.pdf" target="_blank" class="service-card-cta">Download AAA Audit</a>
+                </div>
+
+                <!-- Service 2: Strategy & Brand Structuring -->
+                <div class="service-card">
+                    <div class="service-card-hud">
+                        <span class="service-num">02</span>
+                        <span class="service-status">// DEVELOPMENT</span>
+                    </div>
+                    <h3 class="service-card-title">Strategy & Brand Structuring</h3>
+                    <div class="service-card-content">
+                        <p class="service-desc">For businesses ready to fix the foundation and build clarity.</p>
+                    </div>
+                    <a href="PBS_CompanyProfile.pdf" target="_blank" class="service-card-cta">Company
+                        Profile</a>
+                </div>
+
+                <!-- Service 3: Execution (Selective) -->
+                <div class="service-card">
+                    <div class="service-card-hud">
+                        <span class="service-num">03</span>
+                        <span class="service-status">// DEPLOYMENT</span>
+                    </div>
+                    <h3 class="service-card-title">Founder Training</h3>
+                    <div class="service-card-content">
+                        <p class="service-desc">We don’t execute for everyone. Only for businesses aligned with the
+                            strategy.</p>
+                    </div>
+                    <a href="PBS_Founder_Training.pdf" target="_blank" class="service-card-cta">Founder Training</a>
+                </div>
+            </div>
+
+            <p class="services-seo reveal">Our services focus on brand strategy, business audits, and marketing clarity
+                rather than short-term execution.</p>
+        </div>
+    </section>
+
+    <!-- DIVIDER -->
+    <div class="holo-divider section"></div>
+
+    <!-- CASE STUDIES -->
+    <section id="cases" class="section">
+        <div class="container">
+            <div class="cases-header">
+                <div class="sec-label reveal">Case Studies</div>
+                <h2 class="sec-h2 reveal reveal-delay-1">Selected Work</h2>
+            </div>
+
+            <div class="cases-slider-outer reveal">
+                <!-- Navigation Buttons -->
+                <button class="cases-nav-btn prev" id="cases-prev" aria-label="Previous case">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="15 18 9 12 15 6" />
+                    </svg>
+                </button>
+                <button class="cases-nav-btn next" id="cases-next" aria-label="Next case">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="9 18 15 12 9 6" />
+                    </svg>
+                </button>
+
+                <!-- Viewport Container -->
+                <div class="cases-slider-container">
+                    <div class="cases-track" id="cases-track">
+
+                        <!-- Case 1: School -->
+                        <div class="case-slide" data-index="0">
+                            <div class="case-slide-inner">
+                                <!-- HUD Header -->
+                                <div class="case-hud-header">
+                                    <span class="hud-item sys-id">Brand Strategy Results</span>
+                                    <span class="hud-item sector">SECTOR // EDUCATION</span>
+                                    <span class="hud-item status-tag"><span class="status-dot green"></span>
+                                        SOLVED</span>
+                                </div>
+
+                                <!-- Card Title -->
+                                <div class="case-card-header-new">
+                                    <h3 class="case-card-title-main">SCHOOL</h3>
+                                    <div class="case-niche-pill">Clarity Strategy</div>
+                                </div>
+
+                                <!-- Blueprint Grid -->
+                                <div class="case-blueprint-grid">
+                                    <!-- Left: Diagnosis -->
+                                    <div class="case-diagnosis-panel">
+                                        <div class="panel-header">
+                                            <span class="panel-icon">?</span>
+                                            <span class="panel-label">DIAGNOSTIC // POSITIONING DEVIATION</span>
+                                        </div>
+                                        <div class="panel-body">
+                                            <p>A school wanted to establish consistent admissions and a clear,
+                                                differentiated positioning in a competitive education market.</p>
+                                            <p>The challenge was to restructure generic parent communication and align
+                                                messaging across campaigns to reflect academic values, moving away from
+                                                low-converting agency models.</p>
+                                        </div>
+                                    </div>
+
+                                    <!-- Right: Synthesis & Outcomes -->
+                                    <div class="case-synthesis-panel">
+                                        <div class="panel-header">
+                                            <span class="panel-icon">📊</span>
+                                            <span class="panel-label">SYNTHESIS & OUTCOMES // STABILIZED SYSTEM</span>
+                                        </div>
+                                        <div class="synthesis-nodes">
+                                            <div class="synthesis-node">
+                                                <div class="node-badge">01</div>
+                                                <div class="node-content">
+                                                    <h5>Structured Positioning</h5>
+                                                    <p>A clean parent clarity framework was built to differentiate their
+                                                        curriculum value.</p>
+                                                </div>
+                                            </div>
+                                            <div class="synthesis-node">
+                                                <div class="node-badge">02</div>
+                                                <div class="node-content">
+                                                    <h5>Improved Inquiry Quality</h5>
+                                                    <p>Campaigns shifted focus from generic leads to high-intent
+                                                        inquiries.</p>
+                                                </div>
+                                            </div>
+                                            <div class="synthesis-node">
+                                                <div class="node-badge">03</div>
+                                                <div class="node-content">
+                                                    <h5>Consistent Growth</h5>
+                                                    <p>Reached enrollment targets without switching agencies or
+                                                        increasing budget.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Bottom Signature -->
+                                <div class="case-seo-line-new">// SEC_SIG: Optimizing school admissions through brand
+                                    positioning.</div>
+                            </div>
+                        </div>
+
+                        <!-- Case 2: Real Estate -->
+                        <div class="case-slide" data-index="1">
+                            <div class="case-slide-inner">
+                                <!-- HUD Header -->
+                                <div class="case-hud-header">
+                                    <span class="hud-item sys-id">Brand Strategy Results</span>
+                                    <span class="hud-item sector">SECTOR // ACQUISITION</span>
+                                    <span class="hud-item status-tag"><span class="status-dot green"></span>
+                                        SOLVED</span>
+                                </div>
+
+                                <!-- Card Title -->
+                                <div class="case-card-header-new">
+                                    <h3 class="case-card-title-main">REAL ESTATE</h3>
+                                    <div class="case-niche-pill">Acquisition Funnels</div>
+                                </div>
+
+                                <!-- Blueprint Grid -->
+                                <div class="case-blueprint-grid">
+                                    <!-- Left: Diagnosis -->
+                                    <div class="case-diagnosis-panel">
+                                        <div class="panel-header">
+                                            <span class="panel-icon">?</span>
+                                            <span class="panel-label">DIAGNOSTIC // FUNNEL DISCONNECT</span>
+                                        </div>
+                                        <div class="panel-body">
+                                            <p>A real estate business faced high ad spend waste and poor lead
+                                                conversions in a crowded development market.</p>
+                                            <p>The challenge was to break away from pure lead-generation dependency and
+                                                build a clarity-driven sales funnel that directly addressed real
+                                                customer pain points.</p>
+                                        </div>
+                                    </div>
+
+                                    <!-- Right: Synthesis & Outcomes -->
+                                    <div class="case-synthesis-panel">
+                                        <div class="panel-header">
+                                            <span class="panel-icon">📊</span>
+                                            <span class="panel-label">SYNTHESIS & OUTCOMES // OPTIMIZED FUNNEL</span>
+                                        </div>
+                                        <div class="synthesis-nodes">
+                                            <div class="synthesis-node">
+                                                <div class="node-badge">01</div>
+                                                <div class="node-content">
+                                                    <h5>Refined Value Proposition</h5>
+                                                    <p>Positioning shifted from generic property listings to location
+                                                        clarity metrics.</p>
+                                                </div>
+                                            </div>
+                                            <div class="synthesis-node">
+                                                <div class="node-badge">02</div>
+                                                <div class="node-content">
+                                                    <h5>Decreased Acquisition Cost</h5>
+                                                    <p>Campaign ad waste was minimized by filtering high-intent buyers.
+                                                    </p>
+                                                </div>
+                                            </div>
+                                            <div class="synthesis-node">
+                                                <div class="node-badge">03</div>
+                                                <div class="node-content">
+                                                    <h5>Accelerated Sales Conversion</h5>
+                                                    <p>Prospects reached sales teams pre-qualified and fully educated.
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Bottom Signature -->
+                                <div class="case-seo-line-new">// SEC_SIG: Optimizing real estate lead generation with
+                                    messaging clarity.</div>
+                            </div>
+                        </div>
+
+                        <!-- Case 3: B2B Service Business -->
+                        <div class="case-slide" data-index="2">
+                            <div class="case-slide-inner">
+                                <!-- HUD Header -->
+                                <div class="case-hud-header">
+                                    <span class="hud-item sys-id">Brand Strategy Results</span>
+                                    <span class="hud-item sector">SECTOR // B2B SERVICE</span>
+                                    <span class="hud-item status-tag"><span class="status-dot green"></span>
+                                        SOLVED</span>
+                                </div>
+
+                                <!-- Card Title -->
+                                <div class="case-card-header-new">
+                                    <h3 class="case-card-title-main">SERVICE BUSINESS</h3>
+                                    <div class="case-niche-pill">Portfolio Synthesis</div>
+                                </div>
+
+                                <!-- Blueprint Grid -->
+                                <div class="case-blueprint-grid">
+                                    <!-- Left: Diagnosis -->
+                                    <div class="case-diagnosis-panel">
+                                        <div class="panel-header">
+                                            <span class="panel-icon">?</span>
+                                            <span class="panel-label">DIAGNOSTIC // PORTFOLIO BLOAT</span>
+                                        </div>
+                                        <div class="panel-body">
+                                            <p>A service business struggled with a bloated offering portfolio and no
+                                                clear positioning identity, resulting in low contract values.</p>
+                                            <p>The challenge was to synthesize multiple services into one core value
+                                                proposition and align customer communication to establish clear market
+                                                authority.</p>
+                                        </div>
+                                    </div>
+
+                                    <!-- Right: Synthesis & Outcomes -->
+                                    <div class="case-synthesis-panel">
+                                        <div class="panel-header">
+                                            <span class="panel-icon">📊</span>
+                                            <span class="panel-label">SYNTHESIS & OUTCOMES // MARKET AUTHORITY</span>
+                                        </div>
+                                        <div class="synthesis-nodes">
+                                            <div class="synthesis-node">
+                                                <div class="node-badge">01</div>
+                                                <div class="node-content">
+                                                    <h5>Unified Brand Strategy</h5>
+                                                    <p>Re-engineered the offering portfolio into a single, high-impact
+                                                        service.</p>
+                                                </div>
+                                            </div>
+                                            <div class="synthesis-node">
+                                                <div class="node-badge">02</div>
+                                                <div class="node-content">
+                                                    <h5>Higher Contract Values</h5>
+                                                    <p>Shifted negotiations from features to premium diagnostic
+                                                        solutions.</p>
+                                                </div>
+                                            </div>
+                                            <div class="synthesis-node">
+                                                <div class="node-badge">03</div>
+                                                <div class="node-content">
+                                                    <h5>Strong Market Positioning</h5>
+                                                    <p>Positioned the studio as the absolute authority for their
+                                                        industry vertical.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Bottom Signature -->
+                                <div class="case-seo-line-new">// SEC_SIG: B2B service positioning and value messaging.
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Case 4: Local Business -->
+                        <div class="case-slide" data-index="3">
+                            <div class="case-slide-inner">
+                                <!-- HUD Header -->
+                                <div class="case-hud-header">
+                                    <span class="hud-item sys-id">Brand Strategy Results</span>
+                                    <span class="hud-item sector">SECTOR // LOCAL BRAND</span>
+                                    <span class="hud-item status-tag"><span class="status-dot green"></span>
+                                        SOLVED</span>
+                                </div>
+
+                                <!-- Card Title -->
+                                <div class="case-card-header-new">
+                                    <h3 class="case-card-title-main">LOCAL BUSINESS</h3>
+                                    <div class="case-niche-pill">Content Authority</div>
+                                </div>
+
+                                <!-- Blueprint Grid -->
+                                <div class="case-blueprint-grid">
+                                    <!-- Left: Diagnosis -->
+                                    <div class="case-diagnosis-panel">
+                                        <div class="panel-header">
+                                            <span class="panel-icon">?</span>
+                                            <span class="panel-label">DIAGNOSTIC // PASSIVE VISIBILITY</span>
+                                        </div>
+                                        <div class="panel-body">
+                                            <p>A local brand actively created social content and marketing campaigns
+                                                without driving direct customer actions or inquiries.</p>
+                                            <p>The challenge was to transition from passive visibility metrics to
+                                                structured communication, directing local intent into qualified inbound
+                                                leads.</p>
+                                        </div>
+                                    </div>
+
+                                    <!-- Right: Synthesis & Outcomes -->
+                                    <div class="case-synthesis-panel">
+                                        <div class="panel-header">
+                                            <span class="panel-icon">📊</span>
+                                            <span class="panel-label">SYNTHESIS & OUTCOMES // INBOUND CONVERSION</span>
+                                        </div>
+                                        <div class="synthesis-nodes">
+                                            <div class="synthesis-node">
+                                                <div class="node-badge">01</div>
+                                                <div class="node-content">
+                                                    <h5>Structured Content Plan</h5>
+                                                    <p>Aligned all active campaigns under a single messaging framework.
+                                                    </p>
+                                                </div>
+                                            </div>
+                                            <div class="synthesis-node">
+                                                <div class="node-badge">02</div>
+                                                <div class="node-content">
+                                                    <h5>Direct Customer Intent</h5>
+                                                    <p>Switched content call-to-actions to audit diagnostics, generating
+                                                        immediate interest.</p>
+                                                </div>
+                                            </div>
+                                            <div class="synthesis-node">
+                                                <div class="node-badge">03</div>
+                                                <div class="node-content">
+                                                    <h5>Established Authority</h5>
+                                                    <p>Positioned the founder as a trusted regional leader, building
+                                                        compounding organic search.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Bottom Signature -->
+                                <div class="case-seo-line-new">// SEC_SIG: Content clarity strategy for local market
+                                    growth.</div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- Bottom Slider HUD Controls -->
+                <div class="cases-slider-controls">
+                    <!-- Pagination Indicators -->
+                    <div class="cases-dots" id="cases-dots">
+                        <span class="case-dot active" data-slide="0"></span>
+                        <span class="case-dot" data-slide="1"></span>
+                        <span class="case-dot" data-slide="2"></span>
+                        <span class="case-dot" data-slide="3"></span>
+                    </div>
+
+                    <!-- Play / Pause Button -->
+                    <button class="cases-play-pause active" id="cases-play-pause" aria-label="Pause autoplay">
+                        <!-- Pause Icon -->
+                        <svg class="icon-pause" width="10" height="10" viewBox="0 0 24 24" fill="currentColor">
+                            <rect x="5" y="4" width="4" height="16" rx="1" />
+                            <rect x="15" y="4" width="4" height="16" rx="1" />
+                        </svg>
+                        <!-- Play Icon -->
+                        <svg class="icon-play" width="10" height="10" viewBox="0 0 24 24" fill="currentColor"
+                            style="display: none;">
+                            <polygon points="6 3 20 12 6 21 6 3" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- DIVIDER -->
+    <div class="holo-divider section"></div>
+
+    <!-- AUDIENCE -->
+    <section id="audience" class="section">
+        <div class="container">
+            <div class="audience-inner-container">
+                <div class="audience-title-block">
+                    <div class="sec-label reveal">Right for You?</div>
+                    <h2 class="sec-h2 reveal reveal-delay-1">Who This Is For</h2>
+                    <p class="audience-subtitle reveal reveal-delay-2">We analyze and realign positioning for
+                        organizations facing specific diagnostic failures:</p>
+                </div>
+
+                <div class="audience-dashboard">
+                    <!-- Target 01: Inconsistent Leads -->
+                    <div class="audience-panel reveal">
+                        <div class="panel-scanner"></div>
+                        <div class="panel-corners">
+                            <span class="corner tl"></span>
+                            <span class="corner tr"></span>
+                            <span class="corner bl"></span>
+                            <span class="corner br"></span>
+                        </div>
+                        <div class="panel-body">
+                            <div class="panel-icon-wrap">
+                                <svg class="hud-svg" viewBox="0 0 100 100">
+                                    <circle cx="50" cy="50" r="30" class="hud-circle-bg" />
+                                    <circle cx="50" cy="50" r="30" class="hud-circle-active" />
+                                    <line x1="50" y1="10" x2="50" y2="90" class="hud-crosshair" />
+                                    <line x1="10" y1="50" x2="90" y2="50" class="hud-crosshair" />
+                                    <circle cx="50" cy="50" r="6" class="hud-center-dot" />
+                                </svg>
+                            </div>
+                            <div class="panel-text-content">
+                                <h3 class="panel-title-text">Lead Fluctuation</h3>
+                                <p class="audience-text">Founders struggling with inconsistent leads</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Target 02: Agency Cycle -->
+                    <div class="audience-panel reveal reveal-delay-1">
+                        <div class="panel-scanner"></div>
+                        <div class="panel-corners">
+                            <span class="corner tl"></span>
+                            <span class="corner tr"></span>
+                            <span class="corner bl"></span>
+                            <span class="corner br"></span>
+                        </div>
+                        <div class="panel-body">
+                            <div class="panel-icon-wrap">
+                                <svg class="hud-svg" viewBox="0 0 100 100">
+                                    <circle cx="50" cy="50" r="35" class="hud-circle-bg" />
+                                    <circle cx="50" cy="50" r="25" class="hud-circle-bg" />
+                                    <path d="M 50,15 A 35,35 0 0,1 85,50" class="hud-arc-active" />
+                                    <path d="M 50,85 A 35,35 0 0,1 15,50" class="hud-arc-active" />
+                                    <polygon points="50,40 65,50 50,60 35,50" class="hud-diamond" />
+                                </svg>
+                            </div>
+                            <div class="panel-text-content">
+                                <h3 class="panel-title-text">Execution Loop</h3>
+                                <p class="audience-text">Businesses that have tried multiple agencies without results
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Target 03: Messaging Disconnect -->
+                    <div class="audience-panel reveal reveal-delay-2">
+                        <div class="panel-scanner"></div>
+                        <div class="panel-corners">
+                            <span class="corner tl"></span>
+                            <span class="corner tr"></span>
+                            <span class="corner bl"></span>
+                            <span class="corner br"></span>
+                        </div>
+                        <div class="panel-body">
+                            <div class="panel-icon-wrap">
+                                <svg class="hud-svg" viewBox="0 0 100 100">
+                                    <line x1="20" y1="50" x2="80" y2="50" class="hud-wave-bg" />
+                                    <path d="M 20,50 Q 35,20 50,50 T 80,50" class="hud-wave-active" />
+                                    <path d="M 20,50 Q 35,80 50,50 T 80,50" class="hud-wave-active"
+                                        style="animation-delay: -1s;" />
+                                </svg>
+                            </div>
+                            <div class="panel-text-content">
+                                <h3 class="panel-title-text">Clarity Disconnect</h3>
+                                <p class="audience-text">Companies with unclear positioning and messaging</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Target 04: Vector Missing -->
+                    <div class="audience-panel reveal reveal-delay-3">
+                        <div class="panel-scanner"></div>
+                        <div class="panel-corners">
+                            <span class="corner tl"></span>
+                            <span class="corner tr"></span>
+                            <span class="corner bl"></span>
+                            <span class="corner br"></span>
+                        </div>
+                        <div class="panel-body">
+                            <div class="panel-icon-wrap">
+                                <svg class="hud-svg" viewBox="0 0 100 100">
+                                    <path d="M 50,15 L 85,80 L 50,65 L 15,80 Z" class="hud-pointer-bg" />
+                                    <path d="M 50,15 L 50,65 L 15,80 Z" class="hud-pointer-active" />
+                                    <circle cx="50" cy="50" r="40" class="hud-circle-bg" stroke-dasharray="5,5" />
+                                </svg>
+                            </div>
+                            <div class="panel-text-content">
+                                <h3 class="panel-title-text">Vector Misalignment</h3>
+                                <p class="audience-text">Brands preparing to scale but lacking direction</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- DIVIDER -->
+    <div class="holo-divider section"></div>
+
+    <!-- FOUNDER -->
+    <section id="founder" class="section">
+        <div class="container">
+            <div class="founder-inner">
+                <div>
+                    <div class="sec-label reveal">The Mind Behind It</div>
+                    <h2 class="founder-name reveal reveal-delay-1">
+                        <em>Jyothi N</em>
+                        <span class="founder-title-sub">Founder - Parishva branding studio</span>
+                    </h2>
+                    <div class="founder-manifesto reveal reveal-delay-2">
+                        <p>I don't fix marketing.</p>
+                        <p>I fix <strong>what's broken</strong> before marketing.</p>
+                        <p>Most founders are not failing because of lack of effort —<br>but because of <strong>lack of
+                                clarity.</strong></p>
+                        <p>Parishva was built to solve that.</p>
+                    </div>
+                </div>
+                <div class="founder-visual reveal reveal-delay-1">
+                    <div class="founder-frame">
+                        <img src="founder.png" alt="Jyothi — Founder" class="founder-img">
+                        <div class="founder-frame-label">JYOTHI . FOUNDER</div>
+                        <div class="founder-corner tl"></div>
+                        <div class="founder-corner tr"></div>
+                        <div class="founder-corner bl"></div>
+                        <div class="founder-corner br"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- DIVIDER -->
+    <div class="holo-divider section"></div>
+
+    <!-- ==================== BLOGS SECTION ==================== -->
+    <section id="blogs" class="section">
+        <div class="container">
+            <div class="blogs-header">
+                <div class="sec-label reveal">Insights</div>
+                <h2 class="sec-h2 reveal reveal-delay-1">Blogs & Thoughts</h2>
+            </div>
+
+            <div class="blogs-grid">
+                <!-- Blog Card 1 -->
+                <a href="switching-agencies.html" class="blog-card reveal reveal-delay-2">
+                    <div class="blog-hud-header">
+                        <span class="blog-hud-item">Category // Brand Strategy</span>
+                        <span class="blog-hud-item">Read time // 5 min</span>
+                    </div>
+
+                    <h3 class="blog-card-title">Why Switching Agencies Won't Fix Your Brand</h3>
+
+                    <p class="blog-card-excerpt">
+                        Switching agencies and still not seeing results? The problem isn't the agency. It's your brand's
+                        clarity. Here's what's actually breaking your marketing.
+                    </p>
+
+                    <div class="blog-card-footer">
+                        <span class="blog-author">Parishva Branding Studio</span>
+                        <span class="blog-read-btn">Read Article ➔</span>
+                    </div>
+                </a>
+            </div>
+
+            <!-- Blog Subscription Widget -->
+            <div class="sub-widget-wrapper reveal reveal-delay-3">
+                <div class="sub-widget-card">
+                    <div class="sub-widget-left">
+                        <div class="widget-hud">
+                            <span class="widget-dot"></span>
+                            <span>// INSIGHTS CIRCLE</span>
+                        </div>
+                        <h3>Join the <em>Insight Circle</em></h3>
+                        <p>Get structured analysis on brand strategy, positioning, and growth direction delivered
+                            directly to your inbox when new articles are published.</p>
+                    </div>
+                    <div class="sub-widget-right">
+                        <form class="widget-form-inline" id="inline-subscribe-form">
+                            <div class="widget-input-wrapper">
+                                <input type="email" id="inline-subscribe-email" placeholder="Your professional email..."
+                                    required>
+                            </div>
+                            <button type="submit" class="btn-widget-submit">
+                                SUBSCRIBE TO ARTICLES
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- DIVIDER -->
+    <div class="holo-divider section"></div>
+
+    <!-- FINAL CTA -->
+    <section id="cta" class="section">
+        <div class="container">
+            <div class="cta-luxury-wrapper">
+                <!-- Left: Premium Typography and Message -->
+                <div class="cta-message-block reveal">
+                    <div class="cta-pre-title">Final Directive</div>
+                    <h2 class="cta-h2-serif">Stop switching agencies.<br><em>Start fixing the core.</em></h2>
+                    <p class="cta-paragraph">If your business feels stuck despite marketing efforts, it's not an
+                        execution failure. It's a positioning failure. Ads don't fix broken messaging. Clarity does.</p>
+
+                    <div class="cta-process-summary">
+                        <div class="sum-item">
+                            <span class="sum-num">01</span>
+                            <span class="sum-lbl">AAA Audit</span>
+                        </div>
+                        <div class="sum-arrow">➔</div>
+                        <div class="sum-item">
+                            <span class="sum-num">02</span>
+                            <span class="sum-lbl">5 stages of Execution</span>
+                        </div>
+                        <div class="sum-arrow">➔</div>
+                        <div class="sum-item">
+                            <span class="sum-num">03</span>
+                            <h4 class="sum-lbl">Founder & Team Training</h4>
+                            <span class="sum-sublbl">Customized for your business needs</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right: Premium Call-to-Action Card -->
+                <div class="cta-action-card reveal reveal-delay-1">
+                    <div class="card-glow-effect"></div>
+                    <div class="card-header-bar">
+                        <span class="card-dot-active"></span>
+                        <span class="card-status-text">DIAGNOSTIC SESSION SCHEDULER</span>
+                    </div>
+                    <h3 class="card-title">Book an Audit</h3>
+                    <p class="card-desc">Request a structured 1-on-1 brand diagnostic session. Let's find your messaging
+                        gaps and build a clear path forward.</p>
+
+                    <div class="card-meta-details">
+                        <div class="meta-row">
+                            <span class="label">OBJECTIVE:</span>
+                            <span class="value">POSITIONING DIAGNOSIS</span>
+                        </div>
+                    </div>
+
+                    <div class="card-actions">
+                        <button class="btn-primary cta-main-btn" id="cta-btn-primary">Book Your Business Audit</button>
+                        <a href="#approach" class="cta-ghost-link">Or learn our approach first</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-logo">
+            Parishva
+            <span>Branding Studio · Est. Hyderabad</span>
+            <div class="footer-address">
+                <span class="footer-address-label">ADDRESS</span>
+                KPHB - 114, KPHB Phase 7, Kukatpally, Hyderabad, Telangana 500072
+            </div>
+        </div>
+        <div class="footer-center">
+            <div class="footer-line">Built on clarity. Not guesswork.</div>
+            <div class="footer-socials">
+                <a href="https://www.facebook.com/Parishvabrandingstudio" target="_blank" rel="noopener"
+                    aria-label="Facebook" class="social-link">
+                    <svg viewBox="0 0 24 24" fill="currentColor">
+                        <path
+                            d="M13.547 22V13.882h2.724l.408-3.16h-3.132V8.7c0-.915.254-1.539 1.567-1.539H16.8V4.328a22.457 22.457 0 00-2.435-.124c-2.41 0-4.06 1.47-4.06 4.172v2.346H7.58v3.16h2.725V22h3.242z" />
+                    </svg>
+                </a>
+                <a href="https://www.instagram.com/brandingstudioparishva/" target="_blank" rel="noopener"
+                    aria-label="Instagram" class="social-link">
+                    <svg viewBox="0 0 24 24" fill="currentColor">
+                        <path
+                            d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.051.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z" />
+                    </svg>
+                </a>
+                <a href="https://www.linkedin.com/company/parishvabrandingstudio/" target="_blank" rel="noopener"
+                    aria-label="LinkedIn" class="social-link">
+                    <svg viewBox="0 0 24 24" fill="currentColor">
+                        <path
+                            d="M4.98 3.5c0 1.381-1.11 2.5-2.48 2.5s-2.48-1.119-2.48-2.5c0-1.38 1.11-2.5 2.48-2.5s2.48 1.12 2.48 2.5zm.02 4.5h-5v16h5v-16zm7.982 0h-4.968v16h4.969v-8.399c0-4.67 6.029-5.052 6.029 0v8.399h4.988v-10.131c0-7.88-8.922-7.593-11.018-3.714v-2.155z" />
+                    </svg>
+                </a>
+                <a href="https://wa.me/919059741938" target="_blank" rel="noopener" aria-label="WhatsApp"
+                    class="social-link">
+                    <svg viewBox="0 0 24 24" fill="currentColor">
+                        <path
+                            d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.514 2.266 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.502-5.73-1.45L0 24zm6.59-4.846c1.66.988 3.296 1.48 5.365 1.481 5.397 0 9.79-4.394 9.794-9.792.002-2.614-1.016-5.071-2.868-6.924C17.087 2.067 14.626 1.05 12.01 1.05c-5.396 0-9.786 4.393-9.79 9.791-.001 2.107.56 4.164 1.624 5.945l-.97 3.547 3.633-.953c1.77.965 3.324 1.424 5.09 1.424zm8.68-6.11c-.22-.11-1.302-.643-1.503-.717-.202-.074-.348-.109-.495.11-.147.218-.569.717-.697.864-.129.147-.258.165-.478.055-.22-.11-.93-.343-1.772-1.094-.655-.584-1.097-1.306-1.226-1.525-.128-.219-.014-.337.096-.447.099-.1.218-.256.327-.384.11-.128.147-.219.22-.366.073-.146.037-.274-.018-.384-.056-.11-.495-1.191-.678-1.63-.178-.429-.356-.37-.495-.378-.127-.006-.274-.007-.421-.007-.147 0-.385.055-.586.274-.201.219-.77.75-1.03 2.158-.261 1.408.76 2.77 1.02 3.136.26.365 1.996 3.05 4.838 4.275.676.292 1.205.466 1.616.597.68.216 1.298.186 1.787.113.545-.082 1.67-.682 1.908-1.344.238-.662.238-1.23.165-1.344-.074-.114-.27-.22-.49-.33z" />
+                    </svg>
+                </a>
+            </div>
+        </div>
+        <div class="footer-copy">© 2025 Parishva Branding Studio. All rights reserved.</div>
+    </footer>
+
+    <!-- INTERACTIVE AUDIT MODAL -->
+    <div class="modal-overlay" id="audit-modal">
+        <div class="modal-card">
+            <button class="modal-close" id="modal-close-btn" aria-label="Close modal">✕</button>
+            <div class="modal-content-wrapper">
+
+                <!-- Form State -->
+                <form class="audit-form" id="brand-audit-form">
+                    <h3 class="modal-form-title">Request Diagnostics Audit</h3>
+                    <p class="modal-form-desc">Request a structured 1-on-1 brand diagnostic session. Let's find your
+                        messaging gaps.</p>
+
+                    <div class="form-group">
+                        <label for="form-name">FULL NAME</label>
+                        <input type="text" id="form-name" placeholder="John Doe" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="form-email">WORK EMAIL</label>
+                        <input type="email" id="form-email" placeholder="john@company.com" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="form-company">COMPANY & WEBSITE</label>
+                        <input type="text" id="form-company" placeholder="Company Inc. / company.com" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="form-challenge">BIGGEST BRAND CHALLENGE</label>
+                        <select id="form-challenge" required>
+                            <option value="" disabled selected>Select an option...</option>
+                            <option value="marketing-waste">Wasting money on ads/marketing</option>
+                            <option value="poor-positioning">Positioning doesn't reflect our value</option>
+                            <option value="agency-fatigue">Switching agencies with no results</option>
+                            <option value="launch-strategy">Launching a new product/brand</option>
+                        </select>
+                    </div>
+
+                    <button type="submit" class="btn-modal-submit" id="btn-submit-form">
+                        SUBMIT AUDIT REQUEST
+                    </button>
+                </form>
+
+                <!-- Success State -->
+                <div class="success-message" id="form-success">
+                    <div class="success-icon">
+                        <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#d4a24d" stroke-width="1.5">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                    </div>
+                    <h3>Diagnostics Initiated</h3>
+                    <p>Thank you. Our diagnostics lead will review your submission and contact you within 24 hours to
+                        schedule your audit session.</p>
+                    <button type="button" class="btn-ghost" id="success-close-btn">CLOSE</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- CUSTOM AUTH & SUBSCRIPTION MODAL -->
+    <div class="modal-overlay" id="subscription-modal">
+        <div class="modal-card">
+            <button class="modal-close" id="sub-modal-close-btn" aria-label="Close modal">✕</button>
+            <div class="modal-content-wrapper">
+
+                <!-- Tabs Header -->
+                <div class="auth-tabs">
+                    <button class="auth-tab active" id="tab-signup">Create Account</button>
+                    <button class="auth-tab" id="tab-login">Sign In</button>
+                </div>
+
+                <!-- Display error messages -->
+                <div class="auth-error-msg" id="auth-error-box"></div>
+
+                <!-- Tab 1: Sign Up Form -->
+                <div class="auth-form-container active" id="form-signup-container">
+                    <form class="audit-form" id="sub-signup-form">
+                        <div class="form-group">
+                            <label for="signup-name">FULL NAME</label>
+                            <input type="text" id="signup-name" placeholder="John Doe" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="signup-email">EMAIL ADDRESS</label>
+                            <input type="email" id="signup-email" placeholder="john@company.com" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="signup-phone">PHONE NUMBER</label>
+                            <input type="tel" id="signup-phone" placeholder="+91 98765 43210" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="signup-password">PASSWORD (MIN 6 CHARACTERS)</label>
+                            <input type="password" id="signup-password" placeholder="••••••••" required minlength="6">
+                        </div>
+                        <div class="form-checkbox-group">
+                            <input type="checkbox" id="signup-subscribe-check" checked>
+                            <label for="signup-subscribe-check">Automatically subscribe me to email notifications when
+                                new blogs are published.</label>
+                        </div>
+                        <button type="submit" class="btn-modal-submit" id="btn-signup-submit">
+                            CREATE SUBSCRIBER ACCOUNT
+                        </button>
+                    </form>
+                </div>
+
+                <!-- Tab 2: Login Form -->
+                <div class="auth-form-container" id="form-login-container">
+                    <form class="audit-form" id="sub-login-form">
+                        <div class="form-group">
+                            <label for="login-email">EMAIL ADDRESS</label>
+                            <input type="email" id="login-email" placeholder="john@company.com" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="login-password">PASSWORD</label>
+                            <input type="password" id="login-password" placeholder="••••••••" required>
+                        </div>
+                        <button type="submit" class="btn-modal-submit">
+                            SIGN IN
+                        </button>
+                    </form>
+                </div>
+
+                <!-- Tab 3: Mobile Login Form -->
+                <div class="auth-form-container" id="form-phone-container">
+                    <form class="audit-form" id="sub-phone-form">
+                        <div id="phone-input-group" class="form-group">
+                            <label for="login-phone-number">MOBILE NUMBER (WITH COUNTRY CODE)</label>
+                            <input type="tel" id="login-phone-number" placeholder="+91 98765 43210" required>
+                        </div>
+                        
+                        <!-- Invisible reCAPTCHA container -->
+                        <div id="recaptcha-container" style="margin: 10px 0;"></div>
+
+                        <div id="otp-input-group" class="form-group" style="display: none;">
+                            <label for="login-otp-code">SMS OTP VERIFICATION CODE</label>
+                            <input type="text" id="login-otp-code" placeholder="123456" minlength="6" maxlength="6">
+                        </div>
+
+                        <button type="button" class="btn-modal-submit" id="btn-send-otp">
+                            SEND OTP CODE
+                        </button>
+                        <button type="submit" class="btn-modal-submit" id="btn-verify-otp" style="display: none;">
+                            VERIFY OTP & SIGN IN
+                        </button>
+                        <div style="text-align: center; margin-top: 15px;">
+                            <a href="#" id="btn-back-to-email" class="back-to-email-link">← Back to Email Sign In</a>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- Social Logins Section -->
+                <div id="social-auth-wrapper">
+                    <div class="social-login-separator"><span>OR</span></div>
+                    <button type="button" class="btn-google-login" id="btn-google-login">
+                        <svg class="google-icon" viewBox="0 0 24 24">
+                            <path fill="#EA4335" d="M12 5.04c1.67 0 3.2.58 4.38 1.71l3.27-3.27C17.67 1.54 14.98 1 12 1 7.35 1 3.37 3.67 1.39 7.56l3.89 3C6.2 7.7 8.87 5.04 12 5.04z"/>
+                            <path fill="#4285F4" d="M23.49 12.27c0-.81-.07-1.59-.2-2.36H12v4.51h6.46c-.29 1.48-1.14 2.73-2.4 3.58l3.73 2.89c2.18-2 3.7-4.97 3.7-8.62z"/>
+                            <path fill="#FBBC05" d="M5.28 14.56c-.23-.7-.36-1.45-.36-2.23s.13-1.53.36-2.23l-3.89-3C.5 8.94 0 10.41 0 12s.5 3.06 1.39 4.88l3.89-3.32z"/>
+                            <path fill="#34A853" d="M12 23c3.24 0 5.97-1.07 7.96-2.91l-3.73-2.89c-1.03.69-2.35 1.11-4.23 1.11-3.13 0-5.8-2.66-6.72-6.52l-3.89 3C3.37 19.33 7.35 23 12 23z"/>
+                        </svg>
+                        Continue with Google
+                    </button>
+                    <button type="button" class="btn-google-login" id="btn-phone-login-trigger">
+                        <svg class="phone-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect>
+                            <line x1="12" y1="18" x2="12.01" y2="18"></line>
+                        </svg>
+                        Continue with Mobile Number
+                    </button>
+                </div>
+
+                <!-- State 3: User Dashboard (Logged In) -->
+                <div class="profile-dashboard" id="profile-dashboard-container">
+                    <div class="profile-hud-header">
+                        <div class="profile-hud-title">// SUBSCRIBER PANEL</div>
+                        <div class="profile-badge">Active Member</div>
+                    </div>
+
+                    <div class="profile-info-grid">
+                        <div class="profile-info-row">
+                            <span class="label">MEMBER NAME</span>
+                            <span class="value" id="profile-name-val">John Doe</span>
+                        </div>
+                        <div class="profile-info-row">
+                            <span class="label">REGISTERED EMAIL</span>
+                            <span class="value" id="profile-email-val">john@company.com</span>
+                        </div>
+                        <div class="profile-info-row">
+                            <span class="label">PHONE CONNECTION</span>
+                            <span class="value" id="profile-phone-val">+91 98765 43210</span>
+                        </div>
+                    </div>
+
+                    <!-- Premium Subscription Toggle -->
+                    <div class="subscription-status-card">
+                        <div class="status-left">
+                            <span class="status-title">Blog Notifications</span>
+                            <div class="status-indicator-wrap subscribed">
+                                <span class="status-pulse-dot subscribed" id="sub-status-dot"></span>
+                                <span id="sub-status-text">SUBSCRIBED</span>
+                            </div>
+                        </div>
+                        <div class="status-right">
+                            <label class="switch-container">
+                                <input type="checkbox" id="subscribe-status-toggle" checked>
+                                <span class="switch-slider"></span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="profile-actions">
+                        <button class="btn-profile-logout" id="btn-logout">LOG OUT</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Main JavaScript -->
+    <script src="main.js?v=2"></script>
+    <!-- Blog Subscription Core Logic -->
+    <script src="auth-subscription.js"></script>
+</body>
+
+</html>
