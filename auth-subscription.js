@@ -40,7 +40,6 @@ function initAuthSubscription() {
     // Profile Dashboard Elements
     const profileName = document.getElementById('profile-name-val');
     const profileEmail = document.getElementById('profile-email-val');
-    const profilePhone = document.getElementById('profile-phone-val');
     const subscribeToggle = document.getElementById('subscribe-status-toggle');
     const statusDot = document.getElementById('sub-status-dot');
     const statusText = document.getElementById('sub-status-text');
@@ -256,11 +255,10 @@ function initAuthSubscription() {
 
             const name = document.getElementById('signup-name').value.trim();
             const email = document.getElementById('signup-email').value.trim();
-            const phone = document.getElementById('signup-phone').value.trim();
             const password = document.getElementById('signup-password').value;
             const isSubscribed = document.getElementById('signup-subscribe-check').checked;
 
-            if (!name || !email || !phone || !password) {
+            if (!name || !email || !password) {
                 showError("Please fill in all details.");
                 return;
             }
@@ -283,7 +281,6 @@ function initAuthSubscription() {
                             uid: user.uid,
                             name: name,
                             email: email,
-                            phone: phone,
                             isSubscribed: isSubscribed,
                             createdAt: firebase.database.ServerValue.TIMESTAMP
                         });
@@ -434,14 +431,12 @@ function initAuthSubscription() {
                     // Populate Dashboard fields
                     if (profileName) profileName.innerText = data.name || user.displayName || 'Subscribed Member';
                     if (profileEmail) profileEmail.innerText = data.email || user.email;
-                    if (profilePhone) profilePhone.innerText = data.phone || 'Not provided';
                     
                     updateSubscriptionUI(data.isSubscribed);
                 } else {
                     // Backup populate if profile document wasn't created yet
                     if (profileName) profileName.innerText = user.displayName || 'Subscribed Member';
                     if (profileEmail) profileEmail.innerText = user.email;
-                    if (profilePhone) profilePhone.innerText = 'Not provided';
                     updateSubscriptionUI(true);
                 }
                 refreshCursorListeners();
