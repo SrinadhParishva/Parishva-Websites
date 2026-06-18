@@ -1258,34 +1258,6 @@
                     </form>
                 </div>
 
-                <!-- Tab 3: Mobile Login Form -->
-                <div class="auth-form-container" id="form-phone-container">
-                    <form class="audit-form" id="sub-phone-form">
-                        <div id="phone-input-group" class="form-group">
-                            <label for="login-phone-number">MOBILE NUMBER (WITH COUNTRY CODE)</label>
-                            <input type="tel" id="login-phone-number" placeholder="+91 98765 43210" required>
-                        </div>
-                        
-                        <!-- Invisible reCAPTCHA container -->
-                        <div id="recaptcha-container" style="margin: 10px 0;"></div>
-
-                        <div id="otp-input-group" class="form-group" style="display: none;">
-                            <label for="login-otp-code">SMS OTP VERIFICATION CODE</label>
-                            <input type="text" id="login-otp-code" placeholder="123456" minlength="6" maxlength="6">
-                        </div>
-
-                        <button type="button" class="btn-modal-submit" id="btn-send-otp">
-                            SEND OTP CODE
-                        </button>
-                        <button type="submit" class="btn-modal-submit" id="btn-verify-otp" style="display: none;">
-                            VERIFY OTP & SIGN IN
-                        </button>
-                        <div style="text-align: center; margin-top: 15px;">
-                            <a href="#" id="btn-back-to-email" class="back-to-email-link">← Back to Email Sign In</a>
-                        </div>
-                    </form>
-                </div>
-
                 <!-- Social Logins Section -->
                 <div id="social-auth-wrapper">
                     <div class="social-login-separator"><span>OR</span></div>
@@ -1297,13 +1269,6 @@
                             <path fill="#34A853" d="M12 23c3.24 0 5.97-1.07 7.96-2.91l-3.73-2.89c-1.03.69-2.35 1.11-4.23 1.11-3.13 0-5.8-2.66-6.72-6.52l-3.89 3C3.37 19.33 7.35 23 12 23z"/>
                         </svg>
                         Continue with Google
-                    </button>
-                    <button type="button" class="btn-google-login" id="btn-phone-login-trigger">
-                        <svg class="phone-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect>
-                            <line x1="12" y1="18" x2="12.01" y2="18"></line>
-                        </svg>
-                        Continue with Mobile Number
                     </button>
                 </div>
 

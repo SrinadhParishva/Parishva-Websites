@@ -26,11 +26,9 @@ function initAuthSubscription() {
     const loginTab = document.getElementById('tab-login');
     const signupContainer = document.getElementById('form-signup-container');
     const loginContainer = document.getElementById('form-login-container');
-    const phoneContainer = document.getElementById('form-phone-container');
     const dashboardContainer = document.getElementById('profile-dashboard-container');
     const errorMsgContainer = document.getElementById('auth-error-box');
     const socialAuthWrapper = document.getElementById('social-auth-wrapper');
-    const phoneForm = document.getElementById('sub-phone-form');
 
     // UI Buttons
     const navSubscribeBtn = document.getElementById('nav-subscribe-btn');
@@ -38,10 +36,6 @@ function initAuthSubscription() {
     const inlineWidgetForm = document.getElementById('inline-subscribe-form');
     const inlineWidgetEmail = document.getElementById('inline-subscribe-email');
     const btnGoogleLogin = document.getElementById('btn-google-login');
-    const btnPhoneTrigger = document.getElementById('btn-phone-login-trigger');
-    const btnBackToEmail = document.getElementById('btn-back-to-email');
-    const btnSendOtp = document.getElementById('btn-send-otp');
-    const btnVerifyOtp = document.getElementById('btn-verify-otp');
 
     // Profile Dashboard Elements
     const profileName = document.getElementById('profile-name-val');
@@ -88,7 +82,7 @@ function initAuthSubscription() {
     };
 
     const switchTab = (tab) => {
-        if (!signupTab || !loginTab || !signupContainer || !loginContainer || !phoneContainer || !dashboardContainer) return;
+        if (!signupTab || !loginTab || !signupContainer || !loginContainer || !dashboardContainer) return;
         
         errorMsgContainer.style.display = 'none';
         dashboardContainer.classList.remove('active');
@@ -96,7 +90,6 @@ function initAuthSubscription() {
         // Hide all form containers first
         signupContainer.classList.remove('active');
         loginContainer.classList.remove('active');
-        phoneContainer.classList.remove('active');
 
         signupTab.classList.remove('active');
         loginTab.classList.remove('active');
@@ -109,19 +102,14 @@ function initAuthSubscription() {
             loginTab.classList.add('active');
             loginContainer.classList.add('active');
             if (socialAuthWrapper) socialAuthWrapper.style.display = 'block';
-        } else if (tab === 'phone') {
-            phoneContainer.classList.add('active');
-            // Hide social logins when inside phone OTP form to keep the UI clean
-            if (socialAuthWrapper) socialAuthWrapper.style.display = 'none';
         }
     };
 
     const showDashboard = () => {
-        if (!signupContainer || !loginContainer || !phoneContainer || !dashboardContainer || !signupTab || !loginTab) return;
+        if (!signupContainer || !loginContainer || !dashboardContainer || !signupTab || !loginTab) return;
         errorMsgContainer.style.display = 'none';
         signupContainer.classList.remove('active');
         loginContainer.classList.remove('active');
-        phoneContainer.classList.remove('active');
         signupTab.style.display = 'none';
         loginTab.style.display = 'none';
         
@@ -136,20 +124,11 @@ function initAuthSubscription() {
     const resetForms = () => {
         if (signupForm) signupForm.reset();
         if (loginForm) loginForm.reset();
-        if (phoneForm) phoneForm.reset();
         if (signupTab && loginTab) {
             signupTab.style.display = 'block';
             loginTab.style.display = 'block';
         }
         if (socialAuthWrapper) socialAuthWrapper.style.display = 'block';
-        
-        // Reset phone UI states
-        const phoneInputGrp = document.getElementById('phone-input-group');
-        const otpInputGrp = document.getElementById('otp-input-group');
-        if (phoneInputGrp) phoneInputGrp.style.display = 'block';
-        if (otpInputGrp) otpInputGrp.style.display = 'none';
-        if (btnSendOtp) btnSendOtp.style.display = 'block';
-        if (btnVerifyOtp) btnVerifyOtp.style.display = 'none';
         
         const tabsHeader = document.querySelector('.auth-tabs');
         if (tabsHeader) tabsHeader.style.borderBottom = '1px solid rgba(255, 255, 255, 0.08)';
@@ -194,55 +173,9 @@ function initAuthSubscription() {
         loginTab.addEventListener('click', () => switchTab('login'));
     }
 
-    if (btnPhoneTrigger) {
-        btnPhoneTrigger.addEventListener('click', () => switchTab('phone'));
-    }
-
-    if (btnBackToEmail) {
-        btnBackToEmail.addEventListener('click', (e) => {
-            e.preventDefault();
-            switchTab('login');
-        });
-    }
-
     // Google Sign-In trigger
     if (btnGoogleLogin) {
         btnGoogleLogin.addEventListener('click', () => signInWithGoogle());
-    }
-
-    // Phone OTP triggers
-    if (btnSendOtp) {
-        btnSendOtp.addEventListener('click', () => {
-            const rawPhone = document.getElementById('login-phone-number').value.trim();
-            if (!rawPhone) {
-                showError("Please enter a valid phone number.");
-                return;
-            }
-            
-            let formattedPhone = rawPhone.replace(/[\s-()]/g, ''); // strip spaces/symbols
-            if (!formattedPhone.startsWith('+')) {
-                if (/^\d{10}$/.test(formattedPhone)) {
-                    // Prepend +91 if it is a 10-digit number (India default)
-                    formattedPhone = '+91' + formattedPhone;
-                } else {
-                    showError("Please include your country code starting with + (e.g. +91 98765 43210).");
-                    return;
-                }
-            }
-            sendOTP(formattedPhone);
-        });
-    }
-
-    if (phoneForm) {
-        phoneForm.addEventListener('submit', (e) => {
-            e.preventDefault();
-            const code = document.getElementById('login-otp-code').value.trim();
-            if (!code || code.length !== 6) {
-                showError("Please enter a 6-digit verification code.");
-                return;
-            }
-            verifyOTP(code);
-        });
     }
 
     // Connect custom cursor to new dynamically loaded selectors
@@ -311,74 +244,7 @@ function initAuthSubscription() {
             });
     };
 
-    // ── Phone Authentication ──
-    const initPhoneVerifier = () => {
-        if (!window.recaptchaVerifier) {
-            window.recaptchaVerifier = new firebase.auth.RecaptchaVerifier('recaptcha-container', {
-                'size': 'invisible',
-                'callback': (response) => {
-                    console.log("reCAPTCHA solved.");
-                }
-            });
-        }
-    };
 
-    const sendOTP = (phoneNumber) => {
-        errorMsgContainer.style.display = 'none';
-        if (window.location.protocol === 'file:') {
-            showError("Phone verification is not supported when opening index.html directly via file://. Please serve this folder using a local web server to test OTP validation.");
-            return;
-        }
-        initPhoneVerifier();
-        
-        const appVerifier = window.recaptchaVerifier;
-        auth.signInWithPhoneNumber(phoneNumber, appVerifier)
-            .then((confirmationResult) => {
-                window.confirmationResult = confirmationResult;
-                const phoneInputGrp = document.getElementById('phone-input-group');
-                const otpInputGrp = document.getElementById('otp-input-group');
-                if (phoneInputGrp) phoneInputGrp.style.display = 'none';
-                if (otpInputGrp) otpInputGrp.style.display = 'block';
-                if (btnSendOtp) btnSendOtp.style.display = 'none';
-                if (btnVerifyOtp) btnVerifyOtp.style.display = 'block';
-                console.log("SMS OTP verification code sent.");
-            }).catch((error) => {
-                console.error("SMS OTP dispatch error:", error);
-                showError(error.message);
-            });
-    };
-
-    const verifyOTP = (code) => {
-        errorMsgContainer.style.display = 'none';
-        if (!window.confirmationResult) {
-            showError("OTP verification not initiated. Send OTP code first.");
-            return;
-        }
-
-        window.confirmationResult.confirm(code)
-            .then((result) => {
-                const user = result.user;
-                return db.ref('users/' + user.uid).once('value').then((snapshot) => {
-                    if (!snapshot.exists()) {
-                        return db.ref('users/' + user.uid).set({
-                            uid: user.uid,
-                            name: user.displayName || 'Phone Subscriber',
-                            email: user.email || 'Not provided',
-                            phone: user.phoneNumber || 'Not provided',
-                            isSubscribed: true,
-                            createdAt: firebase.database.ServerValue.TIMESTAMP
-                        });
-                    }
-                });
-            })
-            .then(() => {
-                console.log("Phone Authentication successful.");
-                closeModal();
-            }).catch((error) => {
-                console.error("OTP verification error:", error);
-                showError(error.message);
-            });
-    };
 
     // ── 3. AUTHENTICATION HANDLERS ──
 
