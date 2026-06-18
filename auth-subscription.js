@@ -218,7 +218,18 @@ function initAuthSubscription() {
                 showError("Please enter a valid phone number.");
                 return;
             }
-            sendOTP(rawPhone);
+            
+            let formattedPhone = rawPhone.replace(/[\s-()]/g, ''); // strip spaces/symbols
+            if (!formattedPhone.startsWith('+')) {
+                if (/^\d{10}$/.test(formattedPhone)) {
+                    // Prepend +91 if it is a 10-digit number (India default)
+                    formattedPhone = '+91' + formattedPhone;
+                } else {
+                    showError("Please include your country code starting with + (e.g. +91 98765 43210).");
+                    return;
+                }
+            }
+            sendOTP(formattedPhone);
         });
     }
 
