@@ -235,6 +235,9 @@ function initAuthSubscription() {
             })
             .then(() => {
                 console.log("Google Sign-In successful.");
+                if (typeof window.gtag === 'function') {
+                    window.gtag('event', 'login', { method: 'Google' });
+                }
                 closeModal();
             })
             .catch((error) => {
@@ -293,6 +296,9 @@ function initAuthSubscription() {
                         createExplosion(signupBtnRect);
                     }
                     console.log("Account created successfully and profile synced.");
+                    if (typeof window.gtag === 'function') {
+                        window.gtag('event', 'sign_up', { method: 'Email Signup Form' });
+                    }
                 })
                 .catch((error) => {
                     console.error("Signup error:", error);
@@ -318,6 +324,9 @@ function initAuthSubscription() {
             auth.signInWithEmailAndPassword(email, password)
                 .then((userCredential) => {
                     console.log("Logged in successfully.");
+                    if (typeof window.gtag === 'function') {
+                        window.gtag('event', 'login', { method: 'Email Login Form' });
+                    }
                     closeModal();
                 })
                 .catch((error) => {
@@ -356,6 +365,9 @@ function initAuthSubscription() {
                     createExplosion(toggleRect);
                 }
                 console.log(`Subscription status updated: ${isChecked}`);
+                if (typeof window.gtag === 'function') {
+                    window.gtag('event', 'update_subscription_preference', { subscribed: isChecked });
+                }
             }).catch((error) => {
                 console.error("Error updating subscription status:", error);
                 subscribeToggle.checked = !isChecked; // Revert switch UI on error
@@ -385,6 +397,10 @@ function initAuthSubscription() {
             const emailInputVal = inlineWidgetEmail.value.trim();
             if (!emailInputVal) return;
 
+            if (typeof window.gtag === 'function') {
+                window.gtag('event', 'submit_newsletter_widget', { prefilled: !!emailInputVal });
+            }
+
             if (currentUser) {
                 // If user is already logged in, automatically make sure they are subscribed and show modal
                 db.ref('users/' + currentUser.uid).update({
@@ -395,6 +411,9 @@ function initAuthSubscription() {
                     const widgetBtnRect = inlineWidgetForm.querySelector('button').getBoundingClientRect();
                     if (typeof createExplosion === 'function') {
                         createExplosion(widgetBtnRect);
+                    }
+                    if (typeof window.gtag === 'function') {
+                        window.gtag('event', 'sign_up', { method: 'Newsletter Widget (LoggedIn)' });
                     }
                 });
             } else {
