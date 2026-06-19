@@ -13,6 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initSmoothScrolling();
     initServicesDashboard();
     initCasesSlider();
+    initPDFTracking();
 });
 
 /* 1. Custom Lagged Cursor Ring */
@@ -443,6 +444,20 @@ function initAuditModal() {
             document.documentElement.classList.remove('overflow-hidden');
         }
 
+        // Track the Audit Request click event
+        let buttonId = 'unknown';
+        if (e && e.currentTarget) {
+            buttonId = e.currentTarget.id || e.currentTarget.className || 'unknown';
+        }
+        if (typeof window.gtag === 'function') {
+            window.gtag('event', 'generate_lead', {
+                lead_type: 'business_audit',
+                cta_id: buttonId,
+                form_url: 'https://forms.gle/q4Nfo5Nkdv3cRcJd7'
+            });
+            console.log(`[Google Analytics] Tracked audit booking click on button: ${buttonId}`);
+        }
+
         window.open('https://forms.gle/q4Nfo5Nkdv3cRcJd7', '_blank');
     };
 
@@ -773,4 +788,22 @@ function initCasesSlider() {
         playPauseBtn.querySelector('.icon-pause').style.display = 'none';
         playPauseBtn.querySelector('.icon-play').style.display = 'block';
     }
+}
+
+/* 11. PDF Document Tracking */
+function initPDFTracking() {
+    const pdfLinks = document.querySelectorAll('a[href$=".pdf"]');
+    pdfLinks.forEach(link => {
+        link.addEventListener('click', (e) => {
+            const fileName = link.getAttribute('href').split('/').pop();
+            if (typeof window.gtag === 'function') {
+                window.gtag('event', 'file_download', {
+                    file_name: fileName,
+                    file_extension: 'pdf',
+                    link_text: link.innerText.trim()
+                });
+                console.log(`[Google Analytics] Tracked PDF download: ${fileName}`);
+            }
+        });
+    });
 }
