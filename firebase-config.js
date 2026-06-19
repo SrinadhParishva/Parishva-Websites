@@ -6,7 +6,7 @@
  */
 
 // Google Analytics 4 (GA4) Configuration
-const GA_MEASUREMENT_ID = "G-XXXXXXXXXX"; // Replace with your actual GA4 Measurement ID when deploying
+const GA_MEASUREMENT_ID = "G-Q68TTHJ6W7"; // Replace with your actual GA4 Measurement ID when deploying
 
 const firebaseConfig = {
     apiKey: "AIzaSyD5UF4b7l9FdlPnViEhSlxbUkRQm-qoUtI",
