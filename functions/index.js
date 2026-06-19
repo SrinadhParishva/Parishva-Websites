@@ -227,3 +227,167 @@ exports.sendBlogNotification = functions.database
             return { success: false, error: error.message };
         }
     });
+
+/**
+ * Cloud Function: Send Welcome Email
+ * Triggered when a new user profile is created under '/users/{uid}'.
+ * Sends a welcome/registration email to the user.
+ */
+exports.sendWelcomeEmail = functions.database
+    .ref('/users/{uid}')
+    .onCreate(async (snapshot, context) => {
+        const userData = snapshot.val();
+        
+        if (!userData || !userData.email) {
+            console.log("No user data or email found. Welcome email aborted.");
+            return null;
+        }
+
+        const email = userData.email;
+        const name = userData.name || "Subscriber";
+
+        console.log(`Sending welcome email to: ${email} (${name})...`);
+
+        try {
+            const resendApiKey = process.env.RESEND_API_KEY || (functions.config().resend && functions.config().resend.key);
+
+            if (!resendApiKey || resendApiKey === "YOUR_RESEND_API_KEY_HERE") {
+                console.error("Resend API key is missing. Set the RESEND_API_KEY environment variable.");
+                return null;
+            }
+
+            const resend = new Resend(resendApiKey);
+
+            const welcomeHtml = `
+            <!DOCTYPE html>
+            <html lang="en">
+            <head>
+                <meta charset="UTF-8">
+                <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                <title>Welcome to the Parishva Insight Circle</title>
+                <style>
+                    body {
+                        margin: 0;
+                        padding: 0;
+                        background-color: #0b1215;
+                        color: #edebeb;
+                        font-family: 'Jost', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+                        -webkit-font-smoothing: antialiased;
+                    }
+                    .wrapper {
+                        width: 100%;
+                        background-color: #0b1215;
+                        padding: 40px 0;
+                    }
+                    .container {
+                        max-width: 600px;
+                        margin: 0 auto;
+                        background-color: #0e181c;
+                        border: 1px solid rgba(212, 162, 77, 0.2);
+                        padding: 40px;
+                        text-align: left;
+                    }
+                    .header {
+                        border-bottom: 1px solid rgba(212, 162, 77, 0.15);
+                        padding-bottom: 20px;
+                        margin-bottom: 30px;
+                    }
+                    .logo {
+                        font-size: 14px;
+                        font-weight: bold;
+                        letter-spacing: 0.3em;
+                        color: #d4a24d;
+                        text-transform: uppercase;
+                        margin: 0;
+                    }
+                    .logo span {
+                        display: block;
+                        font-size: 8px;
+                        letter-spacing: 0.4em;
+                        color: rgba(212, 162, 77, 0.4);
+                        margin-top: 4px;
+                    }
+                    .eyebrow {
+                        font-size: 9px;
+                        letter-spacing: 0.2em;
+                        color: #d4a24d;
+                        text-transform: uppercase;
+                        margin-bottom: 12px;
+                    }
+                    h1 {
+                        font-family: 'Cormorant Garamond', 'Georgia', serif;
+                        font-size: 28px;
+                        font-weight: 300;
+                        line-height: 1.3;
+                        color: #edebeb;
+                        margin: 0 0 20px 0;
+                    }
+                    h1 em {
+                        font-style: italic;
+                        color: #e5bf7e;
+                    }
+                    p {
+                        font-size: 15px;
+                        line-height: 1.7;
+                        color: rgba(237, 235, 235, 0.75);
+                        margin: 0 0 25px 0;
+                        font-weight: 300;
+                    }
+                    .footer {
+                        border-top: 1px solid rgba(212, 162, 77, 0.1);
+                        padding-top: 20px;
+                        margin-top: 40px;
+                        font-size: 11px;
+                        color: rgba(237, 235, 235, 0.4);
+                        line-height: 1.6;
+                    }
+                    .footer-address {
+                        margin-top: 10px;
+                        font-size: 10px;
+                    }
+                </style>
+            </head>
+            <body>
+                <div class="wrapper">
+                    <div class="container">
+                        <div class="header">
+                            <div class="logo">
+                                Parishva
+                                <span>Branding Studio</span>
+                            </div>
+                        </div>
+                        <div class="eyebrow">// INSIGHT CIRCLE SUBSCRIBED</div>
+                        <h1>Welcome, <em>${name}</em>.</h1>
+                        <p>Thank you for joining the Parishva Insight Circle.</p>
+                        <p>You have successfully registered your subscriber profile. Whenever we release new strategy teardowns, brand audits, or insights on why confused brands fail, you will receive a direct briefing right here in your inbox.</p>
+                        <p>We build growth on structured design and brand logic, never on guesswork. Welcome aboard.</p>
+                        <div class="footer">
+                            <div>© 2026 Parishva Branding Studio. All rights reserved.</div>
+                            <div class="footer-address">KPHB - 114, KPHB Phase 7, Kukatpally, Hyderabad, TS 500072</div>
+                        </div>
+                    </div>
+                </div>
+            </body>
+            </html>
+            `;
+
+            const fromEmail = resendApiKey.startsWith('re_') && resendApiKey.includes('test')
+                ? "Parishva Insights <onboarding@resend.dev>"
+                : "Parishva Insights <insights@parishvabranding.com>";
+
+            const response = await resend.emails.send({
+                from: fromEmail,
+                to: email,
+                subject: `Welcome to the Insight Circle, ${name}`,
+                html: welcomeHtml
+            });
+
+            console.log(`Welcome email successfully sent to ${email}. Resend ID: ${response.id || response.data.id}`);
+            return { success: true, id: response.id || (response.data && response.data.id) };
+
+        } catch (error) {
+            console.error("Failed to send welcome email:", error);
+            return { success: false, error: error.message };
+        }
+    });
+
