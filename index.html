@@ -11,9 +11,10 @@
     <meta name="keywords"
         content="branding studio, brand strategy, business audit, positioning, marketing clarity, digital marketing agency, social media manage, growth direction, Hyderabad branding agency">
 
-    <!-- Google Fonts -->
+    <!-- Google Fonts & CDN Preconnections -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://www.gstatic.com" crossorigin>
     <link
         href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Syncopate:wght@400;700&family=Jost:wght@200;300;400;500&display=swap"
         rel="stylesheet">
@@ -28,12 +29,15 @@
     <!-- Blog Subscription Stylesheet -->
     <link rel="stylesheet" href="subscription.css">
 
-    <!-- Firebase Compatibility Client SDKs -->
-    <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-app-compat.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-auth-compat.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-database-compat.js"></script>
+    <!-- Firebase Compatibility Client SDKs (Deferred for performance) -->
+    <script defer src="https://www.gstatic.com/firebasejs/10.8.0/firebase-app-compat.js"></script>
+    <script defer src="https://www.gstatic.com/firebasejs/10.8.0/firebase-auth-compat.js"></script>
+    <script defer src="https://www.gstatic.com/firebasejs/10.8.0/firebase-database-compat.js"></script>
     <!-- Firebase App Configuration -->
-    <script src="firebase-config.js"></script>
+    <script defer src="firebase-config.js"></script>
+    <!-- App Scripts (Deferred for performance) -->
+    <script defer src="main.js?v=2"></script>
+    <script defer src="auth-subscription.js?v=3"></script>
 </head>
 
 <body>
@@ -959,7 +963,7 @@
                 </div>
                 <div class="founder-visual reveal reveal-delay-1">
                     <div class="founder-frame">
-                        <img src="founder.png" alt="Jyothi — Founder" class="founder-img">
+                        <img src="founder.png" alt="Jyothi — Founder" class="founder-img" loading="lazy">
                         <div class="founder-frame-label">JYOTHI . FOUNDER</div>
                         <div class="founder-corner tl"></div>
                         <div class="founder-corner tr"></div>
@@ -995,6 +999,25 @@
                     <p class="blog-card-excerpt">
                         Switching agencies and still not seeing results? The problem isn't the agency. It's your brand's
                         clarity. Here's what's actually breaking your marketing.
+                    </p>
+
+                    <div class="blog-card-footer">
+                        <span class="blog-author">Parishva Branding Studio</span>
+                        <span class="blog-read-btn">Read Article ➔</span>
+                    </div>
+                </a>
+
+                <!-- Blog Card 2 -->
+                <a href="business-audit.html" class="blog-card reveal reveal-delay-3">
+                    <div class="blog-hud-header">
+                        <span class="blog-hud-item">Category // Brand Strategy</span>
+                        <span class="blog-hud-item">Read time // 6 min</span>
+                    </div>
+
+                    <h3 class="blog-card-title">What Is a Business Audit — And Why Your Brand Needs One Before Marketing</h3>
+
+                    <p class="blog-card-excerpt">
+                        A business audit isn't a report. It's a diagnostic. Here's what it actually looks at — and why your brand needs one before you spend another rupee on marketing.
                     </p>
 
                     <div class="blog-card-footer">
@@ -1314,10 +1337,7 @@
         </div>
     </div>
 
-    <!-- Main JavaScript -->
-    <script src="main.js?v=2"></script>
-    <!-- Blog Subscription Core Logic -->
-    <script src="auth-subscription.js?v=3"></script>
+
 </body>
 
 </html>
