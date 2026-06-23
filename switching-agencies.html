@@ -6,10 +6,12 @@
 <meta name="description" content="Switching agencies and still not seeing results? The problem isn't the agency. It's your brand's clarity. Here's what's actually breaking your marketing." />
 <meta name="keywords" content="switching agencies, brand strategy, brand clarity, business audit" />
 <title>Why Switching Agencies Won't Fix Your Brand — Parishva Branding Studio</title>
+<link rel="canonical" href="https://parishva.in/switching-agencies.html" />
 
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500;1,600&family=Syncopate:wght@400;700&family=Jost:wght@200;300;400;500&display=swap" rel="stylesheet" />
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500;1,600&family=Syncopate:wght@400;700&family=Jost:wght@200;300;400;500&display=swap" />
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500;1,600&family=Syncopate:wght@400;700&family=Jost:wght@200;300;400;500&display=swap" rel="stylesheet" media="print" onload="this.media='all'" />
 
 <!-- Favicon / Brand Logo -->
 <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
@@ -355,6 +357,33 @@
     footer { flex-direction: column; text-align: center; padding: 2.6rem 1.5rem; }
   }
 </style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://parishva.in/switching-agencies.html"
+  },
+  "headline": "Why Switching Agencies Won't Fix Your Brand",
+  "description": "Switching agencies and still not seeing results? The problem isn't the agency. It's your brand's clarity. Here's what's actually breaking your marketing.",
+  "image": "https://parishva.in/logo.jpeg",  
+  "author": {
+    "@type": "Organization",
+    "name": "Parishva Branding Studio",
+    "url": "https://parishva.in/"
+  },  
+  "publisher": {
+    "@type": "Organization",
+    "name": "Parishva Branding Studio",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://parishva.in/logo.jpeg"
+    }
+  },
+  "datePublished": "2026-06-15"
+}
+</script>
 </head>
 <body>
 
@@ -460,7 +489,7 @@
 
   <h2 class="reveal">The Diagnostic Comes Before the Strategy</h2>
   <p class="reveal">This is the part most businesses skip because it's not as visible or exciting as a new campaign launch.</p>
-  <p class="reveal">A structured diagnostic — a real look at what's happening across your positioning, communication, and acquisition — is what makes the strategy that follows actually work. Without it, you're guessing. With it, you're directing.</p>
+  <p class="reveal">A structured diagnostic — a real look at what's happening across your positioning, communication, and acquisition — is what makes the strategy that follows actually work. Without it, you're guessing. With it, you're directing. (Read more about how this diagnostic works in our <a href="business-audit.html">Business Audit guide</a>.)</p>
   <p class="reveal">This isn't about slowing down. It's about not wasting the next six months on execution built on a foundation that hasn't been cleared.</p>
 
   <h2 class="reveal">So, Should You Switch Agencies?</h2>
@@ -472,7 +501,7 @@
   <div class="cta-panel reveal" id="cta">
     <div class="cta-status"><span class="cta-dot"></span> Business Audit</div>
     <h3>Ready to stop switching?</h3>
-    <p>At Parishva Branding Studio, we work with founders and decision-makers who are tired of the switching cycle. Our Business Audit is a structured diagnostic designed to find exactly where clarity is breaking down — before we recommend a single thing about execution.</p>
+    <p>At Parishva Branding Studio, we work with founders and decision-makers who are tired of the switching cycle. Our <a href="business-audit.html">Business Audit</a> is a structured diagnostic designed to find exactly where clarity is breaking down — before we recommend a single thing about execution.</p>
     <p>If this sounds familiar, book a diagnostic session.</p>
     <a class="btn-primary" href="https://forms.gle/q4Nfo5Nkdv3cRcJd7" target="_blank">Book a Diagnostic Session →</a>
   </div>
@@ -607,13 +636,21 @@
     }
 
     function init() {
+      const isMobile = window.innerWidth < 768 || !window.matchMedia('(pointer: fine)').matches;
+      if (isMobile) {
+        canvas.style.display = 'none';
+        return;
+      }
       resize();
       makeParticles();
+      if (!window.drawLoopStarted) {
+        window.drawLoopStarted = true;
+        draw();
+      }
     }
 
     window.addEventListener('resize', init);
     init();
-    draw();
   })();
 </script>
 
