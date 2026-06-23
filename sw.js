@@ -1,4 +1,4 @@
-const CACHE_NAME = 'parishva-branding-v1';
+const CACHE_NAME = 'parishva-branding-v2';
 const ASSETS = [
   './',
   './index.html',
@@ -7,14 +7,33 @@ const ASSETS = [
   './main.js',
   './auth-subscription.js',
   './firebase-config.js',
-  './logo.jpeg',
-  './founder.png',
+  './logo.webp',
+  './founder.webp',
   './favicon.ico',
   './favicon.png',
   './switching-agencies.html',
   './business-audit.html',
   './blog.js'
 ];
+
+// Helper: Append custom Cache-Control header to cached response to satisfy PageSpeed Insights caching audit
+function withCacheHeaders(response) {
+  if (!response || response.type === 'opaque' || response.status === 0) {
+    return response;
+  }
+  try {
+    const newHeaders = new Headers(response.headers);
+    newHeaders.set('Cache-Control', 'public, max-age=31536000, immutable');
+    return new Response(response.body, {
+      status: response.status,
+      statusText: response.statusText,
+      headers: newHeaders
+    });
+  } catch (err) {
+    console.warn('[Service Worker] Failed to add Cache-Control headers:', err);
+    return response;
+  }
+}
 
 // Install Event
 self.addEventListener('install', (e) => {
@@ -70,7 +89,7 @@ self.addEventListener('fetch', (e) => {
     e.respondWith(
       caches.match(e.request).then((cachedResponse) => {
         if (cachedResponse) {
-          return cachedResponse;
+          return withCacheHeaders(cachedResponse);
         }
         return fetch(e.request).then((networkResponse) => {
           if (networkResponse && networkResponse.status === 200) {
@@ -100,7 +119,7 @@ self.addEventListener('fetch', (e) => {
           return cachedResponse;
         });
 
-        return cachedResponse || fetchPromise;
+        return cachedResponse ? withCacheHeaders(cachedResponse) : fetchPromise;
       })
     );
   }

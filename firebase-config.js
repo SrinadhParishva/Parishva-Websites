@@ -34,12 +34,26 @@ window.gtag = function() { window.dataLayer.push(arguments); };
 window.gtag('js', new Date());
 
 if (GA_MEASUREMENT_ID && GA_MEASUREMENT_ID !== "G-XXXXXXXXXX" && GA_MEASUREMENT_ID.startsWith('G-')) {
-    const gaScript = document.createElement('script');
-    gaScript.async = true;
-    gaScript.src = `https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`;
-    document.head.appendChild(gaScript);
-    window.gtag('config', GA_MEASUREMENT_ID);
-    console.log(`[Google Analytics] Dynamic script injected successfully for ID: ${GA_MEASUREMENT_ID}`);
+    const injectGA = () => {
+        const gaScript = document.createElement('script');
+        gaScript.async = true;
+        gaScript.src = `https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`;
+        document.head.appendChild(gaScript);
+        window.gtag('config', GA_MEASUREMENT_ID);
+        console.log(`[Google Analytics] Dynamic script injected successfully for ID: ${GA_MEASUREMENT_ID}`);
+    };
+
+    // Delay GA loading for mobile devices to optimize TTI & TBT
+    const isMobileDevice = window.innerWidth < 768 || !window.matchMedia('(pointer: fine)').matches;
+    if (isMobileDevice) {
+        if ('requestIdleCallback' in window) {
+            requestIdleCallback(() => setTimeout(injectGA, 2000));
+        } else {
+            setTimeout(injectGA, 2000);
+        }
+    } else {
+        injectGA();
+    }
 } else {
     window.gtag('config', 'G-XXXXXXXXXX');
     console.log("[Google Analytics] Measurement ID is set to placeholder (G-XXXXXXXXXX). Event tracking is active via window.dataLayer.");

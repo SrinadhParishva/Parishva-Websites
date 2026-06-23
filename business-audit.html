@@ -366,7 +366,7 @@
   },
   "headline": "What Is a Business Audit — And Why Your Brand Needs One Before Marketing",
   "description": "A business audit isn't a report. It's a diagnostic. Here's what it actually looks at — and why your brand needs one before you spend another rupee on marketing.",
-  "image": "https://parishva.in/logo.jpeg",  
+  "image": "https://parishva.in/logo.webp",  
   "author": {
     "@type": "Organization",
     "name": "Parishva Branding Studio",
@@ -377,7 +377,7 @@
     "name": "Parishva Branding Studio",
     "logo": {
       "@type": "ImageObject",
-      "url": "https://parishva.in/logo.jpeg"
+      "url": "https://parishva.in/logo.webp"
     }
   },
   "datePublished": "2026-06-15"
@@ -555,123 +555,6 @@
           <svg viewBox="0 0 24 24" fill="currentColor">
               <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.514 2.266 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.502-5.73-1.45L0 24zm6.59-4.846c1.66.988 3.296 1.48 5.365 1.481 5.397 0 9.79-4.394 9.794-9.792.002-2.614-1.016-5.071-2.868-6.924C17.087 2.067 14.626 1.05 12.01 1.05c-5.396 0-9.786 4.393-9.79 9.791-.001 2.107.56 4.164 1.624 5.945l-.97 3.547 3.633-.953c1.77.965 3.324 1.424 5.09 1.424zm8.68-6.11c-.22-.11-1.302-.643-1.503-.717-.202-.074-.348-.109-.495.11-.147.218-.569.717-.697.864-.129.147-.258.165-.478.055-.22-.11-.93-.343-1.772-1.094-.655-.584-1.097-1.306-1.226-1.525-.128-.219-.014-.337.096-.447.099-.1.218-.256.327-.384.11-.128.147-.219.22-.366.073-.146.037-.274-.018-.384-.056-.11-.495-1.191-.678-1.63-.178-.429-.356-.37-.495-.378-.127-.006-.274-.007-.421-.007-.147 0-.385.055-.586.274-.201.219-.77.75-1.03 2.158-.261 1.408.76 2.77 1.02 3.136.26.365 1.996 3.05 4.838 4.275.676.292 1.205.466 1.616.597.68.216 1.298.186 1.787.113.545-.082 1.67-.682 1.908-1.344.238-.662.238-1.23.165-1.344-.074-.114-.27-.22-.49-.33z" />
           </svg>
-      </a>
-    </div>
-  </div>
-  <div class="footer-copy">© 2026 Parishva Branding Studio · All rights reserved</div>
-</footer>
-
-<<<<<<< HEAD
-<script>
-  // ── Custom cursor ──
-  (function () {
-    const isFinePointer = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
-    if (!isFinePointer) return;
-    const dot = document.getElementById('cursor');
-    const ring = document.getElementById('cursor-ring');
-    dot.style.display = 'block';
-    ring.style.display = 'block';
-    let rx = 0, ry = 0, mx = 0, my = 0;
-    window.addEventListener('mousemove', (e) => {
-      mx = e.clientX; my = e.clientY;
-      dot.style.left = mx + 'px'; dot.style.top = my + 'px';
-    });
-    function loop() {
-      rx += (mx - rx) * 0.18;
-      ry += (my - ry) * 0.18;
-      ring.style.left = rx + 'px'; ring.style.top = ry + 'px';
-      requestAnimationFrame(loop);
-    }
-    loop();
-    document.querySelectorAll('a, button, .check-item').forEach(el => {
-      el.addEventListener('mouseenter', () => { ring.style.width = '54px'; ring.style.height = '54px'; ring.style.opacity = '1'; });
-      el.addEventListener('mouseleave', () => { ring.style.width = '36px'; ring.style.height = '36px'; ring.style.opacity = '.6'; });
-    });
-  })();
-
-  // ── Nav scroll state ──
-  (function () {
-    const nav = document.getElementById('site-nav');
-    window.addEventListener('scroll', () => {
-      nav.classList.toggle('scrolled', window.scrollY > 40);
-    });
-  })();
-
-  // ── Scroll reveal ──
-  (function () {
-    const items = document.querySelectorAll('.reveal');
-    const io = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-          io.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
-    items.forEach(el => io.observe(el));
-  })();
-
-  // ── Ambient particle field ──
-  (function () {
-    const canvas = document.getElementById('particle-canvas');
-    const ctx = canvas.getContext('2d');
-    let w, h, particles;
-
-    function resize() {
-      w = canvas.width = window.innerWidth;
-      h = canvas.height = document.documentElement.scrollHeight;
-    }
-
-    function makeParticles() {
-      const count = Math.min(60, Math.floor((w * h) / 60000));
-      particles = Array.from({ length: count }, () => ({
-        x: Math.random() * w,
-        y: Math.random() * h,
-        r: Math.random() * 1.4 + 0.4,
-        speed: Math.random() * 0.25 + 0.05,
-        drift: (Math.random() - 0.5) * 0.15,
-        alpha: Math.random() * 0.35 + 0.08
-      }));
-    }
-
-    function draw() {
-      ctx.clearRect(0, 0, w, h);
-      const scrollY = window.scrollY;
-      particles.forEach(p => {
-        p.y -= p.speed;
-        p.x += p.drift;
-        if (p.y < -10) { p.y = h + 10; p.x = Math.random() * w; }
-        const screenY = p.y - scrollY;
-        if (screenY < -10 || screenY > window.innerHeight + 10) return;
-        ctx.beginPath();
-        ctx.arc(p.x, screenY, p.r, 0, Math.PI * 2);
-        ctx.fillStyle = `rgba(212, 162, 77, ${p.alpha})`;
-        ctx.fill();
-      });
-      requestAnimationFrame(draw);
-    }
-
-    function init() {
-      const isMobile = window.innerWidth < 768 || !window.matchMedia('(pointer: fine)').matches;
-      if (isMobile) {
-        canvas.style.display = 'none';
-        return;
-      }
-      resize();
-      makeParticles();
-      if (!window.drawLoopStarted) {
-        window.drawLoopStarted = true;
-        draw();
-      }
-    }
-
-    window.addEventListener('resize', init);
-    init();
-  })();
-</script>
-=======
-<script src="blog.js" defer></script>
->>>>>>> 7c2b550 (Updated website pages and added audit functionality)
-
+  <script src="blog.js" defer></script>
 </body>
 </html>

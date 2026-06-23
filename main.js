@@ -236,20 +236,27 @@ function initInteractiveSphere() {
         });
     }
 
-    // Capture hover coordinate shifts
+    // Capture hover coordinate shifts by caching canvas rect on mouseenter
+    let canvasRect = null;
     const handleMouseMove = (e) => {
-        const rect = canvas.getBoundingClientRect();
-        const clientX = e.clientX - rect.left - (rect.width / 2);
-        const clientY = e.clientY - rect.top - (rect.height / 2);
+        if (!canvasRect) {
+            canvasRect = canvas.getBoundingClientRect();
+        }
+        const clientX = e.clientX - canvasRect.left - (canvasRect.width / 2);
+        const clientY = e.clientY - canvasRect.top - (canvasRect.height / 2);
 
         targetAngleY = clientX * 0.00003;
         targetAngleX = clientY * 0.00003;
     };
 
+    canvas.addEventListener('mouseenter', () => {
+        canvasRect = canvas.getBoundingClientRect();
+    });
     canvas.addEventListener('mousemove', handleMouseMove);
     canvas.addEventListener('mouseleave', () => {
         targetAngleX = 0.003;
         targetAngleY = 0.005;
+        canvasRect = null;
     });
 
     const rotatePoint = (p, ax, ay) => {
@@ -516,8 +523,11 @@ function initAuditModal() {
                 form.style.display = 'none';
                 successMsg.style.display = 'flex';
 
-                successMsg.offsetHeight; // Force reflow
-                successMsg.classList.add('active');
+                requestAnimationFrame(() => {
+                    requestAnimationFrame(() => {
+                        successMsg.classList.add('active');
+                    });
+                });
 
                 // Explode gold particles relative to modal success icon
                 const iconRect = successMsg.querySelector('.success-icon').getBoundingClientRect();
