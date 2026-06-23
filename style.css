@@ -283,6 +283,22 @@ nav.scrolled .nav-logo-img {
     transform: translateY(-1px);
 }
 
+.nav-actions {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+}
+
+#nav-subscribe-btn {
+    background: transparent;
+    border: 1px solid rgba(212, 162, 77, 0.3);
+    color: var(--gold) !important;
+}
+
+#nav-subscribe-btn:hover {
+    color: var(--obsidian) !important;
+}
+
 /* Mobile Menu Toggle */
 .mobile-toggle {
     display: none;
@@ -367,6 +383,19 @@ nav.scrolled .nav-logo-img {
     padding: 12px 28px;
     clip-path: polygon(0 0, calc(100% - 10px) 0, 100% 10px, 100% 100%, 0 100%);
     cursor: pointer;
+}
+
+#mobile-subscribe-btn {
+    background: transparent;
+    border: 1px solid rgba(212, 162, 77, 0.25);
+    color: var(--gold) !important;
+    margin-bottom: 12px;
+}
+
+#mobile-subscribe-btn:hover {
+    background: var(--gold) !important;
+    color: var(--obsidian) !important;
+    border-color: var(--gold);
 }
 
 /* ==================== 1st SECTION: HERO ==================== */
@@ -2039,6 +2068,10 @@ h1.hero-h1 em {
     transition: fill 0.3s ease;
 }
 
+.cases-play-pause .icon-play {
+    display: none;
+}
+
 @media (max-width: 900px) {
     .case-blueprint-grid {
         grid-template-columns: 1fr;
@@ -2295,6 +2328,10 @@ h1.hero-h1 em {
     stroke-width: 1.5;
     stroke-dasharray: 10, 100;
     animation: waveFlow 4s linear infinite;
+}
+
+.hud-wave-active:nth-of-type(2) {
+    animation-delay: -1s;
 }
 
 @keyframes waveFlow {
