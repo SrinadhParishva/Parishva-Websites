@@ -10,14 +10,16 @@
         content="Parishva Branding Studio: brand strategy and business audit for founders confused, stuck, or switching agencies. We diagnose before we prescribe.">
     <meta name="keywords"
         content="branding studio, brand strategy, business audit, positioning, marketing clarity, digital marketing agency, social media manage, growth direction, Hyderabad branding agency">
+    <link rel="canonical" href="https://parishva.in/" />
 
     <!-- Google Fonts & CDN Preconnections -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preconnect" href="https://www.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Syncopate:wght@400;700&family=Jost:wght@200;300;400;500&display=swap"
-        rel="stylesheet">
+    
+    <!-- Preload critical fonts stylesheet -->
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Syncopate:wght@400;700&family=Jost:wght@200;300;400;500&display=swap">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Syncopate:wght@400;700&family=Jost:wght@200;300;400;500&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
 
     <!-- Favicon / Brand Logo -->
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
@@ -26,8 +28,8 @@
 
     <!-- CSS Stylesheet -->
     <link rel="stylesheet" href="style.css?v=3">
-    <!-- Blog Subscription Stylesheet -->
-    <link rel="stylesheet" href="subscription.css">
+    <!-- Blog Subscription Stylesheet (Loaded Asynchronously) -->
+    <link rel="stylesheet" href="subscription.css" media="print" onload="this.media='all'">
 
     <!-- Firebase Compatibility Client SDKs (Deferred for performance) -->
     <script defer src="https://www.gstatic.com/firebasejs/10.8.0/firebase-app-compat.js"></script>
@@ -38,6 +40,54 @@
     <!-- App Scripts (Deferred for performance) -->
     <script defer src="main.js?v=2"></script>
     <script defer src="auth-subscription.js?v=3"></script>
+
+    <!-- Schema Markup -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "Parishva Branding Studio",
+      "image": "https://parishva.in/logo.jpeg",
+      "@id": "https://parishva.in/#localbusiness",
+      "url": "https://parishva.in/",
+      "telephone": "+919059741938",
+      "priceRange": "$$",
+      "description": "Parishva Branding Studio: brand strategy and business audit for founders confused, stuck, or switching agencies. We diagnose before we prescribe.",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Hyderabad",
+        "addressRegion": "Telangana",
+        "addressCountry": "IN"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 17.385044,
+        "longitude": 78.486671
+      },
+      "founder": {
+        "@type": "Person",
+        "name": "Jyothi"
+      },
+      "openingHoursSpecification": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday",
+          "Saturday"
+        ],
+        "opens": "09:00",
+        "closes": "18:00"
+      },
+      "sameAs": [
+        "https://www.facebook.com/Parishvabrandingstudio",
+        "https://www.instagram.com/brandingstudioparishva/",
+        "https://www.linkedin.com/company/parishvabrandingstudio/"
+      ]
+    }
+    </script>
 </head>
 
 <body>
@@ -54,7 +104,7 @@
     <!-- NAVIGATION -->
     <nav>
         <a href="#" class="nav-logo" id="nav-logo">
-            <img src="logo.jpeg" alt="Parishva Branding Studio" class="nav-logo-img">
+            <img src="logo.jpeg" alt="Parishva Branding Studio" class="nav-logo-img" width="75" height="75" fetchpriority="high">
         </a>
         <ul class="nav-links">
             <li><a href="#approach">Approach</a></li>
@@ -63,9 +113,8 @@
             <li><a href="#process">Process</a></li>
             <li><a href="#blogs">Blogs</a></li>
         </ul>
-        <div class="nav-actions" style="display: flex; gap: 12px; align-items: center;">
-            <button class="nav-cta" id="nav-subscribe-btn"
-                style="background: transparent; border: 1px solid rgba(212, 162, 77, 0.3); color: var(--gold) !important;">Subscribe</button>
+        <div class="nav-actions">
+            <button class="nav-cta" id="nav-subscribe-btn">Subscribe</button>
             <button class="nav-cta" id="nav-cta-btn">Book an Audit</button>
         </div>
 
@@ -85,8 +134,7 @@
             <a href="#cases" class="mobile-link">Work</a>
             <a href="#process" class="mobile-link">Process</a>
             <a href="#blogs" class="mobile-link">Blogs</a>
-            <button class="mobile-link btn-drawer" id="mobile-subscribe-btn"
-                style="background: transparent; border: 1px solid rgba(212, 162, 77, 0.25); color: var(--gold) !important; margin-bottom: 12px;">Subscribe</button>
+            <button class="mobile-link btn-drawer" id="mobile-subscribe-btn">Subscribe</button>
             <button class="mobile-link btn-drawer" id="mobile-cta-btn">Book an Audit</button>
         </div>
     </div>
@@ -809,8 +857,7 @@
                             <rect x="15" y="4" width="4" height="16" rx="1" />
                         </svg>
                         <!-- Play Icon -->
-                        <svg class="icon-play" width="10" height="10" viewBox="0 0 24 24" fill="currentColor"
-                            style="display: none;">
+                        <svg class="icon-play" width="10" height="10" viewBox="0 0 24 24" fill="currentColor">
                             <polygon points="6 3 20 12 6 21 6 3" />
                         </svg>
                     </button>
@@ -901,8 +948,7 @@
                                 <svg class="hud-svg" viewBox="0 0 100 100">
                                     <line x1="20" y1="50" x2="80" y2="50" class="hud-wave-bg" />
                                     <path d="M 20,50 Q 35,20 50,50 T 80,50" class="hud-wave-active" />
-                                    <path d="M 20,50 Q 35,80 50,50 T 80,50" class="hud-wave-active"
-                                        style="animation-delay: -1s;" />
+                                    <path d="M 20,50 Q 35,80 50,50 T 80,50" class="hud-wave-active" />
                                 </svg>
                             </div>
                             <div class="panel-text-content">
@@ -963,7 +1009,7 @@
                 </div>
                 <div class="founder-visual reveal reveal-delay-1">
                     <div class="founder-frame">
-                        <img src="founder.png" alt="Jyothi — Founder" class="founder-img" loading="lazy">
+                        <img src="founder.png" alt="Jyothi — Founder" class="founder-img" loading="lazy" width="320" height="400">
                         <div class="founder-frame-label">JYOTHI . FOUNDER</div>
                         <div class="founder-corner tl"></div>
                         <div class="founder-corner tr"></div>
