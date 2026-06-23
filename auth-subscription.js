@@ -3,16 +3,87 @@
  * Handles Firebase Auth, Firestore sync, and custom premium UI states.
  */
 
+let firebaseLoadingPromise = null;
+let isFirebaseInitialized = false;
+
+function loadFirebaseAndInit() {
+    if (firebaseLoadingPromise) return firebaseLoadingPromise;
+
+    firebaseLoadingPromise = new Promise((resolve, reject) => {
+        if (typeof firebase !== 'undefined') {
+            runAuthSubscription();
+            resolve();
+            return;
+        }
+
+        const scripts = [
+            "https://www.gstatic.com/firebasejs/10.8.0/firebase-app-compat.js",
+            "https://www.gstatic.com/firebasejs/10.8.0/firebase-auth-compat.js",
+            "https://www.gstatic.com/firebasejs/10.8.0/firebase-database-compat.js",
+            "firebase-config.js"
+        ];
+
+        const loadScript = (src) => {
+            return new Promise((res, rej) => {
+                const s = document.createElement('script');
+                s.src = src;
+                s.async = true;
+                s.onload = res;
+                s.onerror = rej;
+                document.head.appendChild(s);
+            });
+        };
+
+        // Load sequentially: app, then compat libs + config
+        loadScript(scripts[0])
+            .then(() => Promise.all([
+                loadScript(scripts[1]),
+                loadScript(scripts[2])
+            ]))
+            .then(() => loadScript(scripts[3]))
+            .then(() => {
+                console.log("[Firebase] SDKs dynamically loaded successfully.");
+                runAuthSubscription();
+                resolve();
+            })
+            .catch(err => {
+                console.error("[Firebase] Error loading SDKs:", err);
+                firebaseLoadingPromise = null;
+                reject(err);
+            });
+    });
+
+    return firebaseLoadingPromise;
+}
+
 document.addEventListener('DOMContentLoaded', () => {
-    initAuthSubscription();
+    // Queue idle loading of Firebase SDKs after 2 seconds to not block critical path / LCP
+    window.addEventListener('load', () => {
+        setTimeout(loadFirebaseAndInit, 2000);
+    });
+
+    // Setup lazy load triggers for user interactions
+    setupLazyLoadTriggers();
 });
 
-function initAuthSubscription() {
-    // Check if Firebase is loaded
-    if (typeof firebase === 'undefined') {
-        console.warn("Firebase is not loaded yet. Skipping auth-subscription initialization.");
-        return;
-    }
+function setupLazyLoadTriggers() {
+    const triggers = [
+        document.getElementById('nav-subscribe-btn'),
+        document.getElementById('mobile-subscribe-btn'),
+        document.getElementById('inline-subscribe-form')
+    ];
+
+    triggers.forEach(el => {
+        if (!el) return;
+        el.addEventListener('click', loadFirebaseAndInit);
+        el.addEventListener('mouseenter', loadFirebaseAndInit);
+        el.addEventListener('focus', loadFirebaseAndInit);
+    });
+}
+
+function runAuthSubscription() {
+    if (isFirebaseInitialized) return;
+    isFirebaseInitialized = true;
 
     const db = window.db || firebase.database();
     const auth = window.auth || firebase.auth();

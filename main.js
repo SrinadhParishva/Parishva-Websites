@@ -3,6 +3,15 @@
  * -------------------------------------------------- */
 
 document.addEventListener('DOMContentLoaded', () => {
+    // Register Service Worker for caching and offline support
+    if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+            navigator.serviceWorker.register('./sw.js')
+                .then(reg => console.log('[Service Worker] Registered scope:', reg.scope))
+                .catch(err => console.error('[Service Worker] Registration failed:', err));
+        });
+    }
+
     initCustomCursor();
     initSpaceBackground();
     initInteractiveSphere();
@@ -108,6 +117,13 @@ function initSpaceBackground() {
     const canvas = document.getElementById('particle-canvas');
     if (!canvas) return;
     const ctx = canvas.getContext('2d');
+
+    // Detect mobile/tablet screens or touch/coarse pointers to save CPU cycles on mobile
+    const isMobile = window.innerWidth < 768 || !window.matchMedia('(pointer: fine)').matches;
+    if (isMobile) {
+        canvas.style.display = 'none';
+        return;
+    }
 
     let W, H;
     let particles = [];
@@ -383,7 +399,7 @@ function initHeaderScroll() {
         }
     };
 
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener('scroll', handleScroll, { passive: true });
     handleScroll();
 }
 
@@ -641,17 +657,23 @@ function initCasesSlider() {
 
     const allSlides = Array.from(track.children);
 
+    // Cache layout reading of clientWidth to prevent layout thrashing/reflows
+    let slideWidth = container.clientWidth;
+
     function updatePosition() {
-        const slideWidth = container.clientWidth;
         track.style.transform = `translateX(-${currentIndex * slideWidth}px)`;
     }
 
     // Initialize initial position and defer slightly to ensure layouts are computed
     updatePosition();
-    setTimeout(updatePosition, 100);
+    setTimeout(() => {
+        slideWidth = container.clientWidth;
+        updatePosition();
+    }, 100);
 
     window.addEventListener('resize', () => {
         track.style.transition = 'none';
+        slideWidth = container.clientWidth;
         updatePosition();
     });
 
