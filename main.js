@@ -476,12 +476,12 @@ function initAuditModal() {
             window.gtag('event', 'generate_lead', {
                 lead_type: 'business_audit',
                 cta_id: buttonId,
-                form_url: 'https://forms.gle/q4Nfo5Nkdv3cRcJd7'
+                form_url: 'https://forms.gle/QcmB1hF5WDoBevS26'
             });
             console.log(`[Google Analytics] Tracked audit booking click on button: ${buttonId}`);
         }
 
-        window.open('https://forms.gle/q4Nfo5Nkdv3cRcJd7', '_blank');
+        window.open('https://forms.gle/QcmB1hF5WDoBevS26', '_blank');
     };
 
     const closeModal = () => {
