@@ -23,6 +23,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initServicesDashboard();
     initCasesSlider();
     initPDFTracking();
+    initEmailDeobfuscation();
 });
 
 /* 1. Custom Lagged Cursor Ring */
@@ -837,5 +838,19 @@ function initPDFTracking() {
                 console.log(`[Google Analytics] Tracked PDF download: ${fileName}`);
             }
         });
+    });
+}
+
+/* 12. Email Deobfuscation for SEO/Spam protection */
+function initEmailDeobfuscation() {
+    const emails = document.querySelectorAll('.obfuscated-email');
+    emails.forEach(el => {
+        const user = el.getAttribute('data-user');
+        const domain = el.getAttribute('data-domain');
+        if (user && domain) {
+            const email = `${user}@${domain}`;
+            el.setAttribute('href', `mailto:${email}`);
+            el.textContent = email;
+        }
     });
 }

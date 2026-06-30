@@ -2941,6 +2941,38 @@ footer {
     margin-bottom: 6px;
 }
 
+.footer-email {
+    display: block;
+    margin-top: 16px;
+    font-family: var(--font-body);
+    font-size: 11px;
+    font-weight: 300;
+    color: rgba(237, 235, 235, 0.55);
+    letter-spacing: 0.05em;
+    text-transform: none;
+    line-height: 1.6;
+}
+
+.footer-email a {
+    color: var(--gold);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-email a:hover {
+    color: #fff;
+}
+
+.footer-email-label {
+    display: block;
+    font-family: var(--font-mono);
+    font-size: 8px;
+    letter-spacing: 0.25em;
+    color: var(--gold);
+    text-transform: uppercase;
+    margin-bottom: 6px;
+}
+
 .footer-copy {
     font-family: var(--font-body);
     font-weight: 200;
