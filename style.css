@@ -3775,3 +3775,83 @@ body.overflow-hidden {
         grid-template-columns: 1fr;
     }
 }
+
+/* Utility Classes */
+.display-none {
+    display: none !important;
+}
+
+/* Blog Page Layout Styles */
+.blog-hero-content {
+    text-align: center;
+    padding: 120px 0 60px 0;
+}
+
+.blog-hero-content .eyebrow {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    letter-spacing: 0.35em;
+    color: var(--gold);
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 20px;
+}
+
+.blog-hero-title {
+    font-family: var(--font-heading);
+    font-size: clamp(2.5rem, 6vw, 4.5rem);
+    font-weight: 300;
+    line-height: 1.1;
+    margin-bottom: 24px;
+    color: var(--white);
+    text-transform: uppercase;
+    letter-spacing: -0.02em;
+}
+
+.blog-hero-subtitle {
+    font-family: var(--font-body);
+    font-size: clamp(1rem, 1.5vw, 1.25rem);
+    font-weight: 300;
+    color: var(--silver);
+    max-width: 680px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+#blogs-feed {
+    padding-bottom: 120px;
+}
+
+#blogs-feed .sub-widget-wrapper {
+    margin-top: 80px;
+}
+
+/* Pure CSS Hero Fade-In Animations */
+@keyframes heroReveal {
+    0% {
+        opacity: 0;
+        transform: translateY(40px) scale(0.97) rotateX(3deg);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0) scale(1) rotateX(0deg);
+    }
+}
+
+.hero-reveal {
+    opacity: 0;
+    animation: heroReveal 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    will-change: transform, opacity;
+}
+
+.hero-reveal-delay-1 {
+    animation-delay: 0.1s;
+}
+
+.hero-reveal-delay-2 {
+    animation-delay: 0.2s;
+}
+
+.hero-reveal-delay-3 {
+    animation-delay: 0.3s;
+}

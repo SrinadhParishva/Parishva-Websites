@@ -2,32 +2,6 @@
 <html lang="en">
 
 <head>
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-Q68TTHJ6W7"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-
-        gtag('config', 'G-Q68TTHJ6W7');
-    </script>
-    <!-- Meta Pixel Code -->
-    <script>
-        !function(f,b,e,v,n,t,s)
-        {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-        n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-        if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-        n.queue=[];t=b.createElement(e);t.async=!0;
-        t.src=v;s=b.getElementsByTagName(e)[0];
-        s.parentNode.insertBefore(t,s)}(window, document,'script',
-        'https://connect.facebook.net/en_US/fbevents.js');
-        fbq('init', 'YOUR_PIXEL_ID');
-        fbq('track', 'PageView');
-    </script>
-    <noscript>
-        <img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=YOUR_PIXEL_ID&ev=PageView&noscript=1" />
-    </noscript>
-    <!-- End Meta Pixel Code -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Parishva Insights — Brand Strategy, Business Audit & Positioning Feed</title>
@@ -165,7 +139,7 @@
     <!-- MOBILE DRAWER NAVIGATION -->
     <div class="mobile-drawer" id="mobile-drawer">
         <div class="mobile-nav">
-            <a href="../#approach" class="mobile-nav-link" style="display: none;">Approach</a> <!-- hidden placeholder to prevent js error if not found -->
+            <a href="../#approach" class="mobile-nav-link display-none">Approach</a> <!-- hidden placeholder to prevent js error if not found -->
             <a href="../#approach" class="mobile-link">Approach</a>
             <a href="../#services" class="mobile-link">Services</a>
             <a href="../#cases" class="mobile-link">Work</a>
@@ -178,13 +152,13 @@
 
     <!-- HERO SECTION -->
     <section id="blog-hero" class="section">
-        <div class="container reveal">
-            <div class="blog-hero-content" style="text-align: center; padding: 120px 0 60px 0;">
-                <span class="eyebrow" style="font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.35em; color: var(--gold); text-transform: uppercase; display: block; margin-bottom: 20px;">// PARISHVA INSIGHTS</span>
-                <h1 style="font-family: var(--font-heading); font-size: clamp(2.5rem, 6vw, 4.5rem); font-weight: 300; line-height: 1.1; margin-bottom: 24px; color: var(--white); text-transform: uppercase; letter-spacing: -0.02em;">
+        <div class="container hero-reveal">
+            <div class="blog-hero-content">
+                <span class="eyebrow">// PARISHVA INSIGHTS</span>
+                <h1 class="blog-hero-title">
                     The <em>Clarity Feed</em>
                 </h1>
-                <p style="font-family: var(--font-body); font-size: clamp(1rem, 1.5vw, 1.25rem); font-weight: 300; color: var(--silver); max-width: 680px; margin: 0 auto; line-height: 1.6;">
+                <p class="blog-hero-subtitle">
                     Diagnosing before prescribing. Structured analysis and deep-dives on brand strategy, positioning, and marketing clarity for growth-focused founders.
                 </p>
             </div>
@@ -192,7 +166,7 @@
     </section>
 
     <!-- BLOGS FEED GRID -->
-    <section id="blogs-feed" class="section" style="padding-bottom: 120px;">
+    <section id="blogs-feed" class="section">
         <div class="container">
             <div class="blogs-grid">
                 
@@ -294,7 +268,7 @@
             </div>
 
             <!-- Blog Subscription Widget -->
-            <div class="sub-widget-wrapper reveal reveal-delay-3" style="margin-top: 80px;">
+            <div class="sub-widget-wrapper reveal reveal-delay-3">
                 <div class="sub-widget-card">
                     <div class="sub-widget-left">
                         <div class="widget-hud">
@@ -542,6 +516,33 @@
             </div>
         </div>
     </div>
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-Q68TTHJ6W7"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-Q68TTHJ6W7');
+    </script>
+    <!-- Meta Pixel Code -->
+    <script>
+        !function(f,b,e,v,n,t,s)
+        {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+        n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+        if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+        n.queue=[];t=b.createElement(e);t.async=!0;
+        t.src=v;s=b.getElementsByTagName(e)[0];
+        s.parentNode.insertBefore(t,s)}(window, document,'script',
+        'https://connect.facebook.net/en_US/fbevents.js');
+        fbq('init', 'YOUR_PIXEL_ID');
+        fbq('track', 'PageView');
+    </script>
+    <noscript>
+        <img height="1" width="1" class="display-none" src="https://www.facebook.com/tr?id=YOUR_PIXEL_ID&ev=PageView&noscript=1" />
+    </noscript>
+    <!-- End Meta Pixel Code -->
 
 </body>
 
