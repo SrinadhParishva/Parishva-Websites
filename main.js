@@ -850,7 +850,12 @@ function initEmailDeobfuscation() {
         if (user && domain) {
             const email = `${user}@${domain}`;
             el.setAttribute('href', `mailto:${email}`);
-            el.textContent = email;
+            const textEl = el.querySelector('.email-text');
+            if (textEl) {
+                textEl.textContent = email;
+            } else if (!el.querySelector('svg')) {
+                el.textContent = email;
+            }
         }
     });
 }

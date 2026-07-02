@@ -1224,11 +1224,7 @@
                 <span class="footer-address-label">ADDRESS</span>
                 KPHB - 114, KPHB Phase 7, Kukatpally, Hyderabad, Telangana 500072
             </div>
-            <div class="footer-email">
-                <span class="footer-email-label">EMAIL</span>
-                <a href="#" class="obfuscated-email" data-user="pbsparishva" data-domain="gmail.com">pbsparishva [at]
-                    gmail.com</a>
-            </div>
+
         </div>
         <div class="footer-center">
             <div class="footer-line">Built on clarity. Not guesswork.</div>
@@ -1274,6 +1270,11 @@
                             d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.514 2.266 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.502-5.73-1.45L0 24zm6.59-4.846c1.66.988 3.296 1.48 5.365 1.481 5.397 0 9.79-4.394 9.794-9.792.002-2.614-1.016-5.071-2.868-6.924C17.087 2.067 14.626 1.05 12.01 1.05c-5.396 0-9.786 4.393-9.79 9.791-.001 2.107.56 4.164 1.624 5.945l-.97 3.547 3.633-.953c1.77.965 3.324 1.424 5.09 1.424zm8.68-6.11c-.22-.11-1.302-.643-1.503-.717-.202-.074-.348-.109-.495.11-.147.218-.569.717-.697.864-.129.147-.258.165-.478.055-.22-.11-.93-.343-1.772-1.094-.655-.584-1.097-1.306-1.226-1.525-.128-.219-.014-.337.096-.447.099-.1.218-.256.327-.384.11-.128.147-.219.22-.366.073-.146.037-.274-.018-.384-.056-.11-.495-1.191-.678-1.63-.178-.429-.356-.37-.495-.378-.127-.006-.274-.007-.421-.007-.147 0-.385.055-.586.274-.201.219-.77.75-1.03 2.158-.261 1.408.76 2.77 1.02 3.136.26.365 1.996 3.05 4.838 4.275.676.292 1.205.466 1.616.597.68.216 1.298.186 1.787.113.545-.082 1.67-.682 1.908-1.344.238-.662.238-1.23.165-1.344-.074-.114-.27-.22-.49-.33z" />
                     </svg>
                 </a>
+                <a href="mailto:pbsparishva@gmail.com" class="social-link" aria-label="Email">
+                    <svg viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
+                    </svg>
+                </a>
             </div>
         </div>
         <div class="footer-copy">© 2025 Parishva Branding Studio. All rights reserved.</div>
@@ -1297,7 +1298,7 @@
                     </div>
                     <div class="form-group">
                         <label for="form-email">WORK EMAIL</label>
-                        <input type="email" id="form-email" placeholder="john@company.com" required>
+                        <input type="email" id="form-email" placeholder="you@example.com" required>
                     </div>
                     <div class="form-group">
                         <label for="form-company">COMPANY & WEBSITE</label>
@@ -1361,7 +1362,7 @@
                         </div>
                         <div class="form-group">
                             <label for="signup-email">EMAIL ADDRESS</label>
-                            <input type="email" id="signup-email" placeholder="john@company.com" required>
+                            <input type="email" id="signup-email" placeholder="you@example.com" required>
                         </div>
 
                         <div class="form-group">
@@ -1384,7 +1385,7 @@
                     <form class="audit-form" id="sub-login-form">
                         <div class="form-group">
                             <label for="login-email">EMAIL ADDRESS</label>
-                            <input type="email" id="login-email" placeholder="john@company.com" required>
+                            <input type="email" id="login-email" placeholder="you@example.com" required>
                         </div>
                         <div class="form-group">
                             <label for="login-password">PASSWORD</label>
@@ -1428,7 +1429,19 @@
                         </div>
                         <div class="profile-info-row">
                             <span class="label">REGISTERED EMAIL</span>
-                            <span class="value" id="profile-email-val">john@company.com</span>
+                            <span class="value" id="profile-email-val">
+                                <span class="profile-email-wrapper">
+                                    <a href="#" class="obfuscated-email" data-user="john" data-domain="company.com">
+                                        <svg class="gmail-icon" viewBox="0 0 24 24">
+                                            <path fill="#EA4335" d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2z"/>
+                                            <path fill="#F1F3F4" d="M20 6H4v12h16V6z"/>
+                                            <path fill="#EA4335" d="M20 6v12h-3V8l-5 4-5-4v10H4V6c0-1.1.9-2 2-2h12c1.1 0 2 .9 2 2z"/>
+                                            <path fill="#DB4437" d="M12 12L4 6v2l8 4 8-4v-2z"/>
+                                        </svg>
+                                        <span id="profile-email-text" class="email-text">john [at] company.com</span>
+                                    </a>
+                                </span>
+                            </span>
                         </div>
 
                     </div>

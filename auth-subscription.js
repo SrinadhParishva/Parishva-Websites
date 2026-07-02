@@ -110,7 +110,7 @@ function runAuthSubscription() {
 
     // Profile Dashboard Elements
     const profileName = document.getElementById('profile-name-val');
-    const profileEmail = document.getElementById('profile-email-val');
+    const profileEmail = document.getElementById('profile-email-text');
     const subscribeToggle = document.getElementById('subscribe-status-toggle');
     const statusDot = document.getElementById('sub-status-dot');
     const statusText = document.getElementById('sub-status-text');

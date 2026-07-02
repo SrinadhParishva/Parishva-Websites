@@ -294,6 +294,37 @@
     color: var(--white);
     font-weight: 300;
 }
+/* Email Deobfuscation & Gmail Icon Styles */
+.gmail-icon {
+    width: 16px;
+    height: 16px;
+    transition: transform 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    display: inline-block;
+    vertical-align: middle;
+}
+
+a.obfuscated-email {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+a.obfuscated-email:hover {
+    color: var(--gold-light) !important;
+}
+
+a.obfuscated-email:hover .gmail-icon {
+    transform: scale(1.1) translateY(-1px);
+}
+
+.profile-email-wrapper {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
 
 /* Premium Subscription Status & Toggle Switch */
 .subscription-status-card {

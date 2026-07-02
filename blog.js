@@ -111,3 +111,34 @@
   window.addEventListener('resize', init);
   init();
 })();
+
+// ── Email Deobfuscation for SEO/Spam protection ──
+(function () {
+  const deobfuscate = () => {
+    const emails = document.querySelectorAll('.obfuscated-email');
+    emails.forEach(el => {
+      const user = el.getAttribute('data-user');
+      const domain = el.getAttribute('data-domain');
+      if (user && domain) {
+        const email = `${user}@${domain}`;
+        el.setAttribute('href', `mailto:${email}`);
+        const textEl = el.querySelector('.email-text');
+        if (textEl) {
+          textEl.textContent = email;
+        } else {
+          // If there are no children, we update textContent
+          // If there's an SVG icon, we don't want to replace it
+          if (!el.querySelector('svg')) {
+            el.textContent = email;
+          }
+        }
+      }
+    });
+  };
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', deobfuscate);
+  } else {
+    deobfuscate();
+  }
+})();
+
