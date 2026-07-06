@@ -252,7 +252,11 @@ function runAuthSubscription() {
     const refreshCursorListeners = () => {
         if (typeof initCustomCursor === 'function') {
             // Re-run cursor bindings for any new button/tabs
-            const hoverElements = modal.querySelectorAll('a, button, select, input');
+            let hoverElements = Array.from(modal.querySelectorAll('a, button, select, input'));
+            const googlePrompt = document.getElementById('google-prompt-modal');
+            if (googlePrompt) {
+                hoverElements = hoverElements.concat(Array.from(googlePrompt.querySelectorAll('a, button, select, input')));
+            }
             const cursor = document.getElementById('cursor');
             const ring = document.getElementById('cursor-ring');
             if (cursor && ring) {
@@ -562,6 +566,109 @@ function runAuthSubscription() {
         }
         refreshCursorListeners();
     });
+
+    // ── GOOGLE SIGN-IN PROMPT POP-UP LOGIC ──
+    
+    // Inject custom Google prompt modal HTML
+    const injectGooglePrompt = () => {
+        if (document.getElementById('google-prompt-modal')) return;
+
+        const promptDiv = document.createElement('div');
+        promptDiv.className = 'modal-overlay';
+        promptDiv.id = 'google-prompt-modal';
+        promptDiv.innerHTML = `
+            <div class="modal-card google-prompt-card">
+                <button class="modal-close" id="google-prompt-close-btn" aria-label="Close modal">✕</button>
+                <div class="modal-content-wrapper google-prompt-wrapper">
+                    <div class="google-prompt-header">
+                        <span class="google-prompt-dot"></span>
+                        <span class="google-prompt-logo-text">Parishva Branding Studio</span>
+                    </div>
+                    <h3 class="google-prompt-title">Let's build <em>your brand</em></h3>
+                    <p class="google-prompt-desc">Sign in with Google to access founder updates, diagnostic tools, and premium business strategy insights.</p>
+                    
+                    <button type="button" class="btn-google-login" id="btn-google-prompt-login">
+                        <svg class="google-icon" viewBox="0 0 24 24">
+                            <path fill="#EA4335" d="M12 5.04c1.67 0 3.2.58 4.38 1.71l3.27-3.27C17.67 1.54 14.98 1 12 1 7.35 1 3.37 3.67 1.39 7.56l3.89 3C6.2 7.7 8.87 5.04 12 5.04z" />
+                            <path fill="#4285F4" d="M23.49 12.27c0-.81-.07-1.59-.2-2.36H12v4.51h6.46c-.29 1.48-1.14 2.73-2.4 3.58l3.73 2.89c2.18-2 3.7-4.97 3.7-8.62z" />
+                            <path fill="#FBBC05" d="M5.28 14.56c-.23-.7-.36-1.45-.36-2.23s.13-1.53.36-2.23l-3.89-3C.5 8.94 0 10.41 0 12s.5 3.06 1.39 4.88l3.89-3.32z" />
+                            <path fill="#34A853" d="M12 23c3.24 0 5.97-1.07 7.96-2.91l-3.73-2.89c-1.03.69-2.35 1.11-4.23 1.11-3.13 0-5.8-2.66-6.72-6.52l-3.89 3C3.37 19.33 7.35 23 12 23z" />
+                        </svg>
+                        Continue with Google
+                    </button>
+                    
+                    <div class="google-prompt-footer">
+                        <span class="prompt-footer-text">Prefer email?</span>
+                        <button type="button" class="btn-link-email-login" id="btn-google-prompt-email-login">Sign in with Email</button>
+                    </div>
+                </div>
+            </div>
+        `;
+        document.body.appendChild(promptDiv);
+
+        // Bind interactive events
+        document.getElementById('google-prompt-close-btn').addEventListener('click', closeGooglePrompt);
+        document.getElementById('btn-google-prompt-login').addEventListener('click', () => {
+            closeGooglePrompt();
+            signInWithGoogle();
+        });
+        document.getElementById('btn-google-prompt-email-login').addEventListener('click', () => {
+            closeGooglePrompt();
+            openModal('login');
+        });
+        promptDiv.addEventListener('click', (e) => {
+            if (e.target === promptDiv) closeGooglePrompt();
+        });
+
+        // Trigger hover mapping for custom cursor ring scaling
+        refreshCursorListeners();
+    };
+
+    const showGooglePrompt = () => {
+        injectGooglePrompt();
+        const promptDiv = document.getElementById('google-prompt-modal');
+        if (promptDiv) {
+            promptDiv.classList.add('active');
+            document.body.classList.add('overflow-hidden');
+            document.documentElement.classList.add('overflow-hidden');
+        }
+    };
+
+    const closeGooglePrompt = () => {
+        const promptDiv = document.getElementById('google-prompt-modal');
+        if (promptDiv) {
+            promptDiv.classList.remove('active');
+            document.body.classList.remove('overflow-hidden');
+            document.documentElement.classList.remove('overflow-hidden');
+        }
+        sessionStorage.setItem('google-prompt-dismissed', 'true');
+    };
+
+    const showGooglePromptIfEligible = () => {
+        // Stop if user is already signed in
+        if (currentUser) return;
+
+        // Stop if dismissed in this session
+        if (sessionStorage.getItem('google-prompt-dismissed') === 'true') return;
+
+        // Stop if general subscription or audit modals are active
+        const subModal = document.getElementById('subscription-modal');
+        const auditModal = document.getElementById('audit-modal');
+        if ((subModal && subModal.classList.contains('active')) || (auditModal && auditModal.classList.contains('active'))) {
+            return;
+        }
+
+        showGooglePrompt();
+    };
+
+    // Calculate elapsed time since page start to trigger exactly 5s after entry
+    const pageStartTime = window.performance && window.performance.timing ? window.performance.timing.navigationStart : Date.now();
+    const elapsed = Date.now() - pageStartTime;
+    const remainingDelay = Math.max(0, 5000 - elapsed);
+
+    setTimeout(() => {
+        showGooglePromptIfEligible();
+    }, remainingDelay);
 
     // Run initial cursor mapping
     refreshCursorListeners();

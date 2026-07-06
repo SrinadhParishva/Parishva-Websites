@@ -581,3 +581,88 @@ a.obfuscated-email:hover .gmail-icon {
     color: var(--gold);
     text-shadow: 0 0 8px rgba(212, 162, 77, 0.35);
 }
+
+/* ── GOOGLE SIGN-IN PROMPT POP-UP ── */
+.google-prompt-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 20px;
+}
+
+.google-prompt-header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-family: var(--font-mono);
+    font-size: 8px;
+    letter-spacing: 0.18em;
+    color: rgba(237, 235, 235, 0.45);
+    text-transform: uppercase;
+    margin-bottom: 5px;
+}
+
+.google-prompt-dot {
+    width: 6px;
+    height: 6px;
+    background: var(--gold);
+    border-radius: 50%;
+    box-shadow: 0 0 8px var(--gold);
+    animation: luxuryPulse 2s infinite alternate;
+}
+
+.google-prompt-title {
+    font-family: var(--font-heading);
+    font-size: clamp(1.8rem, 3.5vw, 2.4rem);
+    font-weight: 300;
+    color: var(--white);
+    line-height: 1.2;
+    margin: 0;
+}
+
+.google-prompt-title em {
+    font-style: italic;
+    color: var(--gold-light);
+}
+
+.google-prompt-desc {
+    font-family: var(--font-body);
+    font-size: 0.92rem;
+    color: var(--silver);
+    line-height: 1.6;
+    font-weight: 200;
+    max-width: 420px;
+    margin: 0 0 10px 0;
+}
+
+.google-prompt-footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    font-family: var(--font-body);
+    font-size: 0.85rem;
+    color: rgba(237, 235, 235, 0.45);
+    margin-top: 10px;
+}
+
+.btn-link-email-login {
+    background: transparent;
+    border: none;
+    color: var(--gold);
+    font-family: var(--font-mono);
+    font-size: 9px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    cursor: pointer;
+    text-decoration: none;
+    padding: 0;
+    transition: color 0.2s ease, text-shadow 0.2s ease;
+}
+
+.btn-link-email-login:hover {
+    color: var(--gold-light);
+    text-shadow: 0 0 8px rgba(212, 162, 77, 0.35);
+    text-decoration: underline;
+}
