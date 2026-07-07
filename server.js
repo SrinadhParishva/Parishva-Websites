@@ -116,9 +116,17 @@ server.on('stream', (stream, headers) => {
 
     fs.stat(filePath, (err, stats) => {
         if (err) {
-            // File not found fallback
-            stream.respond({ ':status': 404, 'content-type': 'text/html; charset=utf-8' });
-            stream.end('<h1>404 Not Found</h1><p>The requested resource could not be found.</p>');
+            // Try appending .html for clean URLs (e.g. /blog/switching-agencies -> switching-agencies.html)
+            const htmlFilePath = filePath + '.html';
+            fs.stat(htmlFilePath, (htmlErr, htmlStats) => {
+                if (!htmlErr && htmlStats.isFile()) {
+                    serveFile(htmlFilePath);
+                } else {
+                    // File not found fallback
+                    stream.respond({ ':status': 404, 'content-type': 'text/html; charset=utf-8' });
+                    stream.end('<h1>404 Not Found</h1><p>The requested resource could not be found.</p>');
+                }
+            });
             return;
         }
 
