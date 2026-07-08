@@ -588,7 +588,7 @@ function runAuthSubscription() {
                     <p class="google-prompt-desc">Sign in with Google to access founder updates, diagnostic tools, and premium business strategy insights.</p>
                     
                     <button type="button" class="btn-google-login" id="btn-google-prompt-login">
-                        <svg class="google-icon" viewBox="0 0 24 24">
+                        <svg class="google-icon" viewBox="0 0 24 24" alt="Google logo icon" aria-hidden="true">
                             <path fill="#EA4335" d="M12 5.04c1.67 0 3.2.58 4.38 1.71l3.27-3.27C17.67 1.54 14.98 1 12 1 7.35 1 3.37 3.67 1.39 7.56l3.89 3C6.2 7.7 8.87 5.04 12 5.04z" />
                             <path fill="#4285F4" d="M23.49 12.27c0-.81-.07-1.59-.2-2.36H12v4.51h6.46c-.29 1.48-1.14 2.73-2.4 3.58l3.73 2.89c2.18-2 3.7-4.97 3.7-8.62z" />
                             <path fill="#FBBC05" d="M5.28 14.56c-.23-.7-.36-1.45-.36-2.23s.13-1.53.36-2.23l-3.89-3C.5 8.94 0 10.41 0 12s.5 3.06 1.39 4.88l3.89-3.32z" />
