@@ -24,6 +24,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initCasesSlider();
     initPDFTracking();
     initEmailDeobfuscation();
+    initFAQAccordion();
 });
 
 /* 1. Custom Lagged Cursor Ring */
@@ -855,6 +856,60 @@ function initEmailDeobfuscation() {
                 textEl.textContent = email;
             } else if (!el.querySelector('svg')) {
                 el.textContent = email;
+            }
+        }
+    });
+}
+
+/* 13. FAQ Accordion Interaction */
+function initFAQAccordion() {
+    const faqItems = document.querySelectorAll('.faq-item');
+    if (faqItems.length === 0) return;
+
+    faqItems.forEach(item => {
+        const trigger = item.querySelector('.faq-trigger');
+        const content = item.querySelector('.faq-content');
+        
+        if (!trigger || !content) return;
+
+        trigger.addEventListener('click', () => {
+            const isActive = item.classList.contains('active');
+
+            // Close all other accordion items
+            faqItems.forEach(otherItem => {
+                if (otherItem !== item) {
+                    otherItem.classList.remove('active');
+                    const otherContent = otherItem.querySelector('.faq-content');
+                    if (otherContent) {
+                        otherContent.style.maxHeight = null;
+                    }
+                    const otherTrigger = otherItem.querySelector('.faq-trigger');
+                    if (otherTrigger) {
+                        otherTrigger.setAttribute('aria-expanded', 'false');
+                    }
+                }
+            });
+
+            // Toggle current item
+            if (isActive) {
+                item.classList.remove('active');
+                content.style.maxHeight = null;
+                trigger.setAttribute('aria-expanded', 'false');
+            } else {
+                item.classList.add('active');
+                content.style.maxHeight = content.scrollHeight + 'px';
+                trigger.setAttribute('aria-expanded', 'true');
+            }
+        });
+    });
+
+    // Recalculate max-height on window resize for active item (responsive fix)
+    window.addEventListener('resize', () => {
+        const activeItem = document.querySelector('.faq-item.active');
+        if (activeItem) {
+            const content = activeItem.querySelector('.faq-content');
+            if (content) {
+                content.style.maxHeight = content.scrollHeight + 'px';
             }
         }
     });
