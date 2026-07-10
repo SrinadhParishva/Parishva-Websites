@@ -3280,6 +3280,22 @@ footer {
     transition-delay: .4s;
 }
 
+.reveal-delay-5 {
+    transition-delay: .5s;
+}
+
+.reveal-delay-6 {
+    transition-delay: .6s;
+}
+
+.reveal-delay-7 {
+    transition-delay: .7s;
+}
+
+.reveal-delay-8 {
+    transition-delay: .8s;
+}
+
 /* Prevent scrolling when drawer/modal is active */
 html.overflow-hidden,
 body.overflow-hidden {
