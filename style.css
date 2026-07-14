@@ -4009,8 +4009,33 @@ body.overflow-hidden {
 @media (min-width: 1025px) {
     #hero {
         min-height: 95vh;
+<<<<<<< HEAD
         padding-top: 160px;
         padding-bottom: 80px;
+=======
+        padding-top: 200px;
+        padding-bottom: 80px;
+    }
+
+    #hero .hero-badge {
+        margin-bottom: 32px;
+    }
+
+    #hero h1.hero-h1 {
+        margin-bottom: 24px;
+    }
+
+    #hero .hero-h2 {
+        margin: 0 auto 20px;
+    }
+
+    #hero .hero-seo {
+        margin: 0 auto 32px;
+    }
+
+    #hero .hero-cta-group {
+        gap: 40px;
+>>>>>>> e2b1c59 (mr majnu)
     }
 
     #problem,
