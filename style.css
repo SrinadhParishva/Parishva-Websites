@@ -4006,16 +4006,22 @@ body.overflow-hidden {
 }
 
 /* ── PC VIEW LAYOUT & SPACING ADJUSTMENTS ── */
-@media (min-width: 1441px) {
-    /* Adjust section height and vertical padding to decrease gaps */
+@media (min-width: 1025px) {
     #hero {
-        min-height: 85vh;
-        padding-top: 140px;
-        padding-bottom: 20px;
+        min-height: 70vh;
+        padding-top: 130px;
+        padding-bottom: 40px;
     }
 
     #problem,
-    #positioning,
+    #positioning {
+        min-height: auto;
+        padding: 80px 0;
+    }
+}
+
+@media (min-width: 1441px) {
+    /* Adjust section height and vertical padding to decrease gaps */
     #approach,
     #process {
         min-height: 70vh;
