@@ -4004,3 +4004,55 @@ body.overflow-hidden {
         padding: 0 22px 20px 22px;
     }
 }
+
+/* ── PC VIEW LAYOUT & SPACING ADJUSTMENTS ── */
+@media (min-width: 1441px) {
+    /* Adjust section height and vertical padding to decrease gaps */
+    #hero {
+        min-height: 85vh;
+        padding-top: 140px;
+        padding-bottom: 20px;
+    }
+
+    #problem,
+    #positioning,
+    #approach,
+    #process {
+        min-height: 70vh;
+        padding: 6vh 0;
+    }
+
+    /* Reduce spacing for sections with fixed padding */
+    #services,
+    #cases,
+    #founder,
+    #faq {
+        padding: 80px 0;
+    }
+
+    #audience {
+        padding: 90px 0;
+    }
+
+    #blogs {
+        padding: 70px 0;
+    }
+
+    #cta {
+        padding: 100px 0;
+    }
+
+    /* Tighter margins for inner elements in PC view to decrease layout height further */
+    .aaa-header {
+        margin-bottom: 4vh;
+    }
+
+    .process-header {
+        margin-bottom: 5vh;
+    }
+
+    .pipeline-container {
+        margin-bottom: 4vh;
+        padding: 20px 0;
+    }
+}
