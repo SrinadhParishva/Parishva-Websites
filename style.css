@@ -4008,9 +4008,9 @@ body.overflow-hidden {
 /* ── PC VIEW LAYOUT & SPACING ADJUSTMENTS ── */
 @media (min-width: 1025px) {
     #hero {
-        min-height: 70vh;
-        padding-top: 130px;
-        padding-bottom: 40px;
+        min-height: 95vh;
+        padding-top: 160px;
+        padding-bottom: 80px;
     }
 
     #problem,
