@@ -1209,38 +1209,7 @@ h1.hero-h1 em {
     padding: 40px 0;
 }
 
-/* SVG timeline thread */
-.pipeline-svg {
-    position: absolute;
-    top: 50%;
-    left: 0;
-    width: 100%;
-    height: 4px;
-    transform: translateY(-50%);
-    z-index: 0;
-    pointer-events: none;
-}
 
-.thread-path-bg {
-    stroke: rgba(212, 162, 77, 0.08);
-    stroke-width: 2;
-}
-
-.thread-path-active {
-    stroke: var(--gold);
-    stroke-width: 2;
-    stroke-dasharray: 10, 15;
-    animation: flowLine 15s linear infinite;
-}
-
-@keyframes flowLine {
-    from {
-        stroke-dashoffset: 0;
-    }
-    to {
-        stroke-dashoffset: -300;
-    }
-}
 
 .pipeline-row {
     display: grid;
@@ -1459,48 +1428,9 @@ h1.hero-h1 em {
         padding: 20px 0;
     }
     
-    .pipeline-svg {
-        display: none; /* Hide horizontal SVG path */
-    }
-    
     .pipeline-row {
         grid-template-columns: 1fr;
         gap: 20px;
-        padding-left: 40px; /* Leave space for left timeline line */
-        position: relative;
-    }
-    
-    .pipeline-row::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        bottom: 0;
-        left: 15px;
-        width: 1px;
-        background: linear-gradient(to bottom, transparent, rgba(212, 162, 77, 0.4) 10%, rgba(212, 162, 77, 0.4) 90%, transparent);
-    }
-    
-    /* Active flowing line animation for vertical layout */
-    .pipeline-row::after {
-        content: '';
-        position: absolute;
-        top: 0;
-        bottom: 0;
-        left: 14px;
-        width: 3px;
-        background: repeating-linear-gradient(to bottom, transparent, transparent 15px, var(--gold) 15px, var(--gold) 30px);
-        background-size: 100% 200%;
-        animation: verticalFlow 15s linear infinite;
-        opacity: 0.7;
-    }
-    
-    @keyframes verticalFlow {
-        from {
-            background-position: 0 0;
-        }
-        to {
-            background-position: 0 400px;
-        }
     }
     
     .pipeline-card-wrapper {
