@@ -193,15 +193,21 @@
   .reveal-d3{transition-delay:.3s}
 
   /* FOOTER */
-  footer{padding:3.5rem 2rem 2.5rem;border-top:1px solid rgba(212,162,77,.1);display:flex;flex-direction:column;align-items:center;gap:1.4rem;position:relative;z-index:1;text-align:center}
-  .footer-logo{font-family:var(--font-mono);font-size:11px;letter-spacing:.3em;text-transform:uppercase;color:var(--white);line-height:1.6}
-  .footer-logo span{display:block;color:var(--gold);font-size:9px;letter-spacing:.38em;margin-top:3px}
-  .footer-line{font-family:var(--font-heading);font-style:italic;font-size:.95rem;color:var(--silver)}
-  .footer-socials{display:flex;gap:20px;align-items:center;flex-wrap:wrap;justify-content:center}
-  .social-link{width:18px;height:18px;display:block;color:rgba(237,235,235,.35);transition:color .25s,transform .25s}
-  .social-link:hover{color:var(--gold);transform:translateY(-2px)}
-  .social-link svg{width:100%;height:100%}
-  .footer-copy{font-family:var(--font-mono);font-size:.55rem;letter-spacing:.28em;text-transform:uppercase;color:rgba(237,235,235,.2)}
+  footer {
+    background: #070d10; border-top: 1px solid rgba(212,162,77,.1);
+    padding: 3rem 2rem; display: flex; align-items: center; justify-content: space-between;
+    flex-wrap: wrap; gap: 1.5rem; position: relative; z-index: 1;
+  }
+  .footer-logo { font-family: var(--font-mono); font-size: 11px; letter-spacing: .3em; color: var(--gold); text-transform: uppercase; line-height: 1.4; }
+  .footer-logo span { display: block; font-size: 8px; letter-spacing: .4em; color: rgba(212,162,77,.4); margin-top: 4px; }
+  .footer-line { font-family: var(--font-heading); font-style: italic; font-size: .92rem; color: rgba(212, 162, 77, .4); }
+  .footer-copy { font-family: var(--font-mono); font-weight: 400; font-size: .65rem; letter-spacing: .1em; color: rgba(255, 255, 255, .25); text-transform: uppercase; }
+  .footer-center { display: flex; flex-direction: column; align-items: center; gap: 14px; }
+  .footer-socials { display: flex; align-items: center; gap: 20px; }
+  .social-link { display: flex; align-items: center; justify-content: center; width: 44px; height: 44px; color: rgba(255, 255, 255, 0.4); transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1); }
+  .social-link svg { width: 24px; height: 24px; fill: currentColor; transition: transform 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275), color 0.25s ease; }
+  .social-link:hover { color: var(--gold); }
+  .social-link:hover svg { transform: scale(1.18) translateY(-2px); }
 
   /* MOBILE */
   @media(max-width:768px){
@@ -460,50 +466,52 @@
 
 <footer>
   <div class="footer-logo">Parishva<span>Branding Studio</span></div>
-  <div style="display:flex;flex-direction:column;align-items:center;gap:.9rem">
+  <div class="footer-center">
     <div class="footer-line">"The admissions problem is rarely about reach — it's about what happens after they've found you."</div>
     <div class="footer-socials">
-      <a href="https://www.facebook.com/Parishvabrandingstudio" target="_blank" rel="noopener" aria-label="Facebook" class="social-link"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M13.547 22V13.882h2.724l.408-3.16h-3.132V8.7c0-.915.254-1.539 1.567-1.539H16.8V4.328a22.457 22.457 0 00-2.435-.124c-2.41 0-4.06 1.47-4.06 4.172v2.346H7.58v3.16h2.725V22h3.242z"/></svg></a>
-      <a href="https://www.instagram.com/brandingstudioparishva/" target="_blank" rel="noopener" aria-label="Instagram" class="social-link"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.051.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/></svg></a>
-      <a href="https://x.com/pbsparishva" target="_blank" rel="noopener" aria-label="X" class="social-link"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
-      <a href="https://www.linkedin.com/company/parishvabrandingstudio/" target="_blank" rel="noopener" aria-label="LinkedIn" class="social-link"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5c0 1.381-1.11 2.5-2.48 2.5s-2.48-1.119-2.48-2.5c0-1.38 1.11-2.5 2.48-2.5s2.48 1.12 2.48 2.5zm.02 4.5h-5v16h5v-16zm7.982 0h-4.968v16h4.969v-8.399c0-4.67 6.029-5.052 6.029 0v8.399h4.988v-10.131c0-7.88-8.922-7.593-11.018-3.714v-2.155z"/></svg></a>
-      <a href="https://www.youtube.com/@brandingstudioparishva" target="_blank" rel="noopener" aria-label="YouTube" class="social-link"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.163a3.003 3.003 0 0 0-2.11-2.11C19.518 3.545 12 3.545 12 3.545s-7.518 0-9.388.507a3.003 3.003 0 0 0-2.11 2.11C0 8.033 0 12 0 12s0 3.967.502 5.837a3.003 3.003 0 0 0 2.11 2.11c1.87.507 9.388.507 9.388.507s7.518 0 9.388-.507a3.003 3.003 0 0 0 2.11-2.11C24 15.967 24 12 24 12s0-3.967-.502-5.837zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></a>
-      <a href="https://wa.me/919059741938" target="_blank" rel="noopener" aria-label="WhatsApp" class="social-link"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.514 2.266 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.502-5.73-1.45L0 24zm6.59-4.846c1.66.988 3.296 1.48 5.365 1.481 5.397 0 9.79-4.394 9.794-9.792.002-2.614-1.016-5.071-2.868-6.924C17.087 2.067 14.626 1.05 12.01 1.05c-5.396 0-9.786 4.393-9.79 9.791-.001 2.107.56 4.164 1.624 5.945l-.97 3.547 3.633-.953c1.77.965 3.324 1.424 5.09 1.424zm8.68-6.11c-.22-.11-1.302-.643-1.503-.717-.202-.074-.348-.109-.495.11-.147.218-.569.717-.697.864-.129.147-.258.165-.478.055-.22-.11-.93-.343-1.772-1.094-.655-.584-1.097-1.306-1.226-1.525-.128-.219-.014-.337.096-.447.099-.1.218-.256.327-.384.11-.128.147-.219.22-.366.073-.146.037-.274-.018-.384-.056-.11-.495-1.191-.678-1.63-.178-.429-.356-.37-.495-.378-.127-.006-.274-.007-.421-.007-.147 0-.385.055-.586.274-.201.219-.77.75-1.03 2.158-.261 1.408.76 2.77 1.02 3.136.26.365 1.996 3.05 4.838 4.275.676.292 1.205.466 1.616.597.68.216 1.298.186 1.787.113.545-.082 1.67-.682 1.908-1.344.238-.662.238-1.23.165-1.344-.074-.114-.27-.22-.49-.33z"/></svg></a>
+      <a href="https://www.facebook.com/profile.php?id=61591304292658" target="_blank" rel="noopener"
+          aria-label="Facebook" class="social-link">
+          <svg viewBox="0 0 24 24" fill="currentColor" alt="Facebook logo icon" aria-hidden="true">
+              <path d="M13.547 22V13.882h2.724l.408-3.16h-3.132V8.7c0-.915.254-1.539 1.567-1.539H16.8V4.328a22.457 22.457 0 00-2.435-.124c-2.41 0-4.06 1.47-4.06 4.172v2.346H7.58v3.16h2.725V22h3.242z" />
+          </svg>
+      </a>
+      <a href="https://www.instagram.com/brandingstudioparishva/" target="_blank" rel="noopener"
+          aria-label="Instagram" class="social-link">
+          <svg viewBox="0 0 24 24" fill="currentColor" alt="Instagram logo icon" aria-hidden="true">
+              <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.051.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z" />
+          </svg>
+      </a>
+      <a href="https://x.com/pbsparishva" target="_blank" rel="noopener"
+          aria-label="X" class="social-link">
+          <svg viewBox="0 0 24 24" fill="currentColor" alt="X logo icon" aria-hidden="true">
+              <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+          </svg>
+      </a>
+      <a href="https://www.linkedin.com/company/parishvabrandingstudio/" target="_blank" rel="noopener"
+          aria-label="LinkedIn" class="social-link">
+          <svg viewBox="0 0 24 24" fill="currentColor" alt="LinkedIn logo icon" aria-hidden="true">
+              <path d="M4.98 3.5c0 1.381-1.11 2.5-2.48 2.5s-2.48-1.119-2.48-2.5c0-1.38 1.11-2.5 2.48-2.5s2.48 1.12 2.48 2.5zm.02 4.5h-5v16h5v-16zm7.982 0h-4.968v16h4.969v-8.399c0-4.67 6.029-5.052 6.029 0v8.399h4.988v-10.131c0-7.88-8.922-7.593-11.018-3.714v-2.155z" />
+          </svg>
+      </a>
+      <a href="https://www.youtube.com/@brandingstudioparishvaa" target="_blank" rel="noopener"
+          aria-label="YouTube" class="social-link">
+          <svg viewBox="0 0 24 24" fill="currentColor" alt="YouTube logo icon" aria-hidden="true">
+              <path d="M23.498 6.163a3.003 3.003 0 0 0-2.11-2.11C19.518 3.545 12 3.545 12 3.545s-7.518 0-9.388.507a3.003 3.003 0 0 0-2.11 2.11C0 8.033 0 12 0 12s0 3.967.502 5.837a3.003 3.003 0 0 0 2.11 2.11c1.87.507 9.388.507 9.388.507s7.518 0 9.388-.507a3.003 3.003 0 0 0 2.11-2.11C24 15.967 24 12 24 12s0-3.967-.502-5.837zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
+          </svg>
+      </a>
+      <a href="https://wa.me/919059741938" target="_blank" rel="noopener" aria-label="WhatsApp"
+          class="social-link">
+          <svg viewBox="0 0 24 24" fill="currentColor" alt="WhatsApp logo icon" aria-hidden="true">
+              <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.514 2.266 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.502-5.73-1.45L0 24zm6.59-4.846c1.66.988 3.296 1.48 5.365 1.481 5.397 0 9.79-4.394 9.794-9.792.002-2.614-1.016-5.071-2.868-6.924C17.087 2.067 14.626 1.05 12.01 1.05c-5.396 0-9.786 4.393-9.79 9.791-.001 2.107.56 4.164 1.624 5.945l-.97 3.547 3.633-.953c1.77.965 3.324 1.424 5.09 1.424zm8.68-6.11c-.22-.11-1.302-.643-1.503-.717-.202-.074-.348-.109-.495.11-.147.218-.569.717-.697.864-.129.147-.258.165-.478.055-.22-.11-.93-.343-1.772-1.094-.655-.584-1.097-1.306-1.226-1.525-.128-.219-.014-.337.096-.447.099-.1.218-.256.327-.384.11-.128.147-.219.22-.366.073-.146.037-.274-.018-.384-.056-.11-.495-1.191-.678-1.63-.178-.429-.356-.37-.495-.378-.127-.006-.274-.007-.421-.007-.147 0-.385.055-.586.274-.201.219-.77.75-1.03 2.158-.261 1.408.76 2.77 1.02 3.136.26.365 1.996 3.05 4.838 4.275.676.292 1.205.466 1.616.597.68.216 1.298.186 1.787.113.545-.082 1.67-.682 1.908-1.344.238-.662.238-1.23.165-1.344-.074-.114-.27-.22-.49-.33z" />
+          </svg>
+      </a>
     </div>
   </div>
-  <div class="footer-copy">© 2026 Parishva Branding Studio · All rights reserved</div>
+  <div class="footer-copy">© 2026 Parishva Branding Studio</div>
 </footer>
 
+<script src="../blog.js" defer></script>
 <script>
-// CURSOR
-(function(){
-  const fine=window.matchMedia('(hover:hover)and(pointer:fine)').matches;
-  if(!fine)return;
-  const dot=document.getElementById('cursor'),ring=document.getElementById('cursor-ring');
-  dot.style.display='block';ring.style.display='block';
-  let rx=0,ry=0,mx=0,my=0;
-  window.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;dot.style.left=mx+'px';dot.style.top=my+'px'});
-  (function loop(){rx+=(mx-rx)*.18;ry+=(my-ry)*.18;ring.style.left=rx+'px';ring.style.top=ry+'px';requestAnimationFrame(loop)})();
-  document.querySelectorAll('a,button,.f-bar-wrap,.f-leak-card').forEach(el=>{
-    el.addEventListener('mouseenter',()=>{ring.style.width='54px';ring.style.height='54px';ring.style.opacity='1'});
-    el.addEventListener('mouseleave',()=>{ring.style.width='36px';ring.style.height='36px';ring.style.opacity='.6'});
-  });
-})();
-
-// NAV
-(function(){
-  const nav=document.getElementById('site-nav');
-  window.addEventListener('scroll',()=>nav.classList.toggle('scrolled',window.scrollY>40));
-})();
-
-// SCROLL REVEAL
-(function(){
-  const io=new IntersectionObserver(entries=>{
-    entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');io.unobserve(e.target)}});
-  },{threshold:.08,rootMargin:'0px 0px -30px 0px'});
-  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
-})();
-
 // FUNNEL ANIMATION
 (function(){
   const funnel=document.getElementById('lead-funnel');
@@ -521,37 +529,6 @@
     });
   },{threshold:.15});
   io.observe(funnel);
-})();
-
-// PARTICLES
-(function(){
-  const canvas=document.getElementById('particle-canvas');
-  const ctx=canvas.getContext('2d');
-  let w,h,particles;
-  function resize(){w=canvas.width=window.innerWidth;h=canvas.height=document.documentElement.scrollHeight}
-  function make(){
-    const n=Math.min(60,Math.floor(w*h/60000));
-    particles=Array.from({length:n},()=>({x:Math.random()*w,y:Math.random()*h,r:Math.random()*1.4+.4,speed:Math.random()*.25+.05,drift:(Math.random()-.5)*.15,alpha:Math.random()*.35+.08}));
-  }
-  function draw(){
-    ctx.clearRect(0,0,w,h);
-    const sy=window.scrollY;
-    particles.forEach(p=>{
-      p.y-=p.speed;p.x+=p.drift;
-      if(p.y<-10){p.y=h+10;p.x=Math.random()*w}
-      const sc=p.y-sy;
-      if(sc<-10||sc>window.innerHeight+10)return;
-      ctx.beginPath();ctx.arc(p.x,sc,p.r,0,Math.PI*2);
-      ctx.fillStyle=`rgba(212,162,77,${p.alpha})`;ctx.fill();
-    });
-    requestAnimationFrame(draw);
-  }
-  function init(){
-    if(window.innerWidth<768||!window.matchMedia('(pointer:fine)').matches){canvas.style.display='none';return}
-    resize();make();
-    if(!window.drawLoopStarted){window.drawLoopStarted=true;draw()}
-  }
-  window.addEventListener('resize',init);init();
 })();
 </script>
 
