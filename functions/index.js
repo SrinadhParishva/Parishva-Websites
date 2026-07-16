@@ -191,7 +191,7 @@ exports.sendBlogNotification = functions.database
                         <p>We build brands on structured logic, not guesswork. Thank you for being a part of our Insight Circle.</p>
                         <div class="footer">
                             <div>© 2026 Parishva Branding Studio. All rights reserved.</div>
-                            <div class="footer-address">KPHB - 114, KPHB Phase 7, Kukatpally, Hyderabad, TS 500072</div>
+                            <div class="footer-address">KPHB - 114, KPHB Phase IV, Kukatpally, Hyderabad, TS 500072</div>
                             <div style="margin-top: 15px;">
                                 You are receiving this because you subscribed to Parishva blog updates.
                                 To modify notifications, sign in to your profile on our <a href="${blogUrl.split('/').slice(0, 3).join('/')}">website</a> and toggle blog alerts off.
@@ -363,7 +363,7 @@ exports.sendWelcomeEmail = functions.database
                         <p>We build growth on structured design and brand logic, never on guesswork. Welcome aboard.</p>
                         <div class="footer">
                             <div>© 2026 Parishva Branding Studio. All rights reserved.</div>
-                            <div class="footer-address">KPHB - 114, KPHB Phase 7, Kukatpally, Hyderabad, TS 500072</div>
+                            <div class="footer-address">KPHB - 114, KPHB Phase IV, Kukatpally, Hyderabad, TS 500072</div>
                         </div>
                     </div>
                 </div>
