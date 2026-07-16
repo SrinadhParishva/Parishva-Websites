@@ -57,13 +57,20 @@ function loadFirebaseAndInit() {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-    // Queue idle loading of Firebase SDKs after 2 seconds to not block critical path / LCP
-    window.addEventListener('load', () => {
-        setTimeout(loadFirebaseAndInit, 2000);
-    });
+    // If the user was previously logged in, load Firebase on load to show profile button.
+    // Otherwise, only load on interaction (triggers hover/click/focus) to optimize page speed.
+    let isAlreadyLoggedIn = false;
+    try {
+        isAlreadyLoggedIn = localStorage.getItem('pbs_firebase_auth_state') === 'active';
+    } catch(e) {}
 
-    // Setup lazy load triggers for user interactions
-    setupLazyLoadTriggers();
+    if (isAlreadyLoggedIn) {
+        window.addEventListener('load', () => {
+            setTimeout(loadFirebaseAndInit, 1000);
+        });
+    } else {
+        setupLazyLoadTriggers();
+    }
 });
 
 function setupLazyLoadTriggers() {
@@ -508,6 +515,9 @@ function runAuthSubscription() {
         
         if (user) {
             console.log("Subscriber authenticated:", user.email);
+            try {
+                localStorage.setItem('pbs_firebase_auth_state', 'active');
+            } catch(e) {}
             
             // 1. Change Nav Button to Profile Button with display name
             if (navSubscribeBtn) {
@@ -546,6 +556,9 @@ function runAuthSubscription() {
         } else {
             console.log("No subscriber authenticated.");
             currentUser = null;
+            try {
+                localStorage.removeItem('pbs_firebase_auth_state');
+            } catch(e) {}
 
             // Restore Nav Button state
             if (navSubscribeBtn) {

@@ -1,0 +1,668 @@
+/* ============================================================
+   PARISHVA BRANDING STUDIO — SUBSCRIPTION & AUTH STYLES
+   ============================================================ */
+
+/* ── NEWSLETTER WIDGET (BLOGS SECTION) ── */
+.sub-widget-wrapper {
+    margin-top: 50px;
+    width: 100%;
+}
+
+.sub-widget-card {
+    background: rgba(14, 24, 28, 0.85);
+    border: 1px solid rgba(212, 162, 77, 0.15);
+    padding: 40px;
+    position: relative;
+    overflow: hidden;
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    clip-path: polygon(0 0, calc(100% - 20px) 0, 100% 20px, 100% 100%, 20px 100%, 0 calc(100% - 20px));
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.55), inset 0 0 20px rgba(212, 162, 77, 0.01);
+    transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 40px;
+    align-items: center;
+    text-align: left;
+}
+
+.sub-widget-card:hover {
+    border-color: rgba(212, 162, 77, 0.35);
+    transform: translateY(-2px);
+    box-shadow: 0 30px 60px rgba(212, 162, 77, 0.05), 0 20px 50px rgba(0, 0, 0, 0.7);
+}
+
+.sub-widget-left .widget-hud {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-family: var(--font-mono);
+    font-size: 8px;
+    letter-spacing: 0.2em;
+    color: var(--silver);
+    opacity: 0.6;
+    margin-bottom: 16px;
+    text-transform: uppercase;
+}
+
+.sub-widget-left .widget-dot {
+    width: 5px;
+    height: 5px;
+    background: var(--gold);
+    border-radius: 50%;
+    box-shadow: 0 0 6px var(--gold);
+}
+
+.sub-widget-left h3 {
+    font-family: var(--font-heading);
+    font-size: 2rem;
+    font-weight: 300;
+    color: var(--white);
+    margin-bottom: 10px;
+    line-height: 1.2;
+}
+
+.sub-widget-left h3 em {
+    font-style: italic;
+    color: var(--gold-light);
+}
+
+.sub-widget-left p {
+    font-family: var(--font-body);
+    font-size: 0.9rem;
+    color: var(--silver);
+    line-height: 1.6;
+    font-weight: 200;
+}
+
+.sub-widget-right {
+    position: relative;
+    z-index: 2;
+}
+
+.widget-form-inline {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.widget-input-wrapper {
+    position: relative;
+    width: 100%;
+}
+
+.widget-input-wrapper input {
+    width: 100%;
+    background: rgba(255, 255, 255, 0.01);
+    border: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 12px 10px;
+    color: var(--white);
+    font-family: var(--font-body);
+    font-size: 0.95rem;
+    font-weight: 300;
+    outline: none;
+    transition: var(--transition-quick);
+}
+
+.widget-input-wrapper input:focus {
+    border-bottom-color: var(--gold);
+}
+
+.widget-input-wrapper input::placeholder {
+    color: rgba(255, 255, 255, 0.2);
+}
+
+.btn-widget-submit {
+    font-family: var(--font-mono);
+    font-size: 9px;
+    letter-spacing: .25em;
+    color: var(--obsidian);
+    background: var(--gold);
+    border: none;
+    padding: 14px 20px;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background .3s, transform .2s;
+    clip-path: polygon(0 0, calc(100% - 8px) 0, 100% 8px, 100% 100%, 0 100%);
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn-widget-submit:hover {
+    background: var(--gold-light);
+}
+
+/* ── AUTHENTICATION & SUBSCRIPTION MODAL ── */
+.auth-tabs {
+    display: flex;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    margin-bottom: 30px;
+    gap: 20px;
+}
+
+.auth-tab {
+    background: transparent;
+    border: none;
+    color: rgba(237, 235, 235, 0.4);
+    font-family: var(--font-mono);
+    font-size: 9px;
+    letter-spacing: 0.2em;
+    padding: 10px 0;
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: color 0.3s, border-color 0.3s;
+    border-bottom: 2px solid transparent;
+}
+
+.auth-tab.active {
+    color: var(--gold);
+    border-bottom-color: var(--gold);
+}
+
+.auth-form-container {
+    display: none;
+}
+
+.auth-form-container.active {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Form Helper Options */
+.form-checkbox-group {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    margin-top: 5px;
+    text-align: left;
+}
+
+.form-checkbox-group input[type="checkbox"] {
+    width: auto;
+    cursor: pointer;
+    accent-color: var(--gold);
+    margin-top: 4px;
+}
+
+.form-checkbox-group label {
+    font-family: var(--font-body);
+    font-size: 0.82rem;
+    color: var(--silver);
+    line-height: 1.4;
+    cursor: pointer;
+    text-transform: none;
+    letter-spacing: 0;
+}
+
+.auth-switch-text {
+    font-family: var(--font-body);
+    font-size: 0.8rem;
+    color: rgba(237, 235, 235, 0.45);
+    margin-top: 20px;
+    text-align: center;
+}
+
+.auth-switch-text a {
+    color: var(--gold);
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.auth-switch-text a:hover {
+    color: var(--gold-light);
+    text-decoration: underline;
+}
+
+.auth-error-msg {
+    color: #e57373;
+    font-family: var(--font-body);
+    font-size: 0.82rem;
+    background: rgba(229, 115, 115, 0.08);
+    border-left: 2px solid #e57373;
+    padding: 8px 12px;
+    margin-bottom: 20px;
+    text-align: left;
+    display: none;
+}
+
+/* ── SUBSCRIBER DASHBOARD / USER STATE ── */
+.profile-dashboard {
+    display: none;
+    flex-direction: column;
+    text-align: left;
+}
+
+.profile-dashboard.active {
+    display: flex;
+}
+
+.profile-hud-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px dashed rgba(212, 162, 77, 0.15);
+    padding-bottom: 16px;
+    margin-bottom: 24px;
+}
+
+.profile-hud-title {
+    font-family: var(--font-mono);
+    font-size: 8px;
+    letter-spacing: 0.18em;
+    color: rgba(237, 235, 235, 0.45);
+    text-transform: uppercase;
+}
+
+.profile-badge {
+    background: rgba(212, 162, 77, 0.05);
+    border: 1px solid var(--gold-dim);
+    color: var(--gold-light);
+    font-family: var(--font-mono);
+    font-size: 7px;
+    letter-spacing: 0.15em;
+    padding: 4px 10px;
+    border-radius: 2px;
+    text-transform: uppercase;
+}
+
+.profile-info-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-bottom: 30px;
+}
+
+.profile-info-row {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.profile-info-row span.label {
+    font-family: var(--font-mono);
+    font-size: 7px;
+    letter-spacing: 0.15em;
+    color: var(--gold);
+}
+
+.profile-info-row span.value {
+    font-family: var(--font-body);
+    font-size: 0.95rem;
+    color: var(--white);
+    font-weight: 300;
+}
+/* Email Deobfuscation & Gmail Icon Styles */
+.gmail-icon {
+    width: 16px;
+    height: 16px;
+    transition: transform 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    display: inline-block;
+    vertical-align: middle;
+}
+
+a.obfuscated-email {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+a.obfuscated-email:hover {
+    color: var(--gold-light) !important;
+}
+
+a.obfuscated-email:hover .gmail-icon {
+    transform: scale(1.1) translateY(-1px);
+}
+
+.profile-email-wrapper {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+
+/* Premium Subscription Status & Toggle Switch */
+.subscription-status-card {
+    background: rgba(255, 255, 255, 0.01);
+    border: 1px solid rgba(255, 255, 255, 0.04);
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+    border-radius: 4px;
+}
+
+.status-left {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.status-title {
+    font-family: var(--font-heading);
+    font-size: 1.3rem;
+    color: var(--white);
+    font-weight: 300;
+}
+
+.status-indicator-wrap {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-family: var(--font-mono);
+    font-size: 8px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+}
+
+.status-pulse-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+}
+
+.status-pulse-dot.subscribed {
+    background: #4caf50;
+    box-shadow: 0 0 8px #4caf50;
+    animation: luxuryPulse 2s infinite alternate;
+}
+
+.status-pulse-dot.unsubscribed {
+    background: #e2c47a;
+    box-shadow: 0 0 8px #e2c47a;
+    opacity: 0.6;
+}
+
+.status-indicator-wrap.subscribed {
+    color: #81c784;
+}
+
+.status-indicator-wrap.unsubscribed {
+    color: #e2c47a;
+    opacity: 0.7;
+}
+
+/* Switch styling */
+.switch-container {
+    position: relative;
+    display: inline-block;
+    width: 46px;
+    height: 24px;
+}
+
+.switch-container input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.switch-slider {
+    position: absolute;
+    cursor: pointer;
+    inset: 0;
+    background-color: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: .4s;
+    border-radius: 34px;
+}
+
+.switch-slider:before {
+    position: absolute;
+    content: "";
+    height: 14px;
+    width: 14px;
+    left: 4px;
+    bottom: 4px;
+    background-color: var(--silver);
+    transition: .4s;
+    border-radius: 50%;
+}
+
+.switch-container input:checked + .switch-slider {
+    background-color: rgba(212, 162, 77, 0.15);
+    border-color: var(--gold);
+}
+
+.switch-container input:checked + .switch-slider:before {
+    transform: translateX(22px);
+    background-color: var(--gold);
+    box-shadow: 0 0 8px var(--gold);
+}
+
+/* Action Buttons */
+.profile-actions {
+    display: flex;
+    gap: 15px;
+}
+
+.btn-profile-logout {
+    font-family: var(--font-mono);
+    font-size: 8.5px;
+    letter-spacing: .2em;
+    color: var(--white);
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    padding: 12px 20px;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.3s;
+    clip-path: polygon(0 0, calc(100% - 6px) 0, 100% 6px, 100% 100%, 0 100%);
+    flex: 1;
+    text-align: center;
+}
+
+.btn-profile-logout:hover {
+    background: rgba(229, 115, 115, 0.08);
+    border-color: rgba(229, 115, 115, 0.3);
+    color: #e57373;
+}
+
+/* Nav Bar Profile status button */
+.nav-profile-btn {
+    font-family: var(--font-mono);
+    font-size: 8px;
+    letter-spacing: 0.25em;
+    color: var(--gold) !important;
+    background: transparent;
+    border: 1px solid var(--gold-dim);
+    padding: 10px 18px;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.3s;
+    clip-path: polygon(0 0, calc(100% - 6px) 0, 100% 6px, 100% 100%, 0 100%);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.nav-profile-btn:hover {
+    border-color: var(--gold);
+    background: rgba(212, 162, 77, 0.03);
+    transform: translateY(-1px);
+}
+
+.nav-profile-btn .nav-pulse {
+    width: 4px;
+    height: 4px;
+    background-color: var(--gold);
+    border-radius: 50%;
+    box-shadow: 0 0 6px var(--gold);
+}
+
+/* ── RESPONSIVE ADAPTATIONS ── */
+@media (max-width: 900px) {
+    .sub-widget-card {
+        grid-template-columns: 1fr;
+        gap: 25px;
+        padding: 30px 24px;
+    }
+    .sub-widget-left h3 {
+        font-size: 1.7rem;
+    }
+}
+
+/* ── SOCIAL AUTH AND SEPARATORS ── */
+.social-login-separator {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    margin: 20px 0;
+    color: rgba(237, 235, 235, 0.25);
+    font-family: var(--font-mono);
+    font-size: 8px;
+    letter-spacing: 0.15em;
+}
+.social-login-separator::before,
+.social-login-separator::after {
+    content: '';
+    flex: 1;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+.social-login-separator:not(:empty)::before {
+    margin-right: .8em;
+}
+.social-login-separator:not(:empty)::after {
+    margin-left: .8em;
+}
+
+.btn-google-login {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.01);
+    border: 1px solid rgba(212, 162, 77, 0.2);
+    color: var(--white);
+    padding: 14px 20px;
+    font-family: var(--font-mono);
+    font-size: 9px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    clip-path: polygon(0 0, calc(100% - 8px) 0, 100% 8px, 100% 100%, 0 100%);
+    margin-bottom: 10px;
+}
+.btn-google-login:hover {
+    background: rgba(212, 162, 77, 0.04);
+    border-color: var(--gold);
+    box-shadow: 0 0 12px rgba(212, 162, 77, 0.1);
+}
+.google-icon {
+    width: 16px;
+    height: 16px;
+}
+
+.phone-icon {
+    width: 16px;
+    height: 16px;
+}
+
+.back-to-email-link {
+    font-family: var(--font-mono);
+    font-size: 8.5px;
+    letter-spacing: 0.15em;
+    color: rgba(212, 162, 77, 0.7);
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+    display: inline-block;
+    margin-top: 15px;
+}
+
+.back-to-email-link:hover {
+    color: var(--gold);
+    text-shadow: 0 0 8px rgba(212, 162, 77, 0.35);
+}
+
+/* ── GOOGLE SIGN-IN PROMPT POP-UP ── */
+.google-prompt-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 20px;
+}
+
+.google-prompt-header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-family: var(--font-mono);
+    font-size: 8px;
+    letter-spacing: 0.18em;
+    color: rgba(237, 235, 235, 0.45);
+    text-transform: uppercase;
+    margin-bottom: 5px;
+}
+
+.google-prompt-dot {
+    width: 6px;
+    height: 6px;
+    background: var(--gold);
+    border-radius: 50%;
+    box-shadow: 0 0 8px var(--gold);
+    animation: luxuryPulse 2s infinite alternate;
+}
+
+.google-prompt-title {
+    font-family: var(--font-heading);
+    font-size: clamp(1.8rem, 3.5vw, 2.4rem);
+    font-weight: 300;
+    color: var(--white);
+    line-height: 1.2;
+    margin: 0;
+}
+
+.google-prompt-title em {
+    font-style: italic;
+    color: var(--gold-light);
+}
+
+.google-prompt-desc {
+    font-family: var(--font-body);
+    font-size: 0.92rem;
+    color: var(--silver);
+    line-height: 1.6;
+    font-weight: 200;
+    max-width: 420px;
+    margin: 0 0 10px 0;
+}
+
+.google-prompt-footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    font-family: var(--font-body);
+    font-size: 0.85rem;
+    color: rgba(237, 235, 235, 0.45);
+    margin-top: 10px;
+}
+
+.btn-link-email-login {
+    background: transparent;
+    border: none;
+    color: var(--gold);
+    font-family: var(--font-mono);
+    font-size: 9px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    cursor: pointer;
+    text-decoration: none;
+    padding: 0;
+    transition: color 0.2s ease, text-shadow 0.2s ease;
+}
+
+.btn-link-email-login:hover {
+    color: var(--gold-light);
+    text-shadow: 0 0 8px rgba(212, 162, 77, 0.35);
+    text-decoration: underline;
+}

@@ -35,6 +35,10 @@ window.gtag('js', new Date());
 
 if (GA_MEASUREMENT_ID && GA_MEASUREMENT_ID !== "G-XXXXXXXXXX" && GA_MEASUREMENT_ID.startsWith('G-')) {
     const injectGA = () => {
+        if (document.querySelector('script[src*="googletagmanager.com/gtag"]')) {
+            console.log(`[Google Analytics] Script already injected, skipping dynamic injection.`);
+            return;
+        }
         const gaScript = document.createElement('script');
         gaScript.async = true;
         gaScript.src = `https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`;

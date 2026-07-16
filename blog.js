@@ -142,3 +142,56 @@
   }
 })();
 
+// ── Dynamic/Lazy Loading of Google Analytics and Facebook Pixel on user interaction ──
+(function() {
+    let analyticsLoaded = false;
+    
+    function loadAnalytics() {
+        if (analyticsLoaded) return;
+        analyticsLoaded = true;
+
+        // 1. Google Analytics Dynamic Injection (if not already loaded)
+        if (!window.gtag && !document.querySelector('script[src*="googletagmanager.com/gtag"]')) {
+            const GA_ID = 'G-Q68TTHJ6W7';
+            window.dataLayer = window.dataLayer || [];
+            window.gtag = function() { window.dataLayer.push(arguments); };
+            window.gtag('js', new Date());
+            
+            const gaScript = document.createElement('script');
+            gaScript.async = true;
+            gaScript.src = `https://www.googletagmanager.com/gtag/js?id=${GA_ID}`;
+            document.head.appendChild(gaScript);
+            
+            window.gtag('config', GA_ID);
+            console.log('[Lazy Analytics] Google Analytics dynamically loaded on user interaction (blog).');
+        }
+
+        // 2. Facebook Pixel Dynamic Injection (if not already loaded)
+        if (!window.fbq && !document.querySelector('script[src*="connect.facebook.net"]')) {
+            !function (f, b, e, v, n, t, s) {
+                if (f.fbq) return; n = f.fbq = function () {
+                    n.callMethod ? n.callMethod.apply(n, arguments) : n.queue.push(arguments);
+                };
+                if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = '2.0';
+                n.queue = []; t = b.createElement(e); t.async = !0;
+                t.src = v; s = b.getElementsByTagName(e)[0];
+                s.parentNode.insertBefore(t, s);
+            }(window, document, 'script', 'https://connect.facebook.net/en_US/fbevents.js');
+            
+            window.fbq('init', 'YOUR_PIXEL_ID');
+            window.fbq('track', 'PageView');
+            console.log('[Lazy Analytics] Facebook Pixel dynamically loaded on user interaction (blog).');
+        }
+        
+        removeListeners();
+    }
+
+    const events = ['mousedown', 'mousemove', 'keydown', 'touchstart', 'scroll'];
+    function removeListeners() {
+        events.forEach(evt => window.removeEventListener(evt, loadAnalytics, { passive: true }));
+    }
+    
+    // Bind interaction events
+    events.forEach(evt => window.addEventListener(evt, loadAnalytics, { once: true, passive: true }));
+})();
+
