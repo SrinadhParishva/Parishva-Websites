@@ -1193,6 +1193,263 @@ h1.hero-h1 em {
     display: none;
 }
 
+.aaa-mobile-header {
+        text-align: center;
+        margin-bottom: 30px;
+    }
+    
+    .aaa-mobile-label {
+        font-family: var(--font-mono);
+        font-size: 11px;
+        letter-spacing: 0.4em;
+        color: var(--gold);
+        text-transform: uppercase;
+        margin-bottom: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 12px;
+    }
+    
+    .aaa-mobile-label::before,
+    .aaa-mobile-label::after {
+        content: '';
+        width: 24px;
+        height: 1px;
+        background: var(--gold);
+        opacity: 0.7;
+    }
+    
+    .aaa-mobile-title-h2 {
+        font-family: var(--font-heading);
+        font-weight: 300;
+        font-size: clamp(2rem, 6vw, 2.5rem);
+        line-height: 1.15;
+        color: var(--white);
+        margin: 0;
+    }
+    
+    .aaa-mobile-ornament {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 15px;
+        margin-top: 15px;
+        margin-bottom: 35px;
+    }
+    
+    .aaa-mobile-ornament .ornament-line {
+        width: 80px;
+        height: 1px;
+        background: linear-gradient(90deg, transparent, var(--gold) 50%, transparent);
+        opacity: 0.8;
+    }
+    
+    .aaa-mobile-ornament .ornament-star {
+        color: var(--gold);
+        font-size: 14px;
+        text-shadow: 0 0 8px var(--gold-glow);
+    }
+    
+    /* Timeline Container */
+    .aaa-timeline-container {
+        position: relative;
+        padding-left: 65px;
+        display: flex;
+        flex-direction: column;
+        gap: 35px;
+    }
+    
+    .aaa-timeline-line {
+        position: absolute;
+        left: 23px;
+        top: 23px;
+        bottom: 23px;
+        width: 1px;
+        background: var(--gold);
+        opacity: 0.6;
+        z-index: 1;
+    }
+    
+    .aaa-timeline-line::before,
+    .aaa-timeline-line::after {
+        content: '';
+        position: absolute;
+        left: 50%;
+        width: 5px;
+        height: 5px;
+        background: var(--gold);
+        border-radius: 50%;
+        transform: translate(-50%, -50%);
+        box-shadow: 0 0 6px var(--gold-glow);
+        z-index: 2;
+    }
+    .aaa-timeline-line::before {
+        top: 25%;
+    }
+    .aaa-timeline-line::after {
+        top: 75%;
+    }
+    
+    .aaa-timeline-item {
+        position: relative;
+        display: flex;
+        align-items: center;
+        width: 100%;
+    }
+    
+    .aaa-timeline-badge {
+        position: absolute;
+        left: -65px;
+        width: 46px;
+        height: 46px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 2;
+    }
+    
+    .aaa-timeline-badge .badge-inner {
+        width: 34px;
+        height: 34px;
+        border-radius: 50%;
+        border: 1px solid var(--gold);
+        background: var(--obsidian);
+        color: var(--gold);
+        font-family: var(--font-heading);
+        font-size: 15px;
+        font-weight: 300;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 0 10px rgba(212, 162, 77, 0.15);
+    }
+    
+    .aaa-timeline-badge::before {
+        content: '';
+        position: absolute;
+        width: 44px;
+        height: 44px;
+        border-radius: 50%;
+        border: 1px dashed rgba(212, 162, 77, 0.35);
+        pointer-events: none;
+    }
+    
+    /* Mobile Cards */
+    .aaa-mobile-card {
+        position: relative;
+        padding: 24px 20px;
+        width: 100%;
+        min-height: 120px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    
+    .aaa-mobile-card-content {
+        position: relative;
+        z-index: 1;
+        width: 100%;
+    }
+    
+    .aaa-mobile-card-header {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        margin-bottom: 14px;
+    }
+    
+    .aaa-mobile-icon-circle {
+        width: 38px;
+        height: 38px;
+        border-radius: 50%;
+        border: 1px solid rgba(212, 162, 77, 0.35);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--gold);
+        background: rgba(212, 162, 77, 0.04);
+        flex-shrink: 0;
+        box-shadow: 0 0 8px rgba(212, 162, 77, 0.1);
+    }
+    
+    .aaa-mobile-icon {
+        width: 18px;
+        height: 18px;
+    }
+    
+    .aaa-mobile-card-title {
+        font-family: var(--font-heading);
+        font-size: 1.55rem;
+        font-weight: 300;
+        color: var(--white);
+        position: relative;
+        padding-bottom: 5px;
+        margin: 0;
+    }
+    
+    .aaa-mobile-card-title::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 32px;
+        height: 1px;
+        background: var(--gold);
+    }
+    
+    .aaa-mobile-card-body {
+        font-family: var(--font-body);
+        font-size: 0.72rem;
+        font-weight: 300;
+        letter-spacing: 0.05em;
+        color: var(--silver);
+        line-height: 1.5;
+        text-transform: uppercase;
+        margin: 0;
+    }
+    
+    .aaa-mobile-letter {
+        font-family: var(--font-heading);
+        font-size: 8rem;
+        font-weight: 300;
+        color: rgba(212, 162, 77, 0.02);
+        position: absolute;
+        bottom: -20px;
+        right: 15px;
+        line-height: 1;
+        pointer-events: none;
+        z-index: 0;
+    }
+
+    /* Hover effects for mobile cards */
+    .aaa-mobile-card:hover .frame-bg {
+        fill: rgba(14, 24, 28, 0.65);
+    }
+    .aaa-mobile-card:hover .frame-border {
+        stroke: rgba(212, 162, 77, 0.6);
+        filter: drop-shadow(0 0 4px rgba(212, 162, 77, 0.4));
+    }
+    .aaa-mobile-card:hover .frame-inner-line {
+        stroke: rgba(212, 162, 77, 0.18);
+    }
+    .aaa-mobile-card:hover .frame-corner-accent {
+        opacity: 1;
+        stroke: var(--gold);
+        filter: drop-shadow(0 0 2px rgba(229, 191, 126, 0.8));
+    }
+    .aaa-mobile-card:hover .frame-dot {
+        opacity: 1;
+        filter: drop-shadow(0 0 2px var(--gold));
+    }
+    .aaa-mobile-card:hover .aaa-mobile-icon-circle {
+        border-color: var(--gold);
+        box-shadow: 0 0 10px rgba(212, 162, 77, 0.3);
+        background: rgba(212, 162, 77, 0.08);
+    }
+
+
 /* ==================== 5th SECTION: PROCESS (THE METHOD) ==================== */
 #process {
     min-height: 100vh;
@@ -3453,262 +3710,7 @@ body.overflow-hidden {
         padding: 10px 0;
     }
     
-    .aaa-mobile-header {
-        text-align: center;
-        margin-bottom: 30px;
     }
-    
-    .aaa-mobile-label {
-        font-family: var(--font-mono);
-        font-size: 11px;
-        letter-spacing: 0.4em;
-        color: var(--gold);
-        text-transform: uppercase;
-        margin-bottom: 12px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 12px;
-    }
-    
-    .aaa-mobile-label::before,
-    .aaa-mobile-label::after {
-        content: '';
-        width: 24px;
-        height: 1px;
-        background: var(--gold);
-        opacity: 0.7;
-    }
-    
-    .aaa-mobile-title-h2 {
-        font-family: var(--font-heading);
-        font-weight: 300;
-        font-size: clamp(2rem, 6vw, 2.5rem);
-        line-height: 1.15;
-        color: var(--white);
-        margin: 0;
-    }
-    
-    .aaa-mobile-ornament {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 15px;
-        margin-top: 15px;
-        margin-bottom: 35px;
-    }
-    
-    .aaa-mobile-ornament .ornament-line {
-        width: 80px;
-        height: 1px;
-        background: linear-gradient(90deg, transparent, var(--gold) 50%, transparent);
-        opacity: 0.8;
-    }
-    
-    .aaa-mobile-ornament .ornament-star {
-        color: var(--gold);
-        font-size: 14px;
-        text-shadow: 0 0 8px var(--gold-glow);
-    }
-    
-    /* Timeline Container */
-    .aaa-timeline-container {
-        position: relative;
-        padding-left: 65px;
-        display: flex;
-        flex-direction: column;
-        gap: 35px;
-    }
-    
-    .aaa-timeline-line {
-        position: absolute;
-        left: 23px;
-        top: 23px;
-        bottom: 23px;
-        width: 1px;
-        background: var(--gold);
-        opacity: 0.6;
-        z-index: 1;
-    }
-    
-    .aaa-timeline-line::before,
-    .aaa-timeline-line::after {
-        content: '';
-        position: absolute;
-        left: 50%;
-        width: 5px;
-        height: 5px;
-        background: var(--gold);
-        border-radius: 50%;
-        transform: translate(-50%, -50%);
-        box-shadow: 0 0 6px var(--gold-glow);
-        z-index: 2;
-    }
-    .aaa-timeline-line::before {
-        top: 25%;
-    }
-    .aaa-timeline-line::after {
-        top: 75%;
-    }
-    
-    .aaa-timeline-item {
-        position: relative;
-        display: flex;
-        align-items: center;
-        width: 100%;
-    }
-    
-    .aaa-timeline-badge {
-        position: absolute;
-        left: -65px;
-        width: 46px;
-        height: 46px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        z-index: 2;
-    }
-    
-    .aaa-timeline-badge .badge-inner {
-        width: 34px;
-        height: 34px;
-        border-radius: 50%;
-        border: 1px solid var(--gold);
-        background: var(--obsidian);
-        color: var(--gold);
-        font-family: var(--font-heading);
-        font-size: 15px;
-        font-weight: 300;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        box-shadow: 0 0 10px rgba(212, 162, 77, 0.15);
-    }
-    
-    .aaa-timeline-badge::before {
-        content: '';
-        position: absolute;
-        width: 44px;
-        height: 44px;
-        border-radius: 50%;
-        border: 1px dashed rgba(212, 162, 77, 0.35);
-        pointer-events: none;
-    }
-    
-    /* Mobile Cards */
-    .aaa-mobile-card {
-        position: relative;
-        padding: 24px 20px;
-        width: 100%;
-        min-height: 120px;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
-    }
-    
-    .aaa-mobile-card-content {
-        position: relative;
-        z-index: 1;
-        width: 100%;
-    }
-    
-    .aaa-mobile-card-header {
-        display: flex;
-        align-items: center;
-        gap: 12px;
-        margin-bottom: 14px;
-    }
-    
-    .aaa-mobile-icon-circle {
-        width: 38px;
-        height: 38px;
-        border-radius: 50%;
-        border: 1px solid rgba(212, 162, 77, 0.35);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        color: var(--gold);
-        background: rgba(212, 162, 77, 0.04);
-        flex-shrink: 0;
-        box-shadow: 0 0 8px rgba(212, 162, 77, 0.1);
-    }
-    
-    .aaa-mobile-icon {
-        width: 18px;
-        height: 18px;
-    }
-    
-    .aaa-mobile-card-title {
-        font-family: var(--font-heading);
-        font-size: 1.55rem;
-        font-weight: 300;
-        color: var(--white);
-        position: relative;
-        padding-bottom: 5px;
-        margin: 0;
-    }
-    
-    .aaa-mobile-card-title::after {
-        content: '';
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        width: 32px;
-        height: 1px;
-        background: var(--gold);
-    }
-    
-    .aaa-mobile-card-body {
-        font-family: var(--font-body);
-        font-size: 0.72rem;
-        font-weight: 300;
-        letter-spacing: 0.05em;
-        color: var(--silver);
-        line-height: 1.5;
-        text-transform: uppercase;
-        margin: 0;
-    }
-    
-    .aaa-mobile-letter {
-        font-family: var(--font-heading);
-        font-size: 8rem;
-        font-weight: 300;
-        color: rgba(212, 162, 77, 0.02);
-        position: absolute;
-        bottom: -20px;
-        right: 15px;
-        line-height: 1;
-        pointer-events: none;
-        z-index: 0;
-    }
-
-    /* Hover effects for mobile cards */
-    .aaa-mobile-card:hover .frame-bg {
-        fill: rgba(14, 24, 28, 0.65);
-    }
-    .aaa-mobile-card:hover .frame-border {
-        stroke: rgba(212, 162, 77, 0.6);
-        filter: drop-shadow(0 0 4px rgba(212, 162, 77, 0.4));
-    }
-    .aaa-mobile-card:hover .frame-inner-line {
-        stroke: rgba(212, 162, 77, 0.18);
-    }
-    .aaa-mobile-card:hover .frame-corner-accent {
-        opacity: 1;
-        stroke: var(--gold);
-        filter: drop-shadow(0 0 2px rgba(229, 191, 126, 0.8));
-    }
-    .aaa-mobile-card:hover .frame-dot {
-        opacity: 1;
-        filter: drop-shadow(0 0 2px var(--gold));
-    }
-    .aaa-mobile-card:hover .aaa-mobile-icon-circle {
-        border-color: var(--gold);
-        box-shadow: 0 0 10px rgba(212, 162, 77, 0.3);
-        background: rgba(212, 162, 77, 0.08);
-    }
-}
 
 @media (max-width: 480px) {
     .container {
