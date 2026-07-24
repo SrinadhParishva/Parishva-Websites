@@ -1468,7 +1468,7 @@ h1.hero-h1 em {
     display: block;
 }
 .process-mobile-view {
-    display: none;
+    display: none !important;
 }
 
 /* ── PROCESS MOBILE CIRCULAR ORBIT ── */
