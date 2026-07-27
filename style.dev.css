@@ -1262,7 +1262,7 @@ h1.hero-h1 em {
     
     .aaa-timeline-line-segment {
         position: absolute;
-        left: 23px;
+        left: -42px;
         top: 50%;
         bottom: calc(-35px - 50%);
         width: 1px;
