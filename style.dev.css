@@ -1260,19 +1260,19 @@ h1.hero-h1 em {
         gap: 35px;
     }
     
-    .aaa-timeline-line {
+    .aaa-timeline-line-segment {
         position: absolute;
         left: 23px;
-        top: 23px;
-        bottom: 23px;
+        top: 50%;
+        bottom: calc(-35px - 50%);
         width: 1px;
         background: var(--gold);
         opacity: 0.6;
         z-index: 1;
     }
     
-    .aaa-timeline-line::before,
-    .aaa-timeline-line::after {
+    .aaa-timeline-line-segment::before,
+    .aaa-timeline-line-segment::after {
         content: '';
         position: absolute;
         left: 50%;
@@ -1284,11 +1284,12 @@ h1.hero-h1 em {
         box-shadow: 0 0 6px var(--gold-glow);
         z-index: 2;
     }
-    .aaa-timeline-line::before {
-        top: 25%;
+    .aaa-timeline-line-segment::before {
+        top: 29px;
     }
-    .aaa-timeline-line::after {
-        top: 75%;
+    .aaa-timeline-line-segment::after {
+        bottom: 29px;
+        transform: translate(-50%, 50%);
     }
     
     .aaa-timeline-item {
