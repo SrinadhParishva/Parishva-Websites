@@ -333,6 +333,39 @@ nav.scrolled .nav-logo-img {
     background-color: var(--gold);
 }
 
+/* Mobile Actions Wrapper */
+.mobile-actions-wrapper {
+    display: none;
+}
+
+/* Mobile Home Button */
+.mobile-home-btn {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    background: transparent;
+    border: 1px solid rgba(212, 162, 77, 0.25);
+    border-radius: 50%;
+    color: var(--white);
+    text-decoration: none;
+    cursor: pointer;
+    transition: var(--transition-quick);
+    z-index: 110;
+}
+
+.mobile-home-btn:hover {
+    background: var(--gold-dim);
+    border-color: var(--gold);
+    color: var(--gold);
+}
+
+.mobile-home-btn svg {
+    width: 18px;
+    height: 18px;
+}
+
 /* Mobile Drawer */
 .mobile-drawer {
     position: fixed;
@@ -3852,6 +3885,16 @@ body.overflow-hidden {
     .nav-links,
     .nav-cta {
         display: none;
+    }
+
+    .mobile-actions-wrapper {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+    }
+
+    .mobile-home-btn {
+        display: flex;
     }
 
     .mobile-toggle {
