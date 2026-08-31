@@ -1,4 +1,4 @@
-const CACHE_NAME = 'parishva-branding-v10';
+const CACHE_NAME = 'parishva-branding-v11';
 const ASSETS = [
   './',
   './index.html',
@@ -25,6 +25,7 @@ const ASSETS = [
   './blog/messaging-clarity.html',
   './blog/how-to-brief-a-branding-agency.html',
   './blog/the-execution-loop-why-founders-get-stuck.html',
+  './blog/when-to-scale.html',
   './blog.js'
 ];
 
