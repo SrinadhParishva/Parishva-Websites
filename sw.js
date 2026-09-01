@@ -25,7 +25,13 @@ const ASSETS = [
   './blog/messaging-clarity.html',
   './blog/how-to-brief-a-branding-agency.html',
   './blog/the-execution-loop-why-founders-get-stuck.html',
+<<<<<<< HEAD
   './blog/when-to-scale.html',
+=======
+  './blog/local-brand-authority-hyderabad.html',
+  './blog/content-without-clarity.html',
+  './blog/branding-mistakes-startups.html',
+>>>>>>> 0b2b714 (category bar)
   './blog.js'
 ];
 
