@@ -1,0 +1,786 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="description" content="Your campaign is generating leads but they aren't converting. The problem isn't the offer, the price, or the sales team. It's almost always a brand trust gap that opens between what your marketing promised and what the lead experienced when they arrived." />
+<meta name="keywords" content="leads not converting, lead conversion problem, why leads don't convert, lead quality vs lead quantity, brand trust and conversion, sales conversion strategy, marketing leads not closing, Parishva Branding Studio" />
+<title>Your Campaign Is Generating Leads. Why Aren't They Converting? | Parishva Branding Studio</title>
+<link rel="canonical" href="https://parishva.in/blog/leads-not-converting" />
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://parishva.in/blog/leads-not-converting">
+<meta property="og:title" content="Your Campaign Is Generating Leads. Why Aren't They Converting? | Parishva Branding Studio">
+<meta property="og:description" content="Your campaign is generating leads but they aren't converting. The problem isn't the offer, the price, or the sales team. It's almost always a brand trust gap that opens between what your marketing promised and what the lead experienced when they arrived.">
+<meta property="og:image" content="https://parishva.in/logo.webp">
+<meta property="og:site_name" content="Parishva Branding Studio">
+
+<!-- Twitter / X -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@pbsparishva">
+<meta name="twitter:title" content="Your Campaign Is Generating Leads. Why Aren't They Converting? | Parishva Branding Studio">
+<meta name="twitter:description" content="Your campaign is generating leads but they aren't converting. The problem isn't the offer, the price, or the sales team. It's almost always a brand trust gap that opens between what your marketing promised and what the lead experienced when they arrived.">
+<meta name="twitter:image" content="https://parishva.in/logo.webp">
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500;1,600&family=Syncopate:wght@400;700&family=Jost:wght@200;300;400;500&display=swap" />
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500;1,600&family=Syncopate:wght@400;700&family=Jost:wght@200;300;400;500&display=swap" rel="stylesheet" media="print" onload="this.media='all'" />
+
+<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+<link rel="icon" href="/favicon.png" type="image/png" />
+<link rel="apple-touch-icon" href="/favicon.png" />
+
+<style>
+  /* ============================================================
+     PARISHVA BRANDING STUDIO — BLOG ARTICLE
+     Color palette, fonts and effects ported from style.css
+     ============================================================ */
+
+  :root {
+    --obsidian:   #0b1215;
+    --obsidian-2: #0e181c;
+    --obsidian-3: #131f24;
+    --gold:       #d4a24d;
+    --gold-light: #e5bf7e;
+    --gold-pale:  #f0d6aa;
+    --gold-dim:   rgba(212, 162, 77, 0.15);
+    --gold-glow:  rgba(212, 162, 77, 0.4);
+    --white:      #edebeb;
+    --silver:     rgba(237, 235, 235, 0.55);
+    --ink:        #1a2830;
+
+    --font-heading: 'Cormorant Garamond', serif;
+    --font-mono:    'Syncopate', sans-serif;
+    --font-body:    'Jost', 'Nexa Light', 'Nexa', sans-serif;
+
+    --transition-smooth: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    --transition-quick:  all 0.25s ease;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html {
+    scroll-behavior: smooth;
+    background-color: var(--obsidian);
+    color: var(--white);
+    font-family: var(--font-body);
+    font-weight: 300;
+    overflow-x: hidden;
+  }
+
+  html::-webkit-scrollbar { width: 8px; }
+  html::-webkit-scrollbar-track { background: var(--obsidian); }
+  html::-webkit-scrollbar-thumb { background: var(--gold-dim); border-radius: 4px; border: 2px solid var(--obsidian); }
+  html::-webkit-scrollbar-thumb:hover { background: var(--gold); }
+
+  body {
+    position: relative;
+    overflow-x: hidden;
+    line-height: 1.75;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  @media (hover: hover) and (pointer: fine) {
+    body { cursor: none; }
+  }
+
+  h1, h2, h3 { font-family: var(--font-heading); }
+
+  a { color: inherit; }
+
+  /* ── CUSTOM CURSOR ── */
+  #cursor {
+    position: fixed; width: 10px; height: 10px;
+    background: var(--gold); border-radius: 50%;
+    pointer-events: none; z-index: 9999;
+    transform: translate(-50%, -50%);
+    transition: transform .08s, width .2s, height .2s, background .2s;
+    mix-blend-mode: screen; display: none;
+  }
+  #cursor-ring {
+    position: fixed; width: 36px; height: 36px;
+    border: 1px solid var(--gold); border-radius: 50%;
+    pointer-events: none; z-index: 9998;
+    transform: translate(-50%, -50%);
+    transition: transform .18s ease-out, width .25s, height .25s, opacity .2s;
+    opacity: .6; display: none;
+  }
+
+  /* ── BACKGROUND ATMOSPHERE ── */
+  #particle-canvas {
+    position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+    pointer-events: none; z-index: 0; opacity: .45;
+  }
+  .holo-grid {
+    position: fixed; inset: 0; pointer-events: none; z-index: 0;
+    background-image:
+      linear-gradient(rgba(212, 162, 77, 0.018) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(212, 162, 77, 0.018) 1px, transparent 1px);
+    background-size: 80px 80px;
+    mask-image: radial-gradient(ellipse at 50% 30%, rgba(0,0,0,.4) 0%, transparent 75%);
+    -webkit-mask-image: radial-gradient(ellipse at 50% 30%, rgba(0,0,0,.4) 0%, transparent 75%);
+  }
+  .scan-line {
+    position: fixed; left: 0; right: 0; height: 2px;
+    background: linear-gradient(90deg, transparent, rgba(212,162,77,.08), transparent);
+    pointer-events: none; z-index: 0; top: 0;
+    animation: scanMove 10s linear infinite;
+  }
+  @keyframes scanMove { 0% { top: -10px; } 100% { top: 100vh; } }
+
+  .container { max-width: 760px; margin: 0 auto; padding: 0 2rem; position: relative; z-index: 1; }
+
+  /* ── NAV ── */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    padding: 26px 48px;
+    display: flex; align-items: center; justify-content: space-between;
+    background: linear-gradient(to bottom, rgba(11,18,21,.96) 0%, transparent 100%);
+    border-bottom: 1px solid rgba(212,162,77,.08);
+    backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+    transition: var(--transition-smooth);
+  }
+  nav.scrolled {
+    padding: 16px 48px;
+    background: rgba(11,18,21,.94);
+    border-bottom-color: rgba(212,162,77,.18);
+  }
+  .nav-logo {
+    font-family: var(--font-mono); font-size: 11px; letter-spacing: .28em;
+    text-transform: uppercase; color: var(--white); text-decoration: none; line-height: 1.4;
+  }
+  .nav-logo span { display: block; color: var(--gold); font-size: 9px; letter-spacing: .35em; margin-top: 2px; }
+  .nav-cta {
+    font-family: var(--font-mono); font-size: 9px; letter-spacing: .3em;
+    color: var(--obsidian) !important; background: var(--gold);
+    border: none; padding: 12px 22px; text-decoration: none; text-transform: uppercase;
+    cursor: pointer; transition: background .3s, transform .2s;
+    clip-path: polygon(0 0, calc(100% - 8px) 0, 100% 8px, 100% 100%, 0 100%);
+  }
+  .nav-cta:hover { background: var(--gold-light) !important; transform: translateY(-1px); }
+
+  /* ── HERO ── */
+  .hero {
+    padding: 175px 0 70px;
+    background: radial-gradient(ellipse 70% 50% at 50% 0%, rgba(212,162,77,.07) 0%, transparent 70%);
+    position: relative;
+  }
+  .eyebrow {
+    font-family: var(--font-mono); font-size: 10px; letter-spacing: .45em;
+    text-transform: uppercase; color: var(--gold); margin-bottom: 26px;
+    display: flex; align-items: center; gap: 14px;
+  }
+  .eyebrow::before { content: ''; width: 28px; height: 1px; background: var(--gold); }
+
+  h1.blog-h1 {
+    font-family: var(--font-heading); font-size: clamp(2.3rem, 5.4vw, 3.7rem);
+    font-weight: 300; line-height: 1.1; letter-spacing: -.01em;
+    color: var(--white); max-width: 680px;
+  }
+  h1.blog-h1 em { font-style: italic; color: var(--gold-light); }
+
+  .hero-meta {
+    margin-top: 2.6rem; padding-top: 1.6rem;
+    border-top: 1px solid rgba(212,162,77,.15);
+    display: flex; gap: 2.6rem; flex-wrap: wrap;
+  }
+  .hero-meta-item {
+    font-family: var(--font-mono); font-size: .65rem; letter-spacing: .22em;
+    text-transform: uppercase; color: rgba(212,162,77,.55);
+  }
+  .hero-meta-item strong {
+    display: block; color: var(--white); font-weight: 300; font-size: .85rem;
+    margin-top: .35rem; letter-spacing: 0; font-family: var(--font-body);
+  }
+
+  /* ── HOLO DIVIDER ── */
+  .holo-divider {
+    width: 100%; height: 1px; position: relative; overflow: visible;
+    background: linear-gradient(90deg, transparent 0%, rgba(212,162,77,.12) 20%, var(--gold) 50%, rgba(212,162,77,.12) 80%, transparent 100%);
+  }
+  .holo-divider::before {
+    content: '◆'; position: absolute; left: 50%; top: 50%;
+    transform: translate(-50%, -50%); color: var(--gold); font-size: 9px;
+    background: var(--obsidian); padding: 0 16px; z-index: 2;
+  }
+
+  /* ── PULL QUOTE BAND ── */
+  .quote-band {
+    position: relative; overflow: hidden; padding: 5rem 2rem;
+    background: radial-gradient(ellipse 60% 70% at 50% 50%, rgba(212,162,77,.06) 0%, transparent 70%);
+  }
+  .quote-band blockquote {
+    max-width: 680px; margin: 0 auto; position: relative; z-index: 1;
+    font-family: var(--font-heading); font-style: italic;
+    font-size: clamp(1.35rem, 3.2vw, 1.95rem); line-height: 1.45;
+    color: var(--white); text-align: center;
+  }
+  .quote-band .quote-mark {
+    position: absolute; top: -1.2rem; left: 50%; transform: translateX(-50%);
+    font-family: var(--font-heading); font-size: 9rem; line-height: 1;
+    color: rgba(212,162,77,.07); pointer-events: none;
+  }
+
+  /* ── ARTICLE ── */
+  article { max-width: 720px; margin: 0 auto; padding: 5rem 2rem 6rem; position: relative; z-index: 1; }
+
+  .intro-graf {
+    font-family: var(--font-heading); font-style: italic; font-weight: 400;
+    font-size: clamp(1.25rem, 2.4vw, 1.55rem); line-height: 1.55;
+    color: var(--gold-pale);
+    margin-bottom: 3.2rem; padding-bottom: 3rem;
+    border-bottom: 1px solid rgba(212,162,77,.15);
+  }
+
+  article h2 {
+    font-weight: 300; font-size: clamp(1.45rem, 3.4vw, 1.95rem);
+    line-height: 1.25; color: var(--white);
+    margin: 3.4rem 0 1.2rem; display: flex; align-items: baseline; gap: 16px;
+  }
+  article h2::before { content: ''; width: 26px; height: 1px; background: var(--gold); flex-shrink: 0; transform: translateY(-3px); }
+
+  article p { margin-bottom: 1.5rem; font-size: .98rem; color: var(--silver); font-weight: 300; }
+  article p strong { color: var(--gold-light); font-weight: 400; }
+
+  /* Closing punchline */
+  .emphasis-line {
+    font-family: var(--font-heading); font-style: italic; font-weight: 400;
+    font-size: clamp(1.3rem, 2.6vw, 1.7rem); color: var(--white);
+    text-align: center; line-height: 1.5;
+    margin: 3rem 0 0; padding: 2.4rem 1rem 0;
+    border-top: 1px solid rgba(212,162,77,.15);
+  }
+  .emphasis-line span { color: var(--gold-light); }
+
+  /* cannot-list panel */
+  .cannot-panel {
+    margin: 1.8rem 0 2.2rem;
+    background: rgba(14, 24, 28, .55);
+    border: 1px solid rgba(212,162,77,.18);
+    border-left: 3px solid var(--gold);
+    padding: 1.8rem 2rem;
+    clip-path: polygon(0 0, calc(100% - 16px) 0, 100% 16px, 100% 100%, 0 100%);
+    backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
+  }
+  .cannot-panel ul { list-style: none; }
+  .cannot-panel li {
+    padding: .7rem 0; font-size: .92rem; color: var(--silver);
+    border-bottom: 1px solid rgba(212,162,77,.1);
+  }
+  .cannot-panel li:last-child { border-bottom: none; }
+  .cannot-panel li::before { content: '—'; color: var(--gold); margin-right: .7rem; font-weight: 500; }
+
+  /* Callout box */
+  .callout {
+    margin: 2.2rem 0; padding: 1.6rem 2rem;
+    background: rgba(212,162,77,.05);
+    border: 1px solid rgba(212,162,77,.2);
+    font-family: var(--font-heading); font-style: italic;
+    font-size: clamp(1.05rem,2vw,1.2rem); line-height: 1.6;
+    color: var(--gold-pale);
+    clip-path: polygon(0 0,calc(100% - 12px) 0,100% 12px,100% 100%,0 100%);
+  }
+
+  /* ══════════════════════════════════════════════════════════════
+     CONVERSION GAP DISSECTION — signature component
+  ══════════════════════════════════════════════════════════════ */
+  .gap-wrap {
+    margin: 2.8rem 0 1.5rem;
+    position: relative;
+  }
+  .gap-col-labels {
+    display: grid;
+    grid-template-columns: 1fr 64px 1fr;
+    gap: 0;
+    margin-bottom: 10px;
+  }
+  .gap-col-label {
+    font-family: var(--font-mono);
+    font-size: .52rem;
+    letter-spacing: .32em;
+    text-transform: uppercase;
+    padding: 0 4px;
+  }
+  .gap-col-label.promise { color: var(--gold); }
+  .gap-col-label.gap-lbl { color: rgba(237,235,235,.2); text-align: center; font-size: .46rem; }
+  .gap-col-label.delivery { color: rgba(237,235,235,.28); text-align: right; }
+
+  .gap-body {
+    display: grid;
+    grid-template-columns: 1fr 64px 1fr;
+    gap: 0;
+    align-items: stretch;
+  }
+
+  .gap-half {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    opacity: 0;
+    transition: opacity .6s ease, transform .6s ease;
+  }
+  .gap-half.promise-half { transform: translateX(-20px); }
+  .gap-half.delivery-half { transform: translateX(20px); }
+  .gap-half.visible { opacity: 1; transform: translateX(0); }
+
+  .gap-row {
+    padding: 1.1rem 1.2rem;
+    display: flex;
+    flex-direction: column;
+    gap: .4rem;
+    opacity: 0;
+    transition: opacity .45s ease;
+    flex: 1;
+  }
+  .gap-row.visible { opacity: 1; }
+
+  .promise-half .gap-row {
+    background: rgba(212,162,77,.06);
+    border: 1px solid rgba(212,162,77,.16);
+    border-left: 2px solid rgba(212,162,77,.5);
+  }
+  .promise-half .gap-row:hover {
+    background: rgba(212,162,77,.1);
+    border-left-color: var(--gold);
+  }
+
+  .delivery-half .gap-row {
+    background: rgba(14,22,28,.5);
+    border: 1px solid rgba(237,235,235,.06);
+    border-right: 2px solid rgba(237,235,235,.12);
+  }
+  .delivery-half .gap-row:hover {
+    background: rgba(14,22,28,.8);
+  }
+
+  .gap-row-label {
+    font-family: var(--font-mono);
+    font-size: .5rem;
+    letter-spacing: .3em;
+    text-transform: uppercase;
+  }
+  .promise-half .gap-row-label { color: var(--gold); }
+  .delivery-half .gap-row-label { color: rgba(237,235,235,.25); }
+
+  .gap-row-text {
+    font-size: .84rem;
+    line-height: 1.55;
+  }
+  .promise-half .gap-row-text { color: var(--silver); }
+  .delivery-half .gap-row-text { color: rgba(237,235,235,.32); font-style: italic; font-family: var(--font-heading); font-size: .92rem; }
+
+  .gap-col {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    border-left: 1px dashed rgba(212,162,77,.2);
+    border-right: 1px dashed rgba(212,162,77,.2);
+    padding: 0 6px;
+    position: relative;
+    opacity: 0;
+    transition: opacity .5s .4s ease;
+  }
+  .gap-col.visible { opacity: 1; }
+
+  .gap-label-vert {
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+    transform: rotate(180deg);
+    font-family: var(--font-mono);
+    font-size: .46rem;
+    letter-spacing: .3em;
+    text-transform: uppercase;
+    color: rgba(212,162,77,.4);
+    white-space: nowrap;
+  }
+  .gap-icon {
+    font-size: 1rem;
+    color: rgba(212,162,77,.4);
+    line-height: 1;
+  }
+
+  @media(max-width: 580px) {
+    .gap-body { grid-template-columns: 1fr; }
+    .gap-col { display: none; }
+    .gap-col-labels { grid-template-columns: 1fr 1fr; }
+    .gap-col-label.gap-lbl { display: none; }
+  }
+
+  /* ── CTA PANEL ── */
+  .cta-panel {
+    margin-top: 4rem; position: relative; overflow: hidden;
+    background: rgba(14,24,28,.85);
+    border: 1px solid rgba(212,162,77,.2);
+    border-top: 3px solid var(--gold);
+    padding: 3rem 2.4rem;
+    clip-path: polygon(0 0, calc(100% - 20px) 0, 100% 20px, 100% 100%, 20px 100%, 0 calc(100% - 20px));
+    box-shadow: 0 30px 70px rgba(0,0,0,.55), inset 0 0 20px rgba(212,162,77,.02);
+    backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px);
+  }
+  .cta-panel::before {
+    content: ''; position: absolute; top: -50%; right: -30%; width: 220px; height: 220px;
+    background: radial-gradient(circle, rgba(212,162,77,.1) 0%, transparent 70%); pointer-events: none;
+  }
+  .cta-status {
+    display: flex; align-items: center; gap: 10px; margin-bottom: 1.6rem;
+    font-family: var(--font-mono); font-size: 9px; letter-spacing: .25em;
+    color: var(--silver); text-transform: uppercase; opacity: .8; position: relative; z-index: 1;
+  }
+  .cta-dot { width: 6px; height: 6px; background: var(--gold); border-radius: 50%; box-shadow: 0 0 8px var(--gold); animation: ctaPulse 2s infinite alternate; }
+  @keyframes ctaPulse { 0% { opacity: .5; } 100% { opacity: 1; } }
+
+  .cta-panel h3 {
+    font-family: var(--font-heading); font-weight: 300; font-size: clamp(1.6rem, 3vw, 2.1rem);
+    color: var(--white); margin-bottom: 1.1rem; position: relative; z-index: 1;
+  }
+  .cta-panel p { font-size: .96rem; color: var(--silver); line-height: 1.75; margin-bottom: 1.2rem; position: relative; z-index: 1; }
+  .cta-panel p:last-of-type { margin-bottom: 2rem; }
+
+  .btn-primary {
+    font-family: var(--font-mono); font-size: 10px; letter-spacing: .3em; text-transform: uppercase;
+    color: var(--obsidian); background: linear-gradient(135deg, var(--gold) 0%, var(--gold-light) 100%);
+    padding: 18px 38px; border: none; text-decoration: none; display: inline-block;
+    position: relative; overflow: hidden; cursor: pointer; z-index: 1;
+    clip-path: polygon(0 0, calc(100% - 12px) 0, 100% 12px, 100% 100%, 0 100%);
+    transition: all .4s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .btn-primary::after {
+    content: ''; position: absolute; top: 0; left: -150%; width: 60%; height: 100%;
+    background: linear-gradient(to right, transparent, rgba(255,255,255,.45), transparent);
+    transform: skewX(-25deg); pointer-events: none; transition: left .8s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .btn-primary:hover::after { left: 150%; }
+  .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 12px 40px rgba(212,162,77,.35); }
+
+  /* ── FOOTER ── */
+  footer {
+    background: #070d10; border-top: 1px solid rgba(212,162,77,.1);
+    padding: 3rem 2rem; display: flex; align-items: center; justify-content: space-between;
+    flex-wrap: wrap; gap: 1.5rem; position: relative; z-index: 1;
+  }
+  .footer-logo { font-family: var(--font-mono); font-size: 11px; letter-spacing: .3em; color: var(--gold); text-transform: uppercase; line-height: 1.4; }
+  .footer-logo span { display: block; font-size: 8px; letter-spacing: .4em; color: rgba(212,162,77,.4); margin-top: 4px; }
+  .footer-line { font-family: var(--font-heading); font-style: italic; font-size: .92rem; color: rgba(212, 162, 77, .4); }
+  .footer-copy { font-family: var(--font-mono); font-weight: 400; font-size: .65rem; letter-spacing: .1em; color: rgba(255, 255, 255, .25); text-transform: uppercase; }
+  .footer-center { display: flex; flex-direction: column; align-items: center; gap: 14px; }
+  .footer-socials { display: flex; align-items: center; gap: 20px; }
+  .social-link { display: flex; align-items: center; justify-content: center; width: 44px; height: 44px; color: rgba(255, 255, 255, 0.4); transition: var(--transition-quick); }
+  .social-link svg { width: 24px; height: 24px; fill: currentColor; transition: transform 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275), color 0.25s ease; }
+  .social-link:hover { color: var(--gold); }
+  .social-link:hover svg { transform: scale(1.18) translateY(-2px); }
+
+  /* ── SCROLL REVEAL ── */
+  .reveal { opacity: 0; transform: translateY(36px); transition: opacity 1.1s cubic-bezier(0.16,1,0.3,1), transform 1.1s cubic-bezier(0.16,1,0.3,1); will-change: transform, opacity; }
+  .reveal.visible { opacity: 1; transform: translateY(0); }
+  .reveal-delay-1 { transition-delay: .1s; }
+  .reveal-delay-2 { transition-delay: .2s; }
+  .reveal-delay-3 { transition-delay: .3s; }
+  .reveal-delay-4 { transition-delay: .4s; }
+
+  @media (prefers-reduced-motion: reduce) {
+    .btn-primary, .scan-line { transition: none; animation: none; }
+  }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 640px) {
+    nav { padding: 20px 24px; flex-wrap: wrap; gap: .8rem; }
+    nav.scrolled { padding: 14px 24px; }
+    .hero { padding: 150px 0 50px; }
+    .hero-meta { gap: 1.4rem; }
+    .quote-band { padding: 3.5rem 1.5rem; }
+    article { padding: 3.5rem 1.5rem 4.5rem; }
+    .cta-panel { padding: 2.2rem 1.6rem; }
+    footer { flex-direction: column; text-align: center; padding: 2.6rem 1.5rem; }
+  }
+
+  .display-none { display: none !important; }
+
+  /* Pure CSS Hero Fade-In Animations */
+  @keyframes heroReveal {
+    0% { opacity: 0; transform: translateY(36px); }
+    100% { opacity: 1; transform: translateY(0); }
+  }
+  .hero-reveal {
+    opacity: 0;
+    animation: heroReveal 1.1s cubic-bezier(0.16,1,0.3,1) forwards;
+    will-change: transform, opacity;
+  }
+</style>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://parishva.in/blog/leads-not-converting"
+  },
+  "headline": "Your Campaign Is Generating Leads. Why Aren't They Converting?",
+  "description": "Your campaign is generating leads but they aren't converting. The problem isn't the offer, the price, or the sales team. It's almost always a brand trust gap that opens between what your marketing promised and what the lead experienced when they arrived.",
+  "image": "https://parishva.in/logo.webp",  
+  "author": {
+    "@type": "Organization",
+    "name": "Parishva Branding Studio",
+    "url": "https://parishva.in/"
+  },  
+  "publisher": {
+    "@type": "Organization",
+    "name": "Parishva Branding Studio",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://parishva.in/logo.webp"
+    }
+  },
+  "datePublished": "2026-09-04"
+}
+</script>
+</head>
+<body>
+
+<div id="cursor"></div>
+<div id="cursor-ring"></div>
+<canvas id="particle-canvas"></canvas>
+<div class="holo-grid"></div>
+<div class="scan-line"></div>
+
+<nav id="site-nav">
+  <a class="nav-logo" href="../">Parishva<span>Branding Studio</span></a>
+  <a class="nav-cta" href="https://forms.gle/omAbHotDH2WL6Hg28" target="_blank">Book a Diagnostic</a>
+</nav>
+
+<section class="hero">
+  <div class="container hero-reveal">
+    <p class="eyebrow">Insights · September 2026</p>
+    <h1 class="blog-h1">Your Campaign Is Generating Leads. <em>Why Aren't They Converting?</em></h1>
+    <div class="hero-meta">
+      <div class="hero-meta-item">Category<strong>Brand Strategy &amp; Conversion</strong></div>
+      <div class="hero-meta-item">Published<strong>September 4, 2026</strong></div>
+      <div class="hero-meta-item">Read time<strong>5 min</strong></div>
+      <div class="hero-meta-item">Author<strong>Parishva Branding Studio</strong></div>
+    </div>
+  </div>
+</section>
+
+<div class="holo-divider"></div>
+
+<div class="quote-band">
+  <span class="quote-mark">“</span>
+  <blockquote class="reveal">
+    Leads that don't convert aren't a sales problem. They're a brand problem — one that began the moment the marketing made a promise the brand wasn't equipped to keep.
+  </blockquote>
+</div>
+
+<div class="holo-divider"></div>
+
+<article>
+
+  <p class="intro-graf reveal">
+    The campaign is working — by every upstream metric. Impressions are up. Clicks are healthy. The form is being filled. The calls are being booked. And then, somewhere between that first contact and a signed agreement, the leads go quiet. They don't say no. They don't object. They simply stop responding, or they take the meeting and don't move forward, or they ask for a proposal and never reply. The team concludes the offer needs adjusting, or the price is too high, or the sales process needs refining. These may all be true in isolation. But in most cases, the problem started much earlier — before the lead ever arrived.
+  </p>
+
+  <h2 class="reveal">The Metric That Looks Like Success but Isn't</h2>
+  <p class="reveal">Lead volume is the most seductive vanity metric in marketing. It is concrete, it is measurable, it increases in direct proportion to spend, and it feels like progress. A business generating fifty leads a month feels more advanced than one generating five. But lead volume without conversion rate is not a marketing success — it is an expensive list of people who were interested enough to raise their hand and then decided, on closer inspection, that what they found didn't match what they expected.</p>
+  <p class="reveal">The question that matters is not how many leads the campaign is generating. It is what percentage of those leads are converting — and at what point in the journey they are dropping off. <strong>A high lead volume with a low conversion rate is not a demand problem. It is a brand trust problem.</strong> The marketing attracted the right level of interest. The brand failed to convert that interest into confidence.</p>
+  <p class="reveal">Trust is what converts. Not the offer, not the price, not the follow-up sequence — though all of those matter at the margin. The fundamental question a prospect is answering when they decide whether to move forward is whether they trust that this business will deliver what the brand implied it would. When the answer is yes, the sales process is short. When the answer is uncertain, no amount of follow-up recovers what the brand failed to establish.</p>
+
+  <h2 class="reveal">The Conversion Gap — Where Trust Breaks</h2>
+  <p class="reveal">There is almost always a specific point in the lead journey where conversion drops. Understanding where it drops — and what the brand is doing or failing to do at that point — is more valuable than any tactical adjustment to the campaign. The gap between what the marketing promised and what the lead encountered when they arrived is where conversion is won or lost.</p>
+
+  <!-- CONVERSION GAP DISSECTION — signature component -->
+  <div class="gap-wrap reveal" id="conv-gap">
+    <div class="gap-col-labels">
+      <div class="gap-col-label promise">The Promise Zone</div>
+      <div class="gap-col-label gap-lbl">Gap</div>
+      <div class="gap-col-label delivery">The Delivery Zone</div>
+    </div>
+
+    <div class="gap-body">
+      <!-- LEFT: PROMISE HALF -->
+      <div class="gap-half promise-half" id="promise-half">
+        <div class="gap-row">
+          <div class="gap-row-label">Ad / Hook</div>
+          <div class="gap-row-text">The ad spoke directly to a specific pain. The headline felt personal. The lead clicked because they felt seen.</div>
+        </div>
+        <div class="gap-row">
+          <div class="gap-row-label">Landing Page</div>
+          <div class="gap-row-text">The page reinforced the promise. The copy was clear. The offer felt specific and credible. The form was filled.</div>
+        </div>
+        <div class="gap-row">
+          <div class="gap-row-label">Brand Signal</div>
+          <div class="gap-row-text">The visual identity looked considered. The testimonials were relevant. The brand felt like it understood this problem.</div>
+        </div>
+      </div>
+
+      <!-- GAP COLUMN -->
+      <div class="gap-col" id="gap-col">
+        <div class="gap-icon">↓</div>
+        <div class="gap-label-vert">Conversion Gap</div>
+        <div class="gap-icon">↓</div>
+      </div>
+
+      <!-- RIGHT: DELIVERY HALF -->
+      <div class="gap-half delivery-half" id="delivery-half">
+        <div class="gap-row">
+          <div class="gap-row-label">First Response</div>
+          <div class="gap-row-text">The follow-up was slow, generic, or scripted. The tone didn't match the brand the lead thought they'd found.</div>
+        </div>
+        <div class="gap-row">
+          <div class="gap-row-label">Discovery Call</div>
+          <div class="gap-row-text">The conversation restarted from scratch. Nothing in the brand had pre-sold the value — the salesperson had to do all the work.</div>
+        </div>
+        <div class="gap-row">
+          <div class="gap-row-label">Proposal Stage</div>
+          <div class="gap-row-text">The proposal arrived. The price felt disconnected from the confidence the brand had implied. Silence followed.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- end gap dissection -->
+
+  <h2 class="reveal">The Four Reasons Leads Don't Convert</h2>
+  <p class="reveal">In our work with businesses across services, B2B, and professional categories, the same four reasons appear — in different combinations, at different stages — in almost every conversion problem. None of them is fundamentally about the sales team or the offer. All of them are brand problems.</p>
+
+  <div class="cannot-panel reveal">
+    <ul>
+      <li><strong>The campaign attracted the wrong leads.</strong> When targeting is defined by demographics rather than by the specific problem the brand solves, the leads that arrive are broadly interested but not well-matched. They convert at low rates because they were never the right audience — the campaign optimised for volume, not for fit. Tighter positioning at the brand level produces fewer leads and far higher conversion.</li>
+      <li><strong>The brand created expectation the experience couldn't meet.</strong> When the ad or landing page implies a level of expertise, sophistication, or personalisation that the actual client experience doesn't deliver, the prospect feels the gap. They don't always name it. They just don't move forward. The solution is not to lower the marketing's ambition — it is to raise the brand's consistency across every touchpoint.</li>
+      <li><strong>The brand hasn't built enough trust before the ask.</strong> In high-consideration purchases — professional services, B2B, education, real estate — the customer needs to trust the brand before they will commit, not just after. When the brand's content, case studies, social presence, and communication don't accumulate trust in advance, the sales conversation has to do all the trust-building itself. It rarely can.</li>
+      <li><strong>The price is disconnected from the brand's perceived value.</strong> When a prospect encounters a price that feels higher than the brand's credibility implies, they don't always negotiate — they disappear. Price and brand positioning must agree. A premium price needs a brand that has earned the right to charge it, visible across every touchpoint the lead encountered before they saw the number.</li>
+    </ul>
+  </div>
+
+  <div class="callout reveal">
+    A professional services firm generating thirty leads a month was converting fewer than four. The campaign was technically sound. The targeting was reasonable. The problem was that the brand's website, social presence, and proposal template all communicated a different level of expertise and polish — none of which matched the quality of the actual service being delivered. The lead arrived with moderate confidence, found no evidence to strengthen it, and left. Aligning the brand across those touchpoints — before changing a single thing in the campaign — moved the conversion rate from under 15% to above 35% in one quarter.
+  </div>
+
+  <h2 class="reveal">What Happens Between Click and Conversion</h2>
+  <p class="reveal">The moment a lead submits a form or books a call, they begin a second evaluation — more careful and more sceptical than the first. The ad caught their attention. Now they are deciding whether to trust. And in the hours and days between that first contact and the decision, the brand is either building that trust or failing to.</p>
+  <p class="reveal">They will look at the website again, more carefully. They will check the social profiles. They will read the reviews and case studies — or notice their absence. They will evaluate the speed and tone of the follow-up. They will form an impression of the discovery call. They will read the proposal — not just the price, but the language, the structure, the care taken. At every one of these points, the brand is being assessed against the promise the campaign made.</p>
+  <p class="reveal"><strong>Conversion is not a moment. It is the accumulated result of every brand interaction between first click and final decision.</strong> A campaign that generates leads has earned the first click. Converting those leads requires the brand to be coherent, credible, and consistent across everything that follows.</p>
+
+  <h2 class="reveal">The Diagnostic Questions Worth Asking Now</h2>
+  <p class="reveal">If your campaign is generating leads that aren't converting, the following questions will identify where the gap is — and point you toward the right intervention. The honest answers are more valuable than any campaign optimisation.</p>
+
+  <div class="cannot-panel reveal">
+    <ul>
+      <li>At what specific stage are the leads dropping off — after the first response, after the discovery call, after the proposal? The drop-off point identifies which brand touchpoint is failing.</li>
+      <li>If a lead Googled your business name after clicking the ad, what would they find — and would it build or erode the confidence the ad created?</li>
+      <li>Does your follow-up communication feel like it came from the same brand as your ad — in tone, in specificity, in the care taken with language?</li>
+      <li>Do your case studies, testimonials, and proof points speak to the specific problem your campaign is addressing — or are they generic enough to apply to any service in your category?</li>
+      <li>Is your price the first time the lead encounters a signal of the value you provide — or has the brand been building that case across every touchpoint before the proposal arrives?</li>
+    </ul>
+  </div>
+
+  <p class="reveal">The answers to those questions are the conversion brief. They tell you whether the problem is in the targeting (wrong leads), the brand experience (right leads, wrong signals), or the trust gap (right leads, right signals, insufficient depth). Each has a different fix — and none of them is a campaign fix.</p>
+
+  <h2 class="reveal">The Fix Is Upstream, Not Downstream</h2>
+  <p class="reveal">When leads don't convert, the instinct is to optimise downstream: retrain the sales team, adjust the proposal, lower the price, add a follow-up sequence. Some of those things help at the margin. None of them addresses the source of the problem, which is almost always upstream — in the brand's positioning, consistency, and credibility across the touchpoints the lead encountered before and after their first contact.</p>
+  <p class="reveal">The businesses that solve their conversion problems by working on the brand — rather than by adjusting the sales process — typically see a compounding effect. Not only do more leads convert, but they convert faster, they negotiate less, they require fewer follow-ups, and they arrive with a level of confidence that makes the sales conversation feel less like persuasion and more like confirmation of a decision they had already made.</p>
+  <p class="reveal">That is what a well-built brand does to a sales pipeline. It doesn't just generate leads. It pre-sells them. It does the trust-building work before the first conversation — so that by the time a lead is speaking to a human being from the business, the only question left is logistics.</p>
+
+  <p class="emphasis-line reveal">The campaign gets them in the door. <span>The brand decides whether they stay.</span></p>
+
+  <div class="cta-panel reveal" id="cta">
+    <div class="cta-status"><span class="cta-dot"></span> Conversion Brand Audit</div>
+    <h3>Generating leads that go quiet? Let's find exactly where the trust is breaking.</h3>
+    <p>At Parishva Branding Studio, we work with businesses that have the leads but not the conversions — and who have exhausted the tactical fixes without addressing the source. Our <a href="business-audit">Business Audit</a> maps the lead journey from first click to final decision and identifies precisely where the brand is failing to carry the promise through. We find the gap, name what's causing it, and show you what needs to change before the next campaign goes live.</p>
+    <p>Not a sales training brief. A brand diagnostic that tells you what the lead encounters after they click — and whether it's giving them a reason to trust you or a reason to reconsider.</p>
+    <a class="btn-primary" href="https://forms.gle/omAbHotDH2WL6Hg28" target="_blank">Book a Business Audit →</a>
+  </div>
+
+</article>
+
+<footer>
+  <div class="footer-logo">Parishva<span>Branding Studio</span></div>
+  <div class="footer-center">
+    <div class="footer-line">"The campaign gets them in the door. The brand decides whether they stay."</div>
+    <div class="footer-socials">
+      <a href="https://www.facebook.com/profile.php?id=61591304292658" target="_blank" rel="noopener"
+          aria-label="Facebook" class="social-link">
+          <svg viewBox="0 0 24 24" fill="currentColor" alt="Facebook logo icon" aria-hidden="true">
+              <path
+                  d="M13.547 22V13.882h2.724l.408-3.16h-3.132V8.7c0-.915.254-1.539 1.567-1.539H16.8V4.328a22.457 22.457 0 00-2.435-.124c-2.41 0-4.06 1.47-4.06 4.172v2.346H7.58v3.16h2.725V22h3.242z" />
+          </svg>
+      </a>
+      <a href="https://www.instagram.com/brandingstudioparishvaa?igsh=bml2MGR4eTR4Mmxo" target="_blank" rel="noopener"
+          aria-label="Instagram" class="social-link">
+          <svg viewBox="0 0 24 24" fill="currentColor" alt="Instagram logo icon" aria-hidden="true">
+              <path
+                  d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.051.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z" />
+          </svg>
+      </a>
+      <a href="https://x.com/pbsparishva" target="_blank" rel="noopener"
+          aria-label="X" class="social-link">
+          <svg viewBox="0 0 24 24" fill="currentColor" alt="X logo icon" aria-hidden="true">
+              <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+          </svg>
+      </a>
+      <a href="https://www.linkedin.com/company/parishvabrandingstudio/" target="_blank" rel="noopener"
+          aria-label="LinkedIn" class="social-link">
+          <svg viewBox="0 0 24 24" fill="currentColor" alt="LinkedIn logo icon" aria-hidden="true">
+              <path
+                  d="M4.98 3.5c0 1.381-1.11 2.5-2.48 2.5s-2.48-1.119-2.48-2.5c0-1.38 1.11-2.5 2.48-2.5s2.48 1.12 2.48 2.5zm.02 4.5h-5v16h5v-16zm7.982 0h-4.968v16h4.969v-8.399c0-4.67 6.029-5.052 6.029 0v8.399h4.988v-10.131c0-7.88-8.922-7.593-11.018-3.714v-2.155z" />
+          </svg>
+      </a>
+      <a href="https://www.youtube.com/@brandingstudioparishvaa" target="_blank" rel="noopener"
+          aria-label="YouTube" class="social-link">
+          <svg viewBox="0 0 24 24" fill="currentColor" alt="YouTube logo icon" aria-hidden="true">
+              <path d="M23.498 6.163a3.003 3.003 0 0 0-2.11-2.11C19.518 3.545 12 3.545 12 3.545s-7.518 0-9.388.507a3.003 3.003 0 0 0-2.11 2.11C0 8.033 0 12 0 12s0 3.967.502 5.837a3.003 3.003 0 0 0 2.11 2.11c1.87.507 9.388.507 9.388.507s7.518 0 9.388-.507a3.003 3.003 0 0 0 2.11-2.11C24 15.967 24 12 24 12s0-3.967-.502-5.837zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
+          </svg>
+      </a>
+      <a href="https://wa.me/919059741938" target="_blank" rel="noopener" aria-label="WhatsApp"
+          class="social-link">
+          <svg viewBox="0 0 24 24" fill="currentColor" alt="WhatsApp logo icon" aria-hidden="true">
+              <path
+                  d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.514 2.266 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.502-5.73-1.45L0 24zm6.59-4.846c1.66.988 3.296 1.48 5.365 1.481 5.397 0 9.79-4.394 9.794-9.792.002-2.614-1.016-5.071-2.868-6.924C17.087 2.067 14.626 1.05 12.01 1.05c-5.396 0-9.786 4.393-9.79 9.791-.001 2.107.56 4.164 1.624 5.945l-.97 3.547 3.633-.953c1.77.965 3.324 1.424 5.09 1.424zm8.68-6.11c-.22-.11-1.302-.643-1.503-.717-.202-.074-.348-.109-.495.11-.147.218-.569.717-.697.864-.129.147-.258.165-.478.055-.22-.11-.93-.343-1.772-1.094-.655-.584-1.097-1.306-1.226-1.525-.128-.219-.014-.337.096-.447.099-.1.218-.256.327-.384.11-.128.147-.219.22-.366.073-.146.037-.274-.018-.384-.056-.11-.495-1.191-.678-1.63-.178-.429-.356-.37-.495-.378-.127-.006-.274-.007-.421-.007-.147 0-.385.055-.586.274-.201.219-.77.75-1.03 2.158-.261 1.408.76 2.77 1.02 3.136.26.365 1.996 3.05 4.838 4.275.676.292 1.205.466 1.616.597.68.216 1.298.186 1.787.113.545-.082 1.67-.682 1.908-1.344.238-.662.238-1.23.165-1.344-.074-.114-.27-.22-.49-.33z" />
+          </svg>
+      </a>
+    </div>
+  </div>
+  <div class="footer-copy">© 2026 Parishva Branding Studio · All rights reserved</div>
+</footer>
+
+<script src="../blog.js" defer></script>
+
+<script>
+// CONVERSION GAP ANIMATION
+(function(){
+  const wrap = document.getElementById('conv-gap');
+  if (!wrap) return;
+  const promiseHalf  = document.getElementById('promise-half');
+  const deliveryHalf = document.getElementById('delivery-half');
+  const gapCol       = document.getElementById('gap-col');
+  const promiseRows  = promiseHalf.querySelectorAll('.gap-row');
+  const deliveryRows = deliveryHalf.querySelectorAll('.gap-row');
+  let fired = false;
+
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting && !fired) {
+        fired = true;
+        setTimeout(() => {
+          promiseHalf.classList.add('visible');
+          deliveryHalf.classList.add('visible');
+        }, 100);
+        setTimeout(() => gapCol.classList.add('visible'), 500);
+        promiseRows.forEach((r, i) => setTimeout(() => r.classList.add('visible'), 280 + i * 160));
+        deliveryRows.forEach((r, i) => setTimeout(() => r.classList.add('visible'), 280 + i * 160));
+        io.disconnect();
+      }
+    });
+  }, { threshold: 0.15 });
+  io.observe(wrap);
+})();
+</script>
+
+<noscript>
+    <img height="1" width="1" class="display-none" alt="" src="https://www.facebook.com/tr?id=YOUR_PIXEL_ID&ev=PageView&noscript=1" />
+</noscript>
+<!-- End Meta Pixel Code -->
+
+</body>
+</html>
