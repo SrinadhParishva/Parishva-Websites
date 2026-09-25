@@ -437,8 +437,8 @@ nav.scrolled .nav-logo-img {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding-top: 160px;
-    padding-bottom: 20px;
+    padding-top: 130px;
+    padding-bottom: 30px;
     position: relative;
     overflow: hidden;
     box-sizing: border-box;
@@ -473,7 +473,8 @@ nav.scrolled .nav-logo-img {
     flex-direction: column;
     align-items: center;
     text-align: center;
-    max-width: 900px;
+    max-width: 1160px;
+    width: 100%;
     margin: 0 auto;
 }
 
@@ -484,7 +485,7 @@ nav.scrolled .nav-logo-img {
     color: var(--gold);
     border: 1px solid rgba(212, 162, 77, .3);
     padding: 8px 20px;
-    margin-bottom: 20px;
+    margin-bottom: 18px;
     display: inline-block;
     clip-path: polygon(0 0, calc(100% - 8px) 0, 100% 8px, 100% 100%, 8px 100%, 0 calc(100% - 8px));
     background: rgba(212, 162, 77, .05);
@@ -505,12 +506,14 @@ nav.scrolled .nav-logo-img {
 
 h1.hero-h1 {
     font-family: var(--font-heading);
-    font-size: clamp(2.2rem, 4.8vw, 4.4rem);
+    font-size: clamp(1.85rem, 2.6vw, 2.9rem);
     font-weight: 300;
-    line-height: 1.05;
+    line-height: 1.22;
     letter-spacing: -.01em;
     color: var(--white);
-    margin-bottom: 16px;
+    margin: 0 auto 18px;
+    max-width: 1100px;
+    text-wrap: balance;
 }
 
 h1.hero-h1 em {
@@ -521,20 +524,22 @@ h1.hero-h1 em {
 .hero-h2 {
     font-family: var(--font-body);
     font-weight: 200;
-    font-size: clamp(0.95rem, 1.4vw, 1.15rem);
+    font-size: clamp(0.95rem, 1.2vw, 1.08rem);
     color: var(--silver);
-    max-width: 620px;
+    max-width: 660px;
     line-height: 1.7;
-    margin: 0 auto 12px;
+    margin: 0 auto 14px;
+    text-wrap: balance;
 }
 
 .hero-seo {
-    font-size: .75rem;
-    letter-spacing: .08em;
-    color: rgba(212, 162, 77, 0.5);
+    font-size: .8rem;
+    letter-spacing: .1em;
+    color: var(--gold);
+    opacity: 0.85;
     font-family: var(--font-mono);
     text-transform: uppercase;
-    margin: 0 auto 20px;
+    margin: 0 auto 22px;
 }
 
 .hero-cta-group {
@@ -4154,20 +4159,21 @@ body.overflow-hidden {
     }
 
     .hero-badge {
-        margin-bottom: 36px;
+        margin-bottom: 24px;
     }
 
     h1.hero-h1 {
-        font-size: 2.2rem;
-        margin-bottom: 32px;
+        font-size: clamp(1.75rem, 5.5vw, 2.1rem);
+        line-height: 1.25;
+        margin-bottom: 18px;
     }
 
     .hero-h2 {
-        margin-bottom: 30px;
+        margin-bottom: 18px;
     }
 
     .hero-seo {
-        margin-bottom: 40px;
+        margin-bottom: 24px;
     }
 
     .problem-text .sec-h2 {
@@ -4635,29 +4641,29 @@ body.overflow-hidden {
 /* ── PC VIEW LAYOUT & SPACING ADJUSTMENTS ── */
 @media (min-width: 1025px) {
     #hero {
-        min-height: 95vh;
-        padding-top: 200px;
-        padding-bottom: 80px;
+        min-height: 100vh;
+        padding-top: 145px;
+        padding-bottom: 45px;
     }
 
     #hero .hero-badge {
-        margin-bottom: 32px;
+        margin-bottom: 20px;
     }
 
     #hero h1.hero-h1 {
-        margin-bottom: 24px;
+        margin-bottom: 18px;
     }
 
     #hero .hero-h2 {
-        margin: 0 auto 20px;
+        margin: 0 auto 14px;
     }
 
     #hero .hero-seo {
-        margin: 0 auto 32px;
+        margin: 0 auto 24px;
     }
 
     #hero .hero-cta-group {
-        gap: 40px;
+        gap: 32px;
     }
 
     #problem,
