@@ -3023,42 +3023,73 @@ h1.hero-h1 em {
     }
 }
 
-/* ── FOUNDER SECTION ── */
-#founder {
-    padding: 120px 0;
-    background: transparent;
+/* ── IMMERSIVE FOUNDER SECTION ── */
+#founder.founder-immersive {
     position: relative;
+    padding: 120px 0;
     overflow: hidden;
-}
-
-#founder .sec-label {
-    font-size: 12px; /* Increased from 8px */
-}
-
-.founder-inner {
-    display: grid;
-    grid-template-columns: 1.05fr 0.95fr;
-    gap: clamp(40px, 6vw, 80px);
+    background-color: var(--obsidian);
+    min-height: 560px;
+    display: flex;
     align-items: center;
 }
 
-.founder-inner > div:first-child {
-    padding-left: 45px; /* Move the whole text a bit right */
+/* Atmospheric ambient backdrop filling entire section */
+.founder-bg-ambient {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+    z-index: 0;
+    pointer-events: none;
 }
 
-@media (max-width: 1024px) {
-    .founder-inner > div:first-child {
-        padding-left: 0; /* Reset on mobile/tablets */
-    }
+.founder-ambient-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: right 10% center;
+    opacity: 0.16;
+    filter: blur(45px) brightness(0.75);
+    transform: scale(1.12);
+}
+
+.founder-ambient-overlay {
+    position: absolute;
+    inset: 0;
+    background: 
+        radial-gradient(ellipse 65% 65% at 75% 50%, rgba(212, 162, 77, 0.12) 0%, transparent 70%),
+        linear-gradient(180deg, var(--obsidian) 0%, transparent 18%, transparent 82%, var(--obsidian) 100%);
+    pointer-events: none;
+}
+
+/* 2-Column Balanced Container */
+.founder-inner {
+    position: relative;
+    z-index: 1;
+    max-width: 1240px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1.08fr;
+    gap: clamp(30px, 4vw, 60px);
+    align-items: center;
+}
+
+.founder-content {
+    max-width: 580px;
+}
+
+#founder .sec-label {
+    font-size: 12px;
 }
 
 .founder-name {
     font-family: var(--font-heading);
-    font-size: clamp(2.2rem, 3.8vw, 3.2rem);
+    font-size: clamp(2.4rem, 4.2vw, 3.4rem);
     font-weight: 300;
     line-height: 1.15;
-    margin: 28px 0;
+    margin: 24px 0;
     color: var(--white);
+    text-shadow: 0 4px 25px rgba(0, 0, 0, 0.8);
 }
 
 .founder-name em {
@@ -3068,21 +3099,23 @@ h1.hero-h1 em {
     font-weight: 300;
 }
 
-.founder-role {
-    font-family: var(--font-mono);
-    font-size: 8px;
-    letter-spacing: .5em;
-    color: var(--gold);
-    text-transform: uppercase;
-    margin-bottom: 28px;
+.founder-title-sub {
+    display: block;
+    font-family: var(--font-body);
+    font-size: clamp(0.95rem, 1.8vw, 1.1rem);
+    font-weight: 200;
+    color: var(--silver);
+    margin-top: 10px;
+    letter-spacing: 0.06em;
 }
 
 .founder-manifesto {
     font-family: var(--font-heading);
-    font-size: 1.35rem;
+    font-size: clamp(1.2rem, 1.9vw, 1.45rem);
     font-style: italic;
     color: var(--silver);
-    line-height: 1.8;
+    line-height: 1.85;
+    text-shadow: 0 2px 15px rgba(0, 0, 0, 0.7);
 }
 
 .founder-manifesto p {
@@ -3091,145 +3124,50 @@ h1.hero-h1 em {
 
 .founder-manifesto strong {
     font-style: normal;
-    color: var(--gold); /* Changed from var(--white) to gold */
+    color: var(--gold);
     font-weight: 400;
 }
 
-.founder-visual {
+/* Right Side Portrait Visual - Seamlessly Blended & Unboxed */
+.founder-visual-wrap {
     position: relative;
     width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 10px 0;
 }
 
-.founder-visual::before {
-    content: '';
+.founder-portrait-glow {
     position: absolute;
-    width: 360px;
-    height: 360px;
-    background: radial-gradient(circle, rgba(212, 162, 77, 0.14) 0%, rgba(212, 162, 77, 0.03) 50%, transparent 75%);
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at 62% 38%, rgba(212, 162, 77, 0.18) 0%, rgba(212, 162, 77, 0.03) 50%, transparent 70%);
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     pointer-events: none;
     z-index: 0;
-    filter: blur(20px);
+    filter: blur(28px);
 }
 
-.founder-frame {
-    width: 100%;
-    max-width: 480px;
-    aspect-ratio: 1024 / 754;
-    border: 1px solid rgba(212, 162, 77, .35);
+.founder-portrait-img {
     position: relative;
-    clip-path: polygon(0 0, calc(100% - 30px) 0, 100% 30px, 100% 100%, 30px 100%, 0 calc(100% - 30px));
-    background: rgba(19, 31, 36, 0.7);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
     z-index: 1;
-    box-shadow: 0 20px 50px -10px rgba(0, 0, 0, 0.8), 0 0 30px rgba(212, 162, 77, 0.1);
-    transition: var(--transition-smooth);
-}
-
-.founder-frame:hover {
-    border-color: rgba(212, 162, 77, 0.6);
-    box-shadow: 0 25px 60px -10px rgba(0, 0, 0, 0.9), 0 0 45px rgba(212, 162, 77, 0.2);
-}
-
-.founder-img {
     width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center;
-    transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
-    z-index: 0;
+    max-width: 620px;
+    height: auto;
+    aspect-ratio: 1024 / 754;
+    object-fit: contain;
     display: block;
+    filter: contrast(1.05) brightness(1.02);
+    -webkit-mask-image: radial-gradient(ellipse 90% 88% at 60% 48%, black 58%, rgba(0,0,0,0.85) 72%, transparent 98%);
+    mask-image: radial-gradient(ellipse 90% 88% at 60% 48%, black 58%, rgba(0,0,0,0.85) 72%, transparent 98%);
+    transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), filter 0.8s ease;
 }
 
-.founder-frame:hover .founder-img {
-    transform: scale(1.04);
-}
-
-.founder-frame::before {
-    content: 'J';
-    position: absolute;
-    font-family: var(--font-heading);
-    font-size: 14rem;
-    font-weight: 300;
-    color: rgba(212, 162, 77, .08);
-    line-height: 1;
-    z-index: -1;
-}
-
-.founder-frame-label {
-    position: absolute;
-    bottom: 16px;
-    left: 20px;
-    right: 20px;
-    font-family: var(--font-heading); /* Cormorant Garamond */
-    font-size: 13px;
-    font-weight: 400;
-    letter-spacing: 0.16em;
-    color: var(--gold-light);
-    background: rgba(7, 13, 16, 0.85);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    border: 1px solid rgba(212, 162, 77, 0.28);
-    padding: 8px 16px;
-    text-align: center;
-    z-index: 2;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
-    transition: var(--transition-smooth);
-}
-
-.founder-frame:hover .founder-frame-label {
-    border-color: rgba(212, 162, 77, 0.55);
-    color: var(--gold);
-    background: rgba(7, 13, 16, 0.95);
-}
-
-.founder-corner {
-    position: absolute;
-    width: 18px;
-    height: 18px;
-    border-color: var(--gold);
-    border-style: solid;
-    border-width: 0;
-    z-index: 3;
-    pointer-events: none;
-    transition: var(--transition-smooth);
-}
-
-.founder-corner.tl {
-    top: -4px;
-    left: -4px;
-    border-top-width: 2px;
-    border-left-width: 2px;
-}
-
-.founder-corner.tr {
-    top: -4px;
-    right: -4px;
-    border-top-width: 2px;
-    border-right-width: 2px;
-}
-
-.founder-corner.bl {
-    bottom: -4px;
-    left: -4px;
-    border-bottom-width: 2px;
-    border-left-width: 2px;
-}
-
-.founder-corner.br {
-    bottom: -4px;
-    right: -4px;
-    border-bottom-width: 2px;
-    border-right-width: 2px;
+#founder:hover .founder-portrait-img {
+    transform: scale(1.02);
+    filter: contrast(1.08) brightness(1.04);
 }
 
 /* ── FINAL CTA ── */
@@ -3996,12 +3934,20 @@ body.overflow-hidden {
 
     .founder-inner {
         grid-template-columns: 1fr;
-        gap: 48px;
+        gap: 40px;
     }
 
-    .founder-visual {
-        height: auto;
-        padding: 10px 0;
+    #founder.founder-immersive {
+        padding: 90px 0;
+    }
+
+    .founder-content {
+        max-width: 100%;
+    }
+
+    .founder-visual-wrap {
+        max-width: 520px;
+        margin: 0 auto;
     }
 
     .aaa-grid,
@@ -4665,6 +4611,24 @@ body.overflow-hidden {
 
 /* Make sure mobile toggling is clean and doesn't look squished */
 @media (max-width: 768px) {
+    #founder.founder-immersive {
+        padding: 70px 0;
+        min-height: auto;
+    }
+
+    .founder-content {
+        max-width: 100%;
+    }
+
+    .founder-visual-wrap {
+        max-width: 100%;
+    }
+
+    .founder-portrait-img {
+        -webkit-mask-image: radial-gradient(ellipse 95% 92% at 58% 48%, black 65%, rgba(0,0,0,0.85) 82%, transparent 100%);
+        mask-image: radial-gradient(ellipse 95% 92% at 58% 48%, black 65%, rgba(0,0,0,0.85) 82%, transparent 100%);
+    }
+
     #faq {
         padding: 80px 0;
     }
