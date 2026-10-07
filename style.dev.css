@@ -3026,10 +3026,10 @@ h1.hero-h1 em {
 /* ── IMMERSIVE FOUNDER SECTION ── */
 #founder.founder-immersive {
     position: relative;
-    padding: 105px 0;
+    padding: 110px 0;
     overflow: hidden;
     background-color: var(--obsidian);
-    min-height: 500px;
+    min-height: 520px;
     display: flex;
     align-items: center;
 }
@@ -3037,47 +3037,37 @@ h1.hero-h1 em {
 .founder-bg-wrap {
     position: absolute;
     top: 0;
-    left: 0;
-    width: 100%;
+    right: 0;
+    width: 55vw;
+    max-width: 900px;
     height: 100%;
     overflow: hidden;
     z-index: 0;
     pointer-events: none;
+    -webkit-mask-image: linear-gradient(to right, transparent 0%, rgba(0, 0, 0, 0.4) 14%, black 36%, black 100%);
+    mask-image: linear-gradient(to right, transparent 0%, rgba(0, 0, 0, 0.4) 14%, black 36%, black 100%);
 }
 
 .founder-bg-img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    object-position: 94% 4%;
-    transform-origin: 94% 10%;
-    transform: scale(0.88); /* Reduced height/scale of face by 7% */
-    opacity: 1;
+    object-position: center 6%;
     filter: contrast(1.05) brightness(1.02);
     transition: transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 #founder.founder-immersive:hover .founder-bg-img {
-    transform: scale(0.90);
+    transform: scale(1.02);
 }
 
 .founder-bg-overlay {
     position: absolute;
     inset: 0;
     background: 
-        /* Left-to-right fade: dark shade stays strictly on the shifted text area and drops to 0.0 by 44%, leaving the remaining 56% completely clear */
-        linear-gradient(90deg, 
-            rgba(7, 13, 16, 0.98) 0%, 
-            rgba(7, 13, 16, 0.95) 18%, 
-            rgba(7, 13, 16, 0.45) 28%, 
-            rgba(7, 13, 16, 0.08) 38%, 
-            rgba(7, 13, 16, 0.0) 44%, 
-            rgba(7, 13, 16, 0.0) 100%
-        ),
-        /* Soft subtle vertical fade */
         linear-gradient(180deg, 
             rgba(7, 13, 16, 0.15) 0%, 
-            transparent 10%, 
+            transparent 12%, 
             transparent 88%, 
             rgba(7, 13, 16, 0.85) 100%
         );
@@ -3090,14 +3080,13 @@ h1.hero-h1 em {
     max-width: 100%;
     margin: 0 auto;
     display: grid;
-    grid-template-columns: 1.25fr 0.75fr;
+    grid-template-columns: 1.15fr 0.85fr;
     align-items: center;
 }
 
 .founder-content {
-    max-width: 550px;
+    max-width: 560px;
     margin-left: 0;
-    transform: translateX(-28%); /* Moved text left by another 15% (total 28% leftward shift) */
 }
 
 #founder .sec-label {
@@ -3922,33 +3911,17 @@ body.overflow-hidden {
         min-height: 500px;
     }
 
+    .founder-bg-wrap {
+        width: 54vw;
+        max-width: 560px;
+    }
+
     .founder-content {
         max-width: 480px;
-        transform: translateX(-12%);
     }
 
     .founder-bg-img {
-        object-position: 93% 4%;
-        transform: scale(0.88);
-        transform-origin: 93% 10%;
-    }
-
-    .founder-bg-overlay {
-        background: 
-            linear-gradient(90deg, 
-                rgba(7, 13, 16, 0.98) 0%, 
-                rgba(7, 13, 16, 0.94) 26%, 
-                rgba(7, 13, 16, 0.45) 40%, 
-                rgba(7, 13, 16, 0.08) 50%, 
-                rgba(7, 13, 16, 0.0) 56%, 
-                rgba(7, 13, 16, 0.0) 100%
-            ),
-            linear-gradient(180deg, 
-                rgba(7, 13, 16, 0.15) 0%, 
-                transparent 10%, 
-                transparent 88%, 
-                rgba(7, 13, 16, 0.85) 100%
-            );
+        object-position: center 6%;
     }
 
     .aaa-grid,
@@ -4625,9 +4598,15 @@ body.overflow-hidden {
         width: 100%;
     }
 
+    .founder-bg-wrap {
+        width: 58vw;
+        max-width: 420px;
+        -webkit-mask-image: linear-gradient(to right, transparent 0%, rgba(0, 0, 0, 0.6) 18%, black 45%, black 100%);
+        mask-image: linear-gradient(to right, transparent 0%, rgba(0, 0, 0, 0.6) 18%, black 45%, black 100%);
+    }
+
     .founder-content {
         max-width: 65%;
-        transform: translateX(0);
         margin-left: 0;
         position: relative;
         z-index: 2;
@@ -4660,28 +4639,8 @@ body.overflow-hidden {
     }
 
     .founder-bg-img {
-        object-position: 96% 8%;
-        transform: scale(0.92);
-        transform-origin: 96% 15%;
+        object-position: 85% 6%;
         opacity: 1;
-    }
-
-    .founder-bg-overlay {
-        background: 
-            linear-gradient(90deg, 
-                rgba(7, 13, 16, 0.98) 0%, 
-                rgba(7, 13, 16, 0.95) 44%, 
-                rgba(7, 13, 16, 0.4) 58%, 
-                rgba(7, 13, 16, 0.05) 68%, 
-                rgba(7, 13, 16, 0.0) 74%, 
-                rgba(7, 13, 16, 0.0) 100%
-            ),
-            linear-gradient(180deg, 
-                rgba(7, 13, 16, 0.2) 0%, 
-                transparent 12%, 
-                transparent 88%, 
-                rgba(7, 13, 16, 0.85) 100%
-            );
     }
 
     #faq {
