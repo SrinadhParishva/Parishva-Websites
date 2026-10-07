@@ -4713,6 +4713,10 @@ body.overflow-hidden {
         min-height: auto;
         padding: 80px 0;
     }
+
+    .founder-content {
+        transform: translateX(-20%);
+    }
 }
 
 @media (min-width: 1441px) {
