@@ -3027,6 +3027,8 @@ h1.hero-h1 em {
 #founder {
     padding: 120px 0;
     background: transparent;
+    position: relative;
+    overflow: hidden;
 }
 
 #founder .sec-label {
@@ -3035,8 +3037,8 @@ h1.hero-h1 em {
 
 .founder-inner {
     display: grid;
-    grid-template-columns: 1.1fr 0.9fr;
-    gap: 80px;
+    grid-template-columns: 1.05fr 0.95fr;
+    gap: clamp(40px, 6vw, 80px);
     align-items: center;
 }
 
@@ -3095,24 +3097,47 @@ h1.hero-h1 em {
 
 .founder-visual {
     position: relative;
-    height: 480px;
+    width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
+    padding: 10px 0;
+}
+
+.founder-visual::before {
+    content: '';
+    position: absolute;
+    width: 360px;
+    height: 360px;
+    background: radial-gradient(circle, rgba(212, 162, 77, 0.14) 0%, rgba(212, 162, 77, 0.03) 50%, transparent 75%);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    z-index: 0;
+    filter: blur(20px);
 }
 
 .founder-frame {
-    width: 320px;
-    height: 400px;
-    border: 1px solid rgba(212, 162, 77, .3);
+    width: 100%;
+    max-width: 480px;
+    aspect-ratio: 1024 / 754;
+    border: 1px solid rgba(212, 162, 77, .35);
     position: relative;
-    clip-path: polygon(0 0, calc(100% - 40px) 0, 100% 40px, 100% 100%, 40px 100%, 0 calc(100% - 40px));
-    background: rgba(212, 162, 77, .04);
+    clip-path: polygon(0 0, calc(100% - 30px) 0, 100% 30px, 100% 100%, 30px 100%, 0 calc(100% - 30px));
+    background: rgba(19, 31, 36, 0.7);
     display: flex;
     align-items: center;
     justify-content: center;
     overflow: hidden;
     z-index: 1;
+    box-shadow: 0 20px 50px -10px rgba(0, 0, 0, 0.8), 0 0 30px rgba(212, 162, 77, 0.1);
+    transition: var(--transition-smooth);
+}
+
+.founder-frame:hover {
+    border-color: rgba(212, 162, 77, 0.6);
+    box-shadow: 0 25px 60px -10px rgba(0, 0, 0, 0.9), 0 0 45px rgba(212, 162, 77, 0.2);
 }
 
 .founder-img {
@@ -3120,12 +3145,13 @@ h1.hero-h1 em {
     height: 100%;
     object-fit: cover;
     object-position: center;
-    transition: var(--transition-smooth);
+    transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
     z-index: 0;
+    display: block;
 }
 
 .founder-frame:hover .founder-img {
-    transform: scale(1.05);
+    transform: scale(1.04);
 }
 
 .founder-frame::before {
@@ -3141,56 +3167,67 @@ h1.hero-h1 em {
 
 .founder-frame-label {
     position: absolute;
-    bottom: 20px;
-    left: 0;
-    right: 0;
+    bottom: 16px;
+    left: 20px;
+    right: 20px;
     font-family: var(--font-heading); /* Cormorant Garamond */
-    font-size: 14px;
+    font-size: 13px;
     font-weight: 400;
-    letter-spacing: 0.12em;
-    color: var(--gold);
-    background: rgba(7, 13, 16, 0.92);
-    border-top: 1px solid rgba(212, 162, 77, 0.25);
-    border-bottom: 1px solid rgba(212, 162, 77, 0.25);
-    padding: 8px 0;
+    letter-spacing: 0.16em;
+    color: var(--gold-light);
+    background: rgba(7, 13, 16, 0.85);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(212, 162, 77, 0.28);
+    padding: 8px 16px;
     text-align: center;
     z-index: 2;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
+    transition: var(--transition-smooth);
+}
+
+.founder-frame:hover .founder-frame-label {
+    border-color: rgba(212, 162, 77, 0.55);
+    color: var(--gold);
+    background: rgba(7, 13, 16, 0.95);
 }
 
 .founder-corner {
     position: absolute;
-    width: 20px;
-    height: 20px;
+    width: 18px;
+    height: 18px;
     border-color: var(--gold);
     border-style: solid;
     border-width: 0;
+    z-index: 3;
+    pointer-events: none;
+    transition: var(--transition-smooth);
 }
 
 .founder-corner.tl {
-    top: -8px;
-    left: -8px;
+    top: -4px;
+    left: -4px;
     border-top-width: 2px;
     border-left-width: 2px;
 }
 
 .founder-corner.tr {
-    top: -8px;
-    right: -8px;
+    top: -4px;
+    right: -4px;
     border-top-width: 2px;
     border-right-width: 2px;
 }
 
 .founder-corner.bl {
-    bottom: -8px;
-    left: -8px;
+    bottom: -4px;
+    left: -4px;
     border-bottom-width: 2px;
     border-left-width: 2px;
 }
 
 .founder-corner.br {
-    bottom: -8px;
-    right: -8px;
+    bottom: -4px;
+    right: -4px;
     border-bottom-width: 2px;
     border-right-width: 2px;
 }
@@ -3959,11 +3996,12 @@ body.overflow-hidden {
 
     .founder-inner {
         grid-template-columns: 1fr;
-        gap: 60px;
+        gap: 48px;
     }
 
     .founder-visual {
-        height: 380px;
+        height: auto;
+        padding: 10px 0;
     }
 
     .aaa-grid,
