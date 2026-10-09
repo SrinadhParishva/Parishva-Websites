@@ -3026,10 +3026,11 @@ h1.hero-h1 em {
 /* ── IMMERSIVE FOUNDER SECTION ── */
 #founder.founder-immersive {
     position: relative;
-    padding: 110px 0;
+    padding: 120px 0;
     overflow: hidden;
     background-color: var(--obsidian);
-    min-height: 520px;
+    background-image: radial-gradient(ellipse 70% 80% at 20% 50%, rgba(212, 162, 77, 0.04) 0%, transparent 70%);
+    min-height: 560px;
     display: flex;
     align-items: center;
 }
@@ -3038,14 +3039,14 @@ h1.hero-h1 em {
     position: absolute;
     top: 0;
     right: 0;
-    width: 55vw;
-    max-width: 900px;
+    width: 54vw;
+    max-width: 880px;
     height: 100%;
     overflow: hidden;
     z-index: 0;
     pointer-events: none;
-    -webkit-mask-image: linear-gradient(to right, transparent 0%, rgba(0, 0, 0, 0.4) 14%, black 36%, black 100%);
-    mask-image: linear-gradient(to right, transparent 0%, rgba(0, 0, 0, 0.4) 14%, black 36%, black 100%);
+    -webkit-mask-image: linear-gradient(to right, transparent 0%, rgba(0, 0, 0, 0.15) 12%, rgba(0, 0, 0, 0.7) 32%, black 55%, black 100%);
+    mask-image: linear-gradient(to right, transparent 0%, rgba(0, 0, 0, 0.15) 12%, rgba(0, 0, 0, 0.7) 32%, black 55%, black 100%);
 }
 
 .founder-bg-img {
@@ -3066,10 +3067,10 @@ h1.hero-h1 em {
     inset: 0;
     background: 
         linear-gradient(180deg, 
-            rgba(7, 13, 16, 0.15) 0%, 
-            transparent 12%, 
-            transparent 88%, 
-            rgba(7, 13, 16, 0.85) 100%
+            rgba(7, 13, 16, 0.25) 0%, 
+            transparent 14%, 
+            transparent 86%, 
+            rgba(7, 13, 16, 0.9) 100%
         );
     pointer-events: none;
 }
@@ -3081,24 +3082,29 @@ h1.hero-h1 em {
     margin: 0 auto;
     display: grid;
     grid-template-columns: 1.15fr 0.85fr;
+    gap: 48px;
     align-items: center;
 }
 
 .founder-content {
-    max-width: 560px;
+    max-width: 580px;
     margin-left: 0;
+    position: relative;
+    z-index: 2;
 }
 
 #founder .sec-label {
-    font-size: 12px;
+    font-size: 11px;
+    letter-spacing: 0.5em;
+    margin-bottom: 18px;
 }
 
 .founder-name {
     font-family: var(--font-heading);
-    font-size: clamp(2.4rem, 4.2vw, 3.4rem);
+    font-size: clamp(2.5rem, 4.2vw, 3.5rem);
     font-weight: 300;
-    line-height: 1.15;
-    margin: 24px 0;
+    line-height: 1.12;
+    margin: 16px 0 24px;
     color: var(--white);
     text-shadow: 0 4px 25px rgba(0, 0, 0, 0.8);
 }
@@ -3106,31 +3112,42 @@ h1.hero-h1 em {
 .founder-name em {
     font-style: italic;
     color: var(--gold-light);
-    display: block;
+    display: inline-block;
     font-weight: 300;
+    text-shadow: 0 0 24px rgba(212, 162, 77, 0.25);
 }
 
 .founder-title-sub {
     display: block;
-    font-family: var(--font-body);
-    font-size: clamp(0.95rem, 1.8vw, 1.1rem);
-    font-weight: 200;
-    color: var(--silver);
+    font-family: var(--font-mono);
+    font-size: clamp(0.72rem, 1.1vw, 0.82rem);
+    font-weight: 400;
+    color: rgba(237, 235, 235, 0.65);
     margin-top: 10px;
-    letter-spacing: 0.06em;
+    letter-spacing: 0.26em;
+    text-transform: uppercase;
 }
 
 .founder-manifesto {
     font-family: var(--font-heading);
-    font-size: clamp(1.2rem, 1.9vw, 1.45rem);
+    font-size: clamp(1.2rem, 1.9vw, 1.48rem);
     font-style: italic;
     color: var(--silver);
-    line-height: 1.85;
+    line-height: 1.8;
     text-shadow: 0 2px 15px rgba(0, 0, 0, 0.7);
+    border-left: 2px solid rgba(212, 162, 77, 0.35);
+    padding-left: 28px;
+    margin-top: 24px;
 }
 
 .founder-manifesto p {
-    margin-bottom: 16px;
+    margin-bottom: 14px;
+}
+
+.founder-manifesto p:last-child {
+    margin-bottom: 0;
+    color: var(--gold-pale);
+    font-weight: 400;
 }
 
 .founder-manifesto strong {
@@ -3903,21 +3920,26 @@ body.overflow-hidden {
 
     .founder-inner {
         grid-template-columns: 1.15fr 0.85fr;
-        gap: 20px;
+        gap: 32px;
     }
 
     #founder.founder-immersive {
-        padding: 95px 0;
-        min-height: 500px;
+        padding: 100px 0;
+        min-height: 520px;
     }
 
     .founder-bg-wrap {
-        width: 54vw;
-        max-width: 560px;
+        width: 52vw;
+        max-width: 580px;
     }
 
     .founder-content {
-        max-width: 480px;
+        max-width: 500px;
+    }
+
+    .founder-manifesto {
+        padding-left: 22px;
+        font-size: clamp(1.15rem, 2.1vw, 1.35rem);
     }
 
     .founder-bg-img {
@@ -4250,16 +4272,6 @@ body.overflow-hidden {
     width: 100%;
 }
 
-.founder-title-sub {
-    display: block;
-    font-family: var(--font-body);
-    font-size: clamp(0.95rem, 2vw, 1.15rem);
-    font-weight: 200;
-    color: var(--silver);
-    margin-top: 10px;
-    letter-spacing: 0.05em;
-}
-
 /* ── BLOGS SECTION ── */
 #blogs {
     padding: 100px 0;
@@ -4586,8 +4598,8 @@ body.overflow-hidden {
 /* Make sure mobile toggling is clean and doesn't look squished */
 @media (max-width: 768px) {
     #founder.founder-immersive {
-        padding: 70px 0;
-        min-height: 490px;
+        padding: 80px 0;
+        min-height: 500px;
         display: flex;
         align-items: center;
         position: relative;
@@ -4618,7 +4630,7 @@ body.overflow-hidden {
         object-fit: cover;
         object-position: 80% 12%;
         filter: contrast(1.05) brightness(1.02);
-        opacity: 1;
+        opacity: 0.9;
     }
 
     .founder-bg-overlay {
@@ -4627,53 +4639,56 @@ body.overflow-hidden {
         background: 
             linear-gradient(90deg, 
                 rgba(7, 13, 16, 0.98) 0%, 
-                rgba(7, 13, 16, 0.95) 42%, 
-                rgba(7, 13, 16, 0.52) 58%, 
-                rgba(7, 13, 16, 0.12) 70%, 
-                rgba(7, 13, 16, 0.0) 78%, 
+                rgba(7, 13, 16, 0.94) 45%, 
+                rgba(7, 13, 16, 0.55) 68%, 
+                rgba(7, 13, 16, 0.15) 82%, 
                 rgba(7, 13, 16, 0.0) 100%
             ),
             linear-gradient(180deg, 
-                rgba(7, 13, 16, 0.25) 0%, 
+                rgba(7, 13, 16, 0.3) 0%, 
                 transparent 15%, 
                 transparent 85%, 
-                rgba(7, 13, 16, 0.9) 100%
+                rgba(7, 13, 16, 0.95) 100%
             );
         pointer-events: none;
     }
 
     .founder-content {
-        max-width: 60%;
+        max-width: 68%;
         margin-left: 0;
         position: relative;
         z-index: 2;
         transform: none;
+        padding: 10px 0;
     }
 
     #founder .sec-label {
         font-size: 10px;
-        margin-bottom: 8px;
+        margin-bottom: 10px;
     }
 
     .founder-name {
-        font-size: clamp(1.65rem, 5.5vw, 2.1rem);
-        margin: 12px 0;
+        font-size: clamp(1.85rem, 5.8vw, 2.3rem);
+        margin: 12px 0 16px;
         line-height: 1.15;
     }
 
     .founder-title-sub {
-        font-size: clamp(0.78rem, 2.5vw, 0.9rem);
-        margin-top: 5px;
-        letter-spacing: 0.04em;
+        font-size: clamp(0.72rem, 2.4vw, 0.82rem);
+        margin-top: 6px;
+        letter-spacing: 0.2em;
     }
 
     .founder-manifesto {
-        font-size: clamp(0.9rem, 2.9vw, 1.05rem);
-        line-height: 1.62;
+        font-size: clamp(0.98rem, 3.1vw, 1.15rem);
+        line-height: 1.65;
+        border-left: 2px solid var(--gold);
+        padding-left: 18px;
+        margin-top: 18px;
     }
 
     .founder-manifesto p {
-        margin-bottom: 8px;
+        margin-bottom: 10px;
     }
 
     #faq {
@@ -4689,29 +4704,31 @@ body.overflow-hidden {
 
 @media (max-width: 480px) {
     #founder.founder-immersive {
-        padding: 60px 0;
-        min-height: 470px;
+        padding: 65px 0;
+        min-height: 480px;
     }
 
     .founder-content {
-        max-width: 58%;
+        max-width: 72%;
     }
 
     .founder-name {
-        font-size: clamp(1.45rem, 5.2vw, 1.75rem);
+        font-size: clamp(1.55rem, 5.4vw, 1.85rem);
     }
 
     .founder-title-sub {
-        font-size: 0.75rem;
+        font-size: 0.68rem;
+        letter-spacing: 0.18em;
     }
 
     .founder-manifesto {
-        font-size: 0.85rem;
-        line-height: 1.55;
+        font-size: 0.88rem;
+        line-height: 1.58;
+        padding-left: 14px;
     }
 
     .founder-bg-img {
-        object-position: 82% 10%;
+        object-position: 84% 10%;
     }
 }
 
